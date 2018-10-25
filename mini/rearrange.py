@@ -10,12 +10,23 @@ def rearrange(input_data, max_length=20):
 	return data
 
 def listify_data(input_data):
+	# takes data and returns its list version.
+	'''
+		if its already a list, it returns it
+		if its a string, it uses REGULAR EXPRESSIONS to transform it into a list.
+		if its an unexpected data type, it throws an assertion error
+	'''
 	if (type(input_data) is str):
 		input_data = re.findall(r"[\w']+", input_data)
 	assert type(input_data) is list
 	return input_data
 
 def randify_list(input_list, max_length):
+	# randomly shuffles a list.
+	'''
+		picks a random digit, min 0 max current length of input list
+		pops current digit into output list
+	'''
 	output_list = []
 	while len(input_list) > 0 and len(output_list) < max_length:
 		digit_rand = random.randint(0, len(input_list) - 1)
@@ -24,6 +35,9 @@ def randify_list(input_list, max_length):
 	return output_list
 
 def textify_list(input_list):
+	# turns a list into a space-deliminated string.
+	'''
+	'''
 	output_text = ''
 	for input_item in input_list:
 		if output_text != '':
