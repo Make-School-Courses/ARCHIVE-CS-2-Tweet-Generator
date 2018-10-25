@@ -37,6 +37,9 @@ def randify_list(input_list, max_length):
 def textify_list(input_list):
 	# turns a list into a space-deliminated string.
 	'''
+		output_text is the final return product.
+		each item is added with a space to output_text.
+		the final output_text string is returned
 	'''
 	output_text = ''
 	for input_item in input_list:

@@ -1,6 +1,9 @@
 import rearrange
-f = open("/usr/share/dict/words","r")
 
+def wordify():
+	file = open("/usr/share/dict/words","r")
+	text = file.read()
+	file.close()
 
 if __name__ == '__main__':
-	print(rearrange.rearrange(f.read()), 20)
+	print(rearrange.rearrange(text, 20))
