@@ -9,6 +9,28 @@ def rearrange(input_data, max_length=20):
 	data = textify_list(data) # morphes a list into text
 	return data
 
+def anagrange(input_data, input_word): # anagrange = anagram arrange
+	data = input_data
+	data = listify_data(data)
+	i_word = input_word
+	new_data = []
+	for v_word in data:
+		# print(f"\nanagram: {i_word}\nversus: {v_word}")
+		if verify_anagram(i_word,v_word):
+			new_data += [v_word]
+	new_data = textify_list(new_data)
+	return new_data
+
+def palindrome(input_data):
+	data = input_data
+	data = listify_data(data)
+	new_data = []
+	for word in data:
+		if verify_palindrome(word):
+			new_data += [word]
+	new_data = textify_list(new_data)
+	return new_data
+
 def listify_data(input_data):
 	# takes data and returns its list version.
 	'''
@@ -34,6 +56,7 @@ def randify_list(input_list, max_length):
 		output_list += [input_rand]
 	return output_list
 
+
 def textify_list(input_list):
 	# turns a list into a space-deliminated string.
 	'''
@@ -47,6 +70,24 @@ def textify_list(input_list):
 			output_text += ' '
 		output_text += input_item
 	return output_text
+
+def verify_palindrome(input_word):
+	i = 1
+	while (i <= len(input_word)/2):
+		if input_word[i-1] != input_word[-i]:
+			return False
+		i += 1
+	return True
+
+def verify_anagram(input_word, verify_word):
+	input_list = list(input_word)
+	verify_list = list(verify_word)
+	input_list.sort()
+	verify_list.sort()
+	if input_list == verify_list:
+		return True
+	else:
+		return False
 
 if __name__ == '__main__':
 	input_list = sys.argv[1:]
