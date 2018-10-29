@@ -2,17 +2,27 @@ import random # psuedo-random number generator module
 import sys # module allows program to access terminal parameters
 import re # the powerful "regular expression" for decompartimentalizing strings
 
-def rearrange(input_data, max_length=20):
-	data = input_data
-	data = listify_data(data) # creates a list from text
-	data = randify_list(data, max_length) # randomizes list sequence
-	data = textify_list(data) # morphes a list into text
-	return data
+# import palindromes
+# import anagrams
+# import rearranges
+# import histogram
+
+def dictionary_main():
+	# opens primary dictionary on the machine.
+	'''
+		This shouldn't vary too much machine to machine, but it may.
+		It is the primary dictionary on your machine, so it holds many words.
+		It isn't originally in list format.
+	'''
+	file = open("/usr/share/dict/words", "r")
+	text = file.read()
+	file.close()
+	return text
 
 def listify_data(input_data):
 	# takes data and returns its list version.
 	'''
-		if its already a list, it returns it
+		if its already a list, nothing happens.
 		if its a string, it uses REGULAR EXPRESSIONS to transform it into a list.
 		if its an unexpected data type, it throws an assertion error
 	'''
@@ -32,8 +42,9 @@ def randify_list(input_list, max_length):
 		digit_rand = random.randint(0, len(input_list) - 1)
 		input_rand = input_list.pop(digit_rand)
 		output_list += [input_rand]
+		print(output_list)
+	print(output_list)
 	return output_list
-
 
 def textify_list(input_list):
 	# turns a list into a space-deliminated string.
@@ -47,8 +58,11 @@ def textify_list(input_list):
 		if output_text != '':
 			output_text += ' '
 		output_text += input_item
-	return output_text
+	input_list = output_text
+	return input_list
 
 if __name__ == '__main__':
-	input_list = sys.argv[1:]
-	print(rearrange(input_list))
+	data = dictionary_main()
+	data = listify_data(data)
+	data = randify_list(data,3)
+	data = textify_list(data)
