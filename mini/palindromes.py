@@ -1,11 +1,13 @@
+import rearrange
+
 def palindromify_data(input_data):
 	data = input_data
-	data = listify_data(data)
+	data = rearrange.listify_data(data)
 	new_data = []
 	for word in data:
 		if verify_palindrome(word):
 			new_data += [word]
-	new_data = textify_list(new_data)
+	new_data = rearrange.textify_list(new_data)
 	return new_data
 
 def verify_palindrome(input_word):

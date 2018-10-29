@@ -1,4 +1,6 @@
 import rearrange
+import anagrams
+import palindromes
 
 def dictionary_main():
 	file = open("/usr/share/dict/words", "r")
@@ -14,8 +16,8 @@ if __name__ == '__main__':
 
 	print("\nhere's palindrome text")
 	print("======================")
-	print(rearrange.palindrome(text))
+	print(palindromes.palindromify_data(text))
 
 	print("\nhere's anagramify text")
 	print("======================")
-	print(rearrange.anagrange(text,input("enter word: >> ")))
+	print(anagrams.anagramify_data(text,input("enter word: >> ")))
