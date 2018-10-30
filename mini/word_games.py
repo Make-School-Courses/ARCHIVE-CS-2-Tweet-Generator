@@ -104,6 +104,13 @@ def textify_list(input_list):
 	input_list = output_text
 	return input_list
 
+def textify_dict(input_dict):
+	output_text = ''
+	for w in sorted(input_dict, key=input_dict.get, reverse=False):
+		if input_dict[w] > 1:
+			output_text += str(input_dict[w]) + ' ' + str(w) + "\n"
+	return output_text
+
 def lowerfy_list(input_list):
 	# takes a list of strings and runs lowercase on each item.
 	'''
@@ -204,20 +211,23 @@ def histogram(input_data = dictionary_main()):
 			hist[word] += 1
 		else:
 			hist[word] = 1
-	output = ""
-	for w in sorted(hist, key=hist.get, reverse=False):
-		if hist[w] > 1:
-			output += str(hist[w]) + ' ' + str(w) + "\n"
+	return hist
+
+def display_dict(input_data = dictionary_main()):
+	hist = histogram(input_data)
+	output = textify_dict(hist)
 	return output
+
 
 ### STARTER KIT
 
 if __name__ == '__main__':
-	print("\nHistogram:\n" + histogram(publication_example()))
-	# entry = user_number("\nI generate several words.\nHow many should I create?")
-	print("\nRandom Words:\n" + rearrange(4))
+	print("\nHistogram:\n" + display_dict(publication_example()))
+	entry = user_number("\nI generate several words.\nHow many should I create?")
+	print("\nRandom Words:\n" + rearrange(entry))
 
-	# entry = user_string("\nI make anagrams, so I need a word.\nWhat base word should I use today?")
-	print("\nAnagrams:\n" + anagrams("super"))
+	entry = user_string("\nI make anagrams, so I need a word.\nWhat base word should I use today?")
+	print("\nAnagrams:\n" + anagrams(entry))
 
+	print("\nI do palindromes too, but I\ndon't need any inputs for that!\nI'll go ahead and get started.")
 	print("\nPalindromes:\n" + palindromes())
