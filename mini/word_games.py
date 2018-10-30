@@ -73,7 +73,7 @@ def undupli_list(input_list):
 	for word in input_list:
 		if word not in output_list:
 			output_list += [word]
-	return word
+	return output_list
 
 def randify_list(input_list, iterations):
 	# randomly shuffles a list.
@@ -138,7 +138,7 @@ def rearrange(iterations, input_data = dictionary_main()):
 	data = input_data
 	data = listify_data(data)
 	data = lowerfy_list(data)
-	data = undupli_list(data)
+	# data = undupli_list(data) ## This function takes too long!
 	data = randify_list(data, iterations)
 	data = textify_list(data)
 	return(data)
@@ -172,10 +172,12 @@ def verify_anagram(input_word, verify_word):
 def palindromes(input_data = dictionary_main()):
 	data = input_data
 	data = listify_data(data)
+	data = lowerfy_list(data)
 	new_data = []
 	for word in data:
 		if verify_palindrome(word):
 			new_data += [word]
+	new_data = undupli_list(new_data)
 	new_data = textify_list(new_data)
 	return new_data
 
