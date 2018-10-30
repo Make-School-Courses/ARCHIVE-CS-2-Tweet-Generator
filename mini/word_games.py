@@ -158,16 +158,6 @@ def verify_palindrome(input_word):
 
 # HISTOGRAM
 
-'''
-	Read dictionary:
-	strip strings of everything but alpha characters.
-	For each word in data:
-		check if name-counter exists in hist.
-			If it doesnt, make it exist.
-		add one to the name-counter.
-	return name-counter object
-'''
-
 def histogram(input_data = dictionary_main()):
 	data = listify_data(input_data)
 	data = lowerfy_list(data)
