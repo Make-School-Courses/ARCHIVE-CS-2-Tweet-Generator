@@ -1,3 +1,4 @@
+import urllib.request # imports internet textfile reader
 import random # psuedo-random number generator module
 import sys # module allows program to access terminal parameters
 import re # the powerful "regular expression" for decompartimentalizing strings
@@ -10,6 +11,24 @@ def dictionary_main():
 		It isn't originally in list format.
 	'''
 	file = open("/usr/share/dict/words", "r")
+	text = file.read()
+	file.close()
+	return text
+
+def publication_random():
+	book = round((random.random()*49544)+1)
+	link = f"http://www.gutenberg.org/cache/epub/{book}/pg{book}.txt"
+	with urllib.request.urlopen(link) as response:
+		text = response.read()
+	return text
+
+def publication_example():
+	# opens primary dictionary on the machine.
+	'''
+		It is the primary dictionary on your machine, so it holds many words.
+		It isn't originally in list format.
+	'''
+	file = open("./example.txt", "r")
 	text = file.read()
 	file.close()
 	return text
@@ -47,6 +66,14 @@ def listify_data(input_data):
 		input_data = re.findall(r"[\w']+", input_data)
 	assert type(input_data) is list
 	return input_data
+
+def undupli_list(input_list):
+	# removes duplicates from a list.
+	output_list = []
+	for word in input_list:
+		if word not in output_list:
+			output_list += [word]
+	return word
 
 def randify_list(input_list, iterations):
 	# randomly shuffles a list.
@@ -87,7 +114,6 @@ def lowerfy_list(input_list):
 	output_list = []
 	for string in input_list:
 		string = string.lower()
-		print(string)
 		output_list += [string]
 	return output_list
 
@@ -100,24 +126,26 @@ def reverse_text(old_word):
 		i+=1
 	return new_word
 
-###
+
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 '''
 	Now setting up specific functions. These will each return complete jobs.
 	These functions will use the previously declared helpers to make code readable.
 '''
-###
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 def rearrange(iterations, input_data = dictionary_main()):
 	data = input_data
 	data = listify_data(data)
 	data = lowerfy_list(data)
+	data = undupli_list(data)
 	data = randify_list(data, iterations)
 	data = textify_list(data)
 	return(data)
 
 ### ANAGRAMS
 
-def anagrams (input_word, input_data = dictionary_main()): # anagrange = anagram arrange
+def anagrams (input_word, input_data = dictionary_main()):
 	data = input_data
 	data = listify_data(data)
 	data = lowerfy_list(data)
@@ -164,6 +192,7 @@ def verify_palindrome(input_word):
 def histogram(input_data = dictionary_main()):
 	data = listify_data(input_data)
 	data = lowerfy_list(data)
+	# data = undupli_list(data) ## This removes duplicates. If this is correct, there will be no outputs when this is uncommented.
 	hist = {}
 	for word in data:
 		found = False
@@ -182,6 +211,7 @@ def histogram(input_data = dictionary_main()):
 ### STARTER KIT
 
 if __name__ == '__main__':
+	print("\nHistogram:\n" + histogram(publication_example()))
 	# entry = user_number("\nI generate several words.\nHow many should I create?")
 	print("\nRandom Words:\n" + rearrange(4))
 
@@ -189,5 +219,3 @@ if __name__ == '__main__':
 	print("\nAnagrams:\n" + anagrams("super"))
 
 	print("\nPalindromes:\n" + palindromes())
-
-	print("\nHistogram:\n" + histogram())
