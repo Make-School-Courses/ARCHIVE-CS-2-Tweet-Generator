@@ -20,6 +20,9 @@ def publication_random():
 	link = f"http://www.gutenberg.org/cache/epub/{book}/pg{book}.txt"
 	with urllib.request.urlopen(link) as response:
 		text = response.read()
+	print("200 SUCCESS")
+	text = str(text)
+	text = text.replace("\\r\\n", "")
 	return text
 
 def publication_example():
@@ -62,6 +65,7 @@ def listify_data(input_data):
 		if its a string, it uses REGULAR EXPRESSIONS to transform it into a list.
 		if its an unexpected data type, it throws an assertion error
 	'''
+	input_data = str(input_data)
 	if (type(input_data) is str):
 		input_data = re.findall(r"[\w']+", input_data)
 	assert type(input_data) is list
@@ -204,30 +208,45 @@ def histogram(input_data = dictionary_main()):
 	# data = undupli_list(data) ## This removes duplicates. If this is correct, there will be no outputs when this is uncommented.
 	hist = {}
 	for word in data:
-		found = False
 		if word in hist:
-			found = True
-		if found:
 			hist[word] += 1
 		else:
 			hist[word] = 1
 	return hist
 
+def histogram_arrays(input_data = dictionary_main()):
+	data = listify_data(input_data)
+	data = lowerfy_list(data)
+	hist = []
+	for word in data:
+		found = False
+		for item in hist:
+			if word == item[0]:
+				found = True
+		if found:
+			item[1] += 1
+		else:
+			item[0] = word
+			item[1] = 1
+	return hist
+
 def display_dict(input_data = dictionary_main()):
-	hist = histogram(input_data)
+	hist = histogram_arrays(input_data)
 	output = textify_dict(hist)
 	return output
-
 
 ### STARTER KIT
 
 if __name__ == '__main__':
-	print("\nHistogram:\n" + display_dict(publication_example()))
-	entry = user_number("\nI generate several words.\nHow many should I create?")
-	print("\nRandom Words:\n" + rearrange(entry))
+	# print("\nIt looks like you used a parameter when you ran this file.\nI'm going to assume that this is a file, and I'm going to runa  ")
 
-	entry = user_string("\nI make anagrams, so I need a word.\nWhat base word should I use today?")
-	print("\nAnagrams:\n" + anagrams(entry))
+	print("\nHistogram:\n" + display_dict(publication_random()))
 
-	print("\nI do palindromes too, but I\ndon't need any inputs for that!\nI'll go ahead and get started.")
-	print("\nPalindromes:\n" + palindromes())
+	# entry = user_number("\nI generate several words.\nHow many should I create?")
+	# print("\nRandom Words:\n" + rearrange(entry))
+
+	# entry = user_string("\nI make anagrams, so I need a word.\nWhat base word should I use today?")
+	# print("\nAnagrams:\n" + anagrams(entry))
+
+	# print("\nI do palindromes too, but I\ndon't need any inputs for that!\nI'll go ahead and get started.")
+	# print("\nPalindromes:\n" + palindromes())
