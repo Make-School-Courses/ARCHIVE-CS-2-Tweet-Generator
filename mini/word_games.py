@@ -84,9 +84,12 @@ def lowerfy_list(input_list):
 		each item is added with a space to output_text.
 		the final output_text string is returned
 	'''
+	output_list = []
 	for string in input_list:
 		string = string.lower()
-	return input_list
+		print(string)
+		output_list += [string]
+	return output_list
 
 def reverse_text(old_word):
 	# simply reverses a text.
