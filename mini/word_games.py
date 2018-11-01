@@ -240,9 +240,9 @@ def display_weight(input_data = dictionary_main()):
 	hist = histogram(input_data)
 	hist = calculate_weight(hist) # testing calculate weight
 	output = textify_dict(hist)
-	return output
-
-
+	random_choice(hist)
+	# return output
+	return "derp"
 
 # WEIGHTED FUNCTION
 
@@ -254,6 +254,16 @@ def calculate_weight(input_dict):
 	for word in input_dict:
 		weight_dict[word] = input_dict[word] / dict_total
 	return weight_dict
+
+def random_choice(weight_dict):
+	total_weight = 0
+	for word in weight_dict:
+		weight_dict[word]=[total_weight,weight_dict[word]]
+	rand_select = random.random()
+	print(rand_select)
+	for word in weight_dict:
+		if weight_dict
+
 
 ### STARTER KIT
 
