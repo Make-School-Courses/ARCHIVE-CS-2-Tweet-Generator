@@ -68,6 +68,7 @@ def listify_data(input_data):
 	input_data = str(input_data)
 	if (type(input_data) is str):
 		input_data = re.findall(r"[\w']+", input_data)
+		# I still must configure the thing to remove /n /r /xc3
 	assert type(input_data) is list
 	return input_data
 
@@ -111,7 +112,7 @@ def textify_list(input_list):
 def textify_dict(input_dict):
 	output_text = ''
 	for w in sorted(input_dict, key=input_dict.get, reverse=False):
-		if input_dict[w] > 1:
+		if input_dict[w] > 0:
 			output_text += str(input_dict[w]) + ' ' + str(w) + "\n"
 	return output_text
 
@@ -231,16 +232,35 @@ def histogram_arrays(input_data = dictionary_main()):
 	return hist
 
 def display_dict(input_data = dictionary_main()):
-	hist = histogram_arrays(input_data)
+	hist = histogram(input_data)
 	output = textify_dict(hist)
 	return output
+
+def display_weight(input_data = dictionary_main()):
+	hist = histogram(input_data)
+	hist = calculate_weight(hist) # testing calculate weight
+	output = textify_dict(hist)
+	return output
+
+
+
+# WEIGHTED FUNCTION
+
+def calculate_weight(input_dict):
+	weight_dict = {}
+	dict_total = 0
+	for word in input_dict:
+		dict_total += input_dict[word]
+	for word in input_dict:
+		weight_dict[word] = input_dict[word] / dict_total
+	return weight_dict
 
 ### STARTER KIT
 
 if __name__ == '__main__':
 	# print("\nIt looks like you used a parameter when you ran this file.\nI'm going to assume that this is a file, and I'm going to runa  ")
 
-	print("\nHistogram:\n" + display_dict(publication_random()))
+	print("\nHistogram:\n" + display_weight(publication_random()))
 
 	# entry = user_number("\nI generate several words.\nHow many should I create?")
 	# print("\nRandom Words:\n" + rearrange(entry))
