@@ -1,3 +1,6 @@
+from flask import Flask
+app = Flask(__name__)
+
 import urllib.request # imports internet textfile reader
 import random # psuedo-random number generator module
 import sys # module allows program to access terminal parameters
@@ -240,9 +243,7 @@ def display_weight(input_data = dictionary_main()):
 	hist = histogram(input_data)
 	hist = calculate_weight(hist) # testing calculate weight
 	output = textify_dict(hist)
-	random_choice(hist)
-	# return output
-	return "derp"
+	return random_choice(hist)
 
 # WEIGHTED FUNCTION
 
@@ -257,20 +258,28 @@ def calculate_weight(input_dict):
 
 def random_choice(weight_dict):
 	total_weight = 0
-	for word in weight_dict:
-		weight_dict[word]=[total_weight,weight_dict[word]]
 	rand_select = random.random()
-	print(rand_select)
 	for word in weight_dict:
-		if weight_dict
+		if (total_weight <= rand_select < weight_dict[word] + total_weight):
+			print("SELECTED: " + word)
+			return word
+		total_weight += weight_dict[word]
+	print(rand_select)
+	# for word in weight_dict:
+	# 	if weight_dict
 
 
 ### STARTER KIT
 
+
+@app.route('/')
+def hello_world():
+	return display_weight(publication_random())
+
 if __name__ == '__main__':
 	# print("\nIt looks like you used a parameter when you ran this file.\nI'm going to assume that this is a file, and I'm going to runa  ")
 
-	print("\nHistogram:\n" + display_weight(publication_random()))
+	display_weight(publication_random())
 
 	# entry = user_number("\nI generate several words.\nHow many should I create?")
 	# print("\nRandom Words:\n" + rearrange(entry))
