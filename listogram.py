@@ -13,6 +13,8 @@ class Listogram(list):
 		self.types = 0  # Count of distinct word types in this histogram
 		self.tokens = 0  # Total count of all word tokens in this histogram
 		# Count words in given list, if any
+		print("SELF:")
+		print(self)
 		if word_list is not None:
 			for word in word_list:
 				self.add_count(word)
@@ -20,6 +22,14 @@ class Listogram(list):
 	def add_count(self, word, count=1):
 		"""Increase frequency count of given word by given count amount."""
 		# TODO: Increase word frequency by count
+		self.tokens += count
+		for array in self:
+			if array[0] == word:
+				array[1] += count
+				break
+		else:
+			self.append([word,count])
+
 
 	def frequency(self, word):
 		"""Return frequency count of given word, or 0 if word is not found."""
@@ -41,8 +51,9 @@ def print_histogram(word_list):
 	histogram = Listogram(word_list)
 	print('listogram: {}'.format(histogram))
 	print('{} tokens, {} types'.format(histogram.tokens, histogram.types))
-	for word in word_list[-2:]:
-		freq = histogram.frequency(word)
+	for array in histogram:
+		word = array[0]
+		freq = array[1]
 		print('{!r} occurs {} times'.format(word, freq))
 	print()
 
@@ -61,8 +72,7 @@ def main():
 		fish_text = 'one fish two fish red fish blue fish'
 		print_histogram(fish_text.split())
 		# Test histogram on words in a long repetitive sentence
-		woodchuck_text = ('how much wood would a wood chuck chuck'
-						  ' if a wood chuck could chuck wood')
+		woodchuck_text = ('how much wood would a wood chuck chuck\nif a wood chuck could chuck wood')
 		print_histogram(woodchuck_text.split())
 
 
