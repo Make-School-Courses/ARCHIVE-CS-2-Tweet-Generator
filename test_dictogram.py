@@ -37,6 +37,7 @@ class DictogramTest(unittest.TestCase):
 	def test_frequency(self):
 		histogram = Dictogram(self.fish_words)
 		# Verify frequency count of all words
+		print(histogram.frequency('one'))
 		assert histogram.frequency('one') == 1
 		assert histogram.frequency('two') == 1
 		assert histogram.frequency('red') == 1
