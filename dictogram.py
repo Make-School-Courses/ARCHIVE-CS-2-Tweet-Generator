@@ -2,7 +2,6 @@
 
 from __future__ import division, print_function  # Python 2 and 3 compatibility
 
-
 class Dictogram(dict):
 	"""Dictogram is a histogram implemented as a subclass of the dict type."""
 
@@ -27,7 +26,6 @@ class Dictogram(dict):
 			self.types += 1
 			self[word] = count
 
-
 	def frequency(self, word):
 		"""Return frequency count of given word, or 0 if word is not found."""
 		# TODO: Retrieve word frequency count
@@ -35,7 +33,6 @@ class Dictogram(dict):
 			return self[word]
 		else:
 			return 0
-
 
 def print_histogram(word_list):
 	print('word list: {}'.format(word_list))
