@@ -222,6 +222,7 @@ def histogram_arrays(input_data = dictionary_main()):
 	data = listify_data(input_data)
 	data = lowerfy_list(data)
 	hist = []
+
 	for word in data:
 		found = False
 		for item in hist:
@@ -242,8 +243,10 @@ def display_dict(input_data = dictionary_main()):
 def display_weight(input_data = dictionary_main()):
 	hist = histogram(input_data)
 	hist = calculate_weight(hist) # testing calculate weight
-	output = textify_dict(hist)
+	# output = textify_dict(hist)
 	return random_choice(hist)
+
+
 
 # WEIGHTED FUNCTION
 
@@ -257,7 +260,7 @@ def calculate_weight(input_dict):
 	return weight_dict
 
 def random_choice(weight_dict):
-	total_weight = 0
+	cumulative = 0
 	rand_select = random.random()
 	for word in weight_dict:
 		if (total_weight <= rand_select < weight_dict[word] + total_weight):
