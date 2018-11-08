@@ -62,7 +62,7 @@ class DictogramTest(unittest.TestCase):
 		# Verify count of distinct word types
 		assert histogram.types == 6
 		# Verify total count of all word tokens
-		assert histogram.tokens == 8 + 14
+		assert histogram.tokens == 22
 
 	def test_tokens(self):
 		histogram = Dictogram(self.fish_words)
