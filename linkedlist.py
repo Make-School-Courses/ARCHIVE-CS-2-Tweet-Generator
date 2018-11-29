@@ -23,6 +23,7 @@ class LinkedList(object):
 		if items is not None:
 			for item in items:
 				self.append(item)
+		self.length = 0
 
 	def __str__(self):
 		"""Return a formatted string representation of this linked list."""
@@ -49,30 +50,57 @@ class LinkedList(object):
 		return items  # O(1) time to return list
 
 	def is_empty(self):
-		"""Return a boolean indicating whether this linked list is empty."""
+		"""
+			Return a boolean indicating whether this linked list is empty.
+			Running time: O(1)
+			There are no loops; it just has to compute each action once
+		"""
 		return self.head is None
 
 	def length(self):
-		"""Return the length of this linked list by traversing its nodes.
-		TODO: Running time: O(???) Why and under what conditions?"""
+		"""
+			Return the length of this linked list by traversing its nodes.
+			TODO: Running time: O(???)
+			TODO: Why and under what conditions?
+		"""
 		# TODO: Loop through all nodes and count one for each
+		return self.length
 
 	def append(self, item):
-		"""Insert the given item at the tail of this linked list.
-		TODO: Running time: O(???) Why and under what conditions?"""
-		# TODO: Create new node to hold given item
-		# TODO: Append node after tail, if it exists
+		"""
+			Insert the given item at the tail of this linked list.
+			Running time: O(1)
+			There are no loops; it just has to compute each action once
+		"""
+		# Create new node to hold given item
+		new_node = Node(item)
+		# Set first node if it doesn't exist
+		if self.head == None:
+			self.head = new_node
+		# Append node after tail if it exists
+		else:
+			self.tail.next = new_node
+		# Set tail to the last node -- new_node
+		self.tail = new_node
 
 	def prepend(self, item):
-		"""Insert the given item at the head of this linked list.
-		TODO: Running time: O(???) Why and under what conditions?"""
-		# TODO: Create new node to hold given item
-		# TODO: Prepend node before head, if it exists
+		"""
+			Insert the given item at the head of this linked list.
+			Running time: O(1)
+			There are no loops; it just has to compute each action once
+		"""
+		# Create new node to hold given item
+		new_node = Node(item)
+		# Prepend node before head, if it exists
+		if self.head != None:
+			new_node.next = self.head
+		# Set head to the first node -- new_node
+		self.head = new_node
 
 	def find(self, quality):
 		"""Return an item from this linked list satisfying the given quality.
 		TODO: Best case running time: O(???) Why and under what conditions?
-		TODO: Worst case running time: O(???) Why and under what conditions?"""
+		TODO: Worst case running txwime: O(???) Why and under what conditions?"""
 		# TODO: Loop through all nodes to find item where quality(item) is True
 		# TODO: Check if node's data satisfies given quality function
 
@@ -81,8 +109,17 @@ class LinkedList(object):
 		TODO: Best case running time: O(???) Why and under what conditions?
 		TODO: Worst case running time: O(???) Why and under what conditions?"""
 		# TODO: Loop through all nodes to find one whose data matches given item
+		print(item)
+		target = self.find(item)
+
 		# TODO: Update previous node to skip around node with matching data
+
+
+		# replace prev pointer with trgt pointer.
+		previous.next = item.next
+
 		# TODO: Otherwise raise error to tell user that delete has failed
+
 		# Hint: raise ValueError('Item not found: {}'.format(item))
 
 
