@@ -4,18 +4,24 @@
 class Node(object):
 
 	def __init__(self, data):
-		"""Initialize this node with the given data."""
+		"""
+			Initialize this node with the given data.
+		"""
 		self.data = data
 		self.next = None
 
 	def __repr__(self):
-		"""Return a string representation of this node."""
+		"""
+			Return a string representation of this node.
+		"""
 		return 'Node({!r})'.format(self.data)
 
 class LinkedList(object):
 
 	def __init__(self, items=None):
-		"""Initialize this linked list and append the given items, if any."""
+		"""
+			Initialize this linked list and append the given items, if any.
+		"""
 		self.head = None  # First node
 		self.tail = None  # Last node
 		# Append given items
@@ -25,12 +31,16 @@ class LinkedList(object):
 		self.length = 0
 
 	def __str__(self):
-		"""Return a formatted string representation of this linked list."""
+		"""
+			Return a formatted string representation of this linked list.
+		"""
 		items = ['({!r})'.format(item) for item in self.items()]
 		return '[{}]'.format(' -> '.join(items))
 
 	def __repr__(self):
-		"""Return a string representation of this linked list."""
+		"""
+			Return a string representation of this linked list.
+		"""
 		return 'LinkedList({!r})'.format(self.items())
 
 	def items(self):
