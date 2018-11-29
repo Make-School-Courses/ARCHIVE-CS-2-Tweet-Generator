@@ -12,7 +12,6 @@ class Node(object):
 		"""Return a string representation of this node."""
 		return 'Node({!r})'.format(self.data)
 
-
 class LinkedList(object):
 
 	def __init__(self, items=None):
@@ -35,9 +34,11 @@ class LinkedList(object):
 		return 'LinkedList({!r})'.format(self.items())
 
 	def items(self):
-		"""Return a list (dynamic array) of all items in this linked list.
-		Best and worst case running time: O(n) for n items in the list (length)
-		because we always need to loop through all n nodes to get each item."""
+		"""
+			Return a list (dynamic array) of all items in this linked list.
+			Best and worst case running time: O(n) for n items in the list (length)
+			because we always need to loop through all n nodes to get each item.
+		"""
 		items = []  # O(1) time to create empty list
 		# Start at head node
 		node = self.head  # O(1) time to assign new variable
@@ -82,6 +83,8 @@ class LinkedList(object):
 			self.tail.next = new_node
 		# Set tail to the last node -- new_node
 		self.tail = new_node
+		# Add one to length
+		self.length += 1
 
 	def prepend(self, item):
 		"""
@@ -96,6 +99,8 @@ class LinkedList(object):
 			new_node.next = self.head
 		# Set head to the first node -- new_node
 		self.head = new_node
+		# Add one to length
+		self.length += 1
 
 	def find(self, quality):
 		"""Return an item from this linked list satisfying the given quality.
