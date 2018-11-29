@@ -61,10 +61,10 @@ class LinkedList(object):
 	def length(self):
 		"""
 			Return the length of this linked list by traversing its nodes.
-			TODO: Running time: O(???)
-			TODO: Why and under what conditions?
+			Running time: O(1)
+			I used a parameter, so all I need to do is access it.
 		"""
-		# TODO: Loop through all nodes and count one for each
+		# Access and return length parameter.
 		return self.length
 
 	def append(self, item):
@@ -103,29 +103,25 @@ class LinkedList(object):
 		self.length += 1
 
 	def find(self, quality):
-		"""Return an item from this linked list satisfying the given quality.
-		TODO: Best case running time: O(???) Why and under what conditions?
-		TODO: Worst case running txwime: O(???) Why and under what conditions?"""
+		"""
+			Return an item from this linked list satisfying the given quality.
+			TODO: Best case running time: O(???) Why and under what conditions?
+			TODO: Worst case running txwime: O(???) Why and under what conditions?
+		"""
 		# TODO: Loop through all nodes to find item where quality(item) is True
 		# TODO: Check if node's data satisfies given quality function
 
 	def delete(self, item):
-		"""Delete the given item from this linked list, or raise ValueError.
-		TODO: Best case running time: O(???) Why and under what conditions?
-		TODO: Worst case running time: O(???) Why and under what conditions?"""
+		"""
+			Delete the given item from this linked list, or raise ValueError.
+			TODO: Best case running time: O(???) Why and under what conditions?
+			TODO: Worst case running time: O(???) Why and under what conditions?
+		"""
 		# TODO: Loop through all nodes to find one whose data matches given item
-		print(item)
-		target = self.find(item)
-
 		# TODO: Update previous node to skip around node with matching data
-
-
-		# replace prev pointer with trgt pointer.
-		previous.next = item.next
-
+		# TODO: replace prev pointer with trgt pointer
 		# TODO: Otherwise raise error to tell user that delete has failed
-
-		# Hint: raise ValueError('Item not found: {}'.format(item))
+		# HINT: raise ValueError('Item not found: {}'.format(item))
 
 
 def test_linked_list():
@@ -154,7 +150,6 @@ def test_linked_list():
 		print('head: {}'.format(ll.head))
 		print('tail: {}'.format(ll.tail))
 		print('length: {}'.format(ll.length()))
-
 
 if __name__ == '__main__':
 	test_linked_list()
