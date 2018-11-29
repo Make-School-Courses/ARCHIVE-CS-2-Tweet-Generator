@@ -1,6 +1,5 @@
 #!python
 
-
 class Node(object):
 
 	def __init__(self, data):
@@ -112,14 +111,30 @@ class LinkedList(object):
 		# Add one to length
 		self.length += 1
 
-	def find(self, quality):
+	def find(self, item):
 		"""
 			Return an item from this linked list satisfying the given quality.
-			TODO: Best case running time: O(???) Why and under what conditions?
-			TODO: Worst case running txwime: O(???) Why and under what conditions?
+			TODO: Best case running time: O(1)
+			TODO: Why and under what conditions?
+			---
+			TODO: Worst case running time: O(n)
+			TODO: Why and under what conditions?
 		"""
-		# TODO: Loop through all nodes to find item where quality(item) is True
-		# TODO: Check if node's data satisfies given quality function
+		# Loop through all nodes to find item where quality(item) is True
+		get_node = self.head
+		while get_node != None:
+			# Check if node's data satisfies given quality function
+			if quality(get_node.data) == quality(item):
+				return get_node
+		# Otherwise, nothing has been found.
+		else:
+			return None
+
+	def quality(self, item):
+		"""
+			Return the item. The quality function may or may change in the future.
+		"""
+		return item
 
 	def delete(self, item):
 		"""
