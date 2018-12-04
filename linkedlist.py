@@ -145,41 +145,62 @@ class LinkedList(object):
 			TODO: Best case running time: O(???) Why and under what conditions?
 			TODO: Worst case running time: O(???) Why and under what conditions?
 		"""
+		print('\nSTARTING DELETE FUNCTION')
+		print(f"here's the input data: {data}\n")
+
 
 		# prv_node and get_node keeps track of two consecutive nodes.
 		prv_node = self.head
 		get_node = self.head.next
+		found = False
 
-		# Loop through all nodes to find one node's data that matches the input data
+
+		# FIRST CHECK IF HEAD HAS THE DATA
+		if self.head.data == data:
+			found = True
+			print('switching head!')
+			print(f"{self.head} => {get_node}\n")
+			self.head = get_node
+
+		# LOOP THROUGH ALL NODES TO FIND ONE NODE'S DATA THAT MATCHES INPUT
 		while get_node.next != None:
 
-			# Check if this node's data equals the input data.
+			# Being verbose will help with testing.
+			print('===iterating===\n')
+			print(f'prv data: {prv_node}')
+			print(f'get data: {get_node}')
+			print(f'nxt data: {get_node.next}\n')
+
+			# If this node's data equals the input, skip around it.
 			if get_node.data == data:
-				# Update previous node to skip around node with matching data
+				found = True
+				print('switching node!')
+				print(f"{prv_node.next} => {get_node.next}\n")
 				prv_node.next = get_node.next
-			# If it doesn't, search the next node, if there is one.
+				get_node = get_node.next
+				break
+			# otherwise, check the next node.
 			else:
 				prv_node = get_node
 				get_node = get_node.next
 
-		# If the while loop finishes, get_node.next is none.
+		print('===completing===\n')
+		print(f'prv data: {prv_node}')
+		print(f'get data: {get_node}')
+		print(f'nxt data: {get_node.next}\n')
+
+		# LASTLY CHECK IF TAIL HAS THE DATA
+		if get_node.data == data:
+			found = True
+			print('switching tail!')
+			print(f"{self.tail} => {prv_node}\n")
+			self.tail = prv_node
+
+		if found:
+			print('entry found! reducing span.\n')
+			self.span -= 1
 		else:
-			# Does get_node have the data?
-			if get_node.data == data:
-				# If so, our data is in the last item on the list. Skip it.
-				prv_node.next = get_node.next
-				self.tail = prv_node
-			else:
-				# Otherwise, raise an error to tell user that delete has failed.
-				ValueError(f'Item not found: {data}')
-				return None
-
-		# Check if self.head still points to the data.
-		if self.head == data:
-			self.head = self.head.next
-
-		# If the function made it this far, data has been deleted.
-		self.span -= 1
+			raise ValueError(f'Item not found: {data}')
 
 def test_linked_list():
 	ll = LinkedList()
