@@ -21,13 +21,13 @@ class LinkedList(object):
 		"""
 			Initialize this linked list and append the given items, if any.
 		"""
+		self.span = 0 # Keeps track of node span
 		self.head = None  # First node
 		self.tail = None  # Last node
 		# Append given items
 		if items is not None:
 			for item in items:
 				self.append(item)
-		self.length = 0
 
 	def __str__(self):
 		"""
@@ -73,81 +73,113 @@ class LinkedList(object):
 			Running time: O(1)
 			I used a parameter, so all I need to do is access it.
 		"""
-		# Access and return length parameter.
-		return self.length
+		# Access and return node span parameter.
+		# Couldn't call it length because its used here!
+		return self.span
 
-	def append(self, item):
+	def append(self, data):
 		"""
-			Insert the given item at the tail of this linked list.
+			Insert the given data at the tail of this linked list.
 			Running time: O(1)
 			There are no loops; it just has to compute each action once
 		"""
-		# Create new node to hold given item
-		new_node = Node(item)
-		# Set first node if it doesn't exist
-		if self.head == None:
-			self.head = new_node
+		# Add one to node span
+		self.span += 1
+		# Create new node to hold given data
+		new_node = Node(data)
 		# Append node after tail if it exists
-		else:
+		if self.head != None:
 			self.tail.next = new_node
+		# Set first node if it doesn't exist
+		else:
+			self.head = new_node
 		# Set tail to the last node -- new_node
 		self.tail = new_node
-		# Add one to length
-		self.length += 1
 
-	def prepend(self, item):
+	def prepend(self, data):
 		"""
-			Insert the given item at the head of this linked list.
+			Insert the given data at the head of this linked list.
 			Running time: O(1)
 			There are no loops; it just has to compute each action once
 		"""
-		# Create new node to hold given item
-		new_node = Node(item)
-		# Prepend node before head, if it exists
+		# Add one to length
+		self.span += 1
+		# Create new node to hold given data
+		new_node = Node(data)
+		# Prepend node before head node, if it exists
 		if self.head != None:
 			new_node.next = self.head
+		# if it doesn't exist, than this node is the first and last
+		else:
+			self.tail = new_node
 		# Set head to the first node -- new_node
 		self.head = new_node
-		# Add one to length
-		self.length += 1
 
-	def find(self, item):
+	def find(self, quality):
 		"""
-			Return an item from this linked list satisfying the given quality.
-			TODO: Best case running time: O(1)
-			TODO: Why and under what conditions?
+			Return data from this linked list satisfying the given quality.
+			Best case running time: O(1)
+			If the find function immediately finds the first node as valid...
+			...then it only uses the while loop once.
 			---
-			TODO: Worst case running time: O(n)
-			TODO: Why and under what conditions?
+			Worst case running time: O(n)
+			If the find function never finds valid data...
+			...then it has to loop through all (n) nodes in the linked list.
 		"""
-		# Loop through all nodes to find item where quality(item) is True
+		# Loop through all nodes to find one node's data where quality(data) is True
 		get_node = self.head
 		while get_node != None:
-			# Check if node's data satisfies given quality function
-			if quality(get_node.data) == quality(item):
-				return get_node
+			# Check if this node's data satisfies given quality function.
+			if quality(get_node.data) == True:
+				return get_node.data
+			# If it doesn't, search the next node, if there is one.
+			else:
+				get_node = get_node.next
 		# Otherwise, nothing has been found.
 		else:
 			return None
 
-	def quality(self, item):
-		"""
-			Return the item. The quality function may or may change in the future.
-		"""
-		return item
-
-	def delete(self, item):
+	def delete(self, data):
 		"""
 			Delete the given item from this linked list, or raise ValueError.
 			TODO: Best case running time: O(???) Why and under what conditions?
 			TODO: Worst case running time: O(???) Why and under what conditions?
 		"""
-		# TODO: Loop through all nodes to find one whose data matches given item
-		# TODO: Update previous node to skip around node with matching data
-		# TODO: replace prev pointer with trgt pointer
-		# TODO: Otherwise raise error to tell user that delete has failed
-		# HINT: raise ValueError('Item not found: {}'.format(item))
 
+		# prv_node and get_node keeps track of two consecutive nodes.
+		prv_node = self.head
+		get_node = self.head.next
+
+		# Loop through all nodes to find one node's data that matches the input data
+		while get_node.next != None:
+
+			# Check if this node's data equals the input data.
+			if get_node.data == data:
+				# Update previous node to skip around node with matching data
+				prv_node.next = get_node.next
+			# If it doesn't, search the next node, if there is one.
+			else:
+				prv_node = get_node
+				get_node = get_node.next
+
+		# If the while loop finishes, get_node.next is none.
+		else:
+			# Does get_node have the data?
+			if get_node.data == data:
+				# If so, our data is in the last item on the list. Skip it.
+				prv_node.next = get_node.next
+				self.tail = prv_node
+			else:
+				# Otherwise, raise an error to tell user that delete has failed.
+				ValueError(f'Item not found: {data}')
+				return None
+
+		# Check if self.head still points to the data.
+		if self.head == data:
+			self.head = self.head.next
+
+		# If the function made it this far, data has been deleted.
+		self.span -= 1
 
 def test_linked_list():
 	ll = LinkedList()
