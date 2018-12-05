@@ -143,8 +143,12 @@ class LinkedList(object):
 	def delete(self, data):
 		"""
 			Delete the given item from this linked list, or raise ValueError.
-			TODO: Best case running time: O(???) Why and under what conditions?
-			TODO: Worst case running time: O(???) Why and under what conditions?
+			Best case running time: O(1)
+			If the loop is exited on the first try (eg. head is result)...
+			...then it only has each computation in the loop once
+			---
+			Worst case running time: O(n)
+			If the loop is totally complete
 		"""
 		print('\nSTARTING DELETE FUNCTION')
 		print(f"here's the input data: {data}\n")
