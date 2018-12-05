@@ -139,6 +139,7 @@ class LinkedList(object):
 		else:
 			return None
 
+
 	def delete(self, data):
 		"""
 			Delete the given item from this linked list, or raise ValueError.
@@ -148,53 +149,37 @@ class LinkedList(object):
 		print('\nSTARTING DELETE FUNCTION')
 		print(f"here's the input data: {data}\n")
 
-
 		# prv_node and get_node keeps track of two consecutive nodes.
-		prv_node = self.head
-		get_node = self.head.next
+		prv_node = None
+		get_node = self.head
 		found = False
 
-
-		# FIRST CHECK IF HEAD HAS THE DATA
-		if self.head.data == data:
-			found = True
-			print('switching head!')
-			print(f"{self.head} => {get_node}\n")
-			self.head = get_node
-
 		# LOOP THROUGH ALL NODES TO FIND ONE NODE'S DATA THAT MATCHES INPUT
-		while get_node.next != None:
-
-			# Being verbose will help with testing.
-			print('===iterating===\n')
-			print(f'prv data: {prv_node}')
-			print(f'get data: {get_node}')
-			print(f'nxt data: {get_node.next}\n')
-
+		while get_node != None:
 			# If this node's data equals the input, skip around it.
 			if get_node.data == data:
 				found = True
-				print('switching node!')
-				print(f"{prv_node.next} => {get_node.next}\n")
-				prv_node.next = get_node.next
-				get_node = get_node.next
+				# Set Head & Tail
+				if (prv_node == None) and (get_node.next == None):
+					self.head = None
+					self.tail = None
+				# Set Head
+				elif prv_node == None:
+					self.head = get_node.next
+					get_node = None
+				# Set Tail
+				elif get_node.next == None:
+					self.tail = prv_node
+					get_node = None
+					prv_node.next = None
+				# Set Node
+				else:
+					prv_node.next = get_node.next
 				break
 			# otherwise, check the next node.
 			else:
 				prv_node = get_node
 				get_node = get_node.next
-
-		print('===completing===\n')
-		print(f'prv data: {prv_node}')
-		print(f'get data: {get_node}')
-		print(f'nxt data: {get_node.next}\n')
-
-		# LASTLY CHECK IF TAIL HAS THE DATA
-		if get_node.data == data:
-			found = True
-			print('switching tail!')
-			print(f"{self.tail} => {prv_node}\n")
-			self.tail = prv_node
 
 		if found:
 			print('entry found! reducing span.\n')

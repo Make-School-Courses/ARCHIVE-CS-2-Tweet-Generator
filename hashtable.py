@@ -3,7 +3,6 @@
 from linkedlist import LinkedList
 
 class HashTable(object):
-
 	def __init__(self, init_size=8):
 		"""
 			Initialize this hash table with the given initial size.
@@ -34,7 +33,7 @@ class HashTable(object):
 	def keys(self):
 		"""
 			Return a list of all keys in this hash table.
-			TODO: Running time: O(???) Why and under what conditions?
+			TODO: Running time: O(n^2) Why and under what conditions?
 		"""
 		# Collect all keys in each bucket
 		all_keys = []
@@ -73,7 +72,7 @@ class HashTable(object):
 	def contains(self, key):
 		"""
 			Return True if this hash table contains the given key, or False.
-			TODO: Running time: O(???) Why and under what conditions?
+			TODO: Running time: O(n) Why and under what conditions?
 		"""
 		# TODO: Find bucket where given key belongs
 		# TODO: Check if key-value entry exists in bucket
@@ -140,7 +139,6 @@ def test_hash_table():
 
 		print('contains(X): {}'.format(ht.contains('X')))
 		print('length: {}'.format(ht.length()))
-
 
 if __name__ == '__main__':
 	test_hash_table()
