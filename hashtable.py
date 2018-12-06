@@ -73,13 +73,15 @@ class HashTable(object):
 	def length(self):
 		"""
 			Return the number of key-value entries by traversing its buckets.
-			TODO: Running time: O(???)
+			TODO: Running time: O(n)
 			TODO: Why and under what conditions?
 		"""
 		counter = 0
 		# Loop through all buckets
 		for bucket in self.buckets:
-			counter += bucket.length
+			counter += bucket.size
+		return counter
+
 		# TODO: Count number of key-value entries in each bucket
 
 	def contains(self, key):

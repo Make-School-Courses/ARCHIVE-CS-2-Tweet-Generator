@@ -21,7 +21,7 @@ class LinkedList(object):
 		"""
 			Initialize this linked list and append the given items, if any.
 		"""
-		self.span = 0 # Keeps track of node span
+		self.size = 0 # Keeps track of node size
 		self.head = None  # First node
 		self.tail = None  # Last node
 		# Append given items
@@ -73,9 +73,9 @@ class LinkedList(object):
 			Running time: O(1)
 			I used a parameter, so all I need to do is access it.
 		"""
-		# Access and return node span parameter.
+		# Access and return node size parameter.
 		# Couldn't call it length because its used here!
-		return self.span
+		return self.size
 
 	def append(self, data):
 		"""
@@ -83,8 +83,8 @@ class LinkedList(object):
 			Running time: O(1)
 			There are no loops; it just has to compute each action once
 		"""
-		# Add one to node span
-		self.span += 1
+		# Add one to node size
+		self.size += 1
 		# Create new node to hold given data
 		new_node = Node(data)
 		# Append node after tail if it exists
@@ -103,7 +103,7 @@ class LinkedList(object):
 			There are no loops; it just has to compute each action once
 		"""
 		# Add one to length
-		self.span += 1
+		self.size += 1
 		# Create new node to hold given data
 		new_node = Node(data)
 		# Prepend node before head node, if it exists
@@ -186,8 +186,8 @@ class LinkedList(object):
 				get_node = get_node.next
 
 		if found:
-			print('entry found! reducing span.\n')
-			self.span -= 1
+			print('entry found! reducing size.\n')
+			self.size -= 1
 		else:
 			raise ValueError(f'Item not found: {data}')
 
