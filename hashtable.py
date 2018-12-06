@@ -147,10 +147,11 @@ class HashTable(object):
 
 	def delete(self, myKey):
 		"""
-			TODO: Delete myKey from this hash table, or raise KeyError.
+			Delete myKey from this hash table, or raise KeyError.
 
-			TODO: Running time: O(???)
-			TODO: Why and under what conditions?
+			Running time: O(l = n÷b) | b = buckets & n = total num of entries
+			This function inherits the linked list's delete function, Order of O(n).
+			However, this is reduced to l because of how the buckets split up each linked list.
 		"""
 		# Find bucket where myKey belongs
 		index = self._bucket_index(myKey)
