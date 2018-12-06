@@ -33,6 +33,7 @@ class HashTable(object):
 	def keys(self):
 		"""
 			Return a list of all keys in this hash table.
+
 			Running time: O(b×l = n) | b = buckets & l = avg size of buckets, n÷b
 			With a nested for loop, we must run the 2nd loop for each item in the 1st loop.
 		"""
@@ -47,6 +48,7 @@ class HashTable(object):
 	def values(self):
 		"""
 			Return a list of all values in this hash table.
+
 			Running time: O(b×l = n) | b = buckets & l = avg size of buckets, n÷b
 			With a nested for loop, we must run the 2nd loop for each item in the 1st loop.
 		"""
@@ -61,6 +63,7 @@ class HashTable(object):
 	def items(self):
 		"""
 			Return a list of all items (key-value pairs) in this hash table.
+
 			Running time: O(b) | b = buckets & l = avg size of buckets, n÷b
 			There is only one for loop -- that's for each bucket.
 			The extend function is O(1) so its not influencing the final Order.
@@ -74,6 +77,7 @@ class HashTable(object):
 	def length(self):
 		"""
 			Return the number of key-value entries by traversing its buckets.
+
 			Running time: O(b) | b = buckets & l = avg size of buckets, n÷b
 			Because size is a parameter in LinkedList, the program loops through each bucket and adds that to counter.
 		"""
@@ -87,6 +91,7 @@ class HashTable(object):
 	def contains(self, key):
 		"""
 			TODO: Return True if this hash table contains the given key, or False.
+
 			TODO: Running time: O(n)
 			TODO: Why and under what conditions?
 		"""
@@ -96,6 +101,7 @@ class HashTable(object):
 	def get(self, key):
 		"""
 			TODO: Return the value associated with the given key, or raise KeyError.
+
 			TODO: Running time: O(???)
 			TODO: Why and under what conditions?
 		"""
@@ -108,6 +114,7 @@ class HashTable(object):
 	def set(self, key, value):
 		"""
 			TODO: Insert or update the given key with its associated value.
+
 			TODO: Running time: O(???)
 			TODO: Why and under what conditions?
 		"""
@@ -119,6 +126,7 @@ class HashTable(object):
 	def delete(self, key):
 		"""
 			TODO: Delete the given key from this hash table, or raise KeyError.
+
 			TODO: Running time: O(???)
 			TODO: Why and under what conditions?
 		"""

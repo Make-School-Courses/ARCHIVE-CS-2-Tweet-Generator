@@ -45,6 +45,7 @@ class LinkedList(object):
 	def items(self):
 		"""
 			Return a list (dynamic array) of all items in this linked list.
+
 			Best and worst case running time: O(n) for n items in the list (length)
 			because we always need to loop through all n nodes to get each item.
 		"""
@@ -62,6 +63,7 @@ class LinkedList(object):
 	def is_empty(self):
 		"""
 			Return a boolean indicating whether this linked list is empty.
+
 			Running time: O(1)
 			There are no loops; it just has to compute each action once
 		"""
@@ -70,6 +72,7 @@ class LinkedList(object):
 	def length(self):
 		"""
 			Return the length of this linked list by traversing its nodes.
+
 			Running time: O(1)
 			I used a parameter, so all I need to do is access it.
 		"""
@@ -80,6 +83,7 @@ class LinkedList(object):
 	def append(self, data):
 		"""
 			Insert the given data at the tail of this linked list.
+
 			Running time: O(1)
 			There are no loops; it just has to compute each action once
 		"""
@@ -99,6 +103,7 @@ class LinkedList(object):
 	def prepend(self, data):
 		"""
 			Insert the given data at the head of this linked list.
+
 			Running time: O(1)
 			There are no loops; it just has to compute each action once
 		"""
@@ -118,6 +123,7 @@ class LinkedList(object):
 	def find(self, quality):
 		"""
 			Return data from this linked list satisfying the given quality.
+
 			Best case running time: O(1)
 			If the find function immediately finds the first node as valid...
 			...then it only uses the while loop once.
@@ -143,6 +149,7 @@ class LinkedList(object):
 	def delete(self, data):
 		"""
 			Delete the given item from this linked list, or raise ValueError.
+
 			Best case running time: O(1)
 			If the loop is exited on the first try (eg. head is result)...
 			...then it only has each computation in the loop once
