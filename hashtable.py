@@ -88,28 +88,45 @@ class HashTable(object):
 			counter += bucket.size
 		return counter
 
-	def contains(self, key):
+	def contains(self, myKey):
 		"""
-			TODO: Return True if this hash table contains the given key, or False.
+			Return True if this hash table contains myKey, or False.
 
-			TODO: Running time: O(n)
-			TODO: Why and under what conditions?
+			Running time: O(l = n÷b) | b = buckets & n = total num of entries
+			The number of items we have is evenly divided among each bucket.
+			This means that we just have to traverse one bucket's worth of data, or l.
 		"""
-		# TODO: Find bucket where given key belongs
-		# TODO: Check if key-value entry exists in bucket
+		# Find bucket where myKey belongs
+		index = self._bucket_index(myKey)
+		bucket = self.buckets[index]
+		# Check if key-value entry exists in bucket
+		for key, value in bucket.items():
+			if key == myKey:
+				return True
+		# Otherwise, return False
+		else:
+			return False
 
-	def get(self, key):
+	def get(self, myKey):
 		"""
-			TODO: Return the value associated with the given key, or raise KeyError.
+			Return the value associated with the myKey, or raise KeyError.
 
-			TODO: Running time: O(???)
-			TODO: Why and under what conditions?
+			Running time: O(l = n÷b) | b = buckets & n = total num of entries
+			The number of items we have is evenly divided among each bucket.
+			This means that we just have to traverse one bucket's worth of data, or l.
 		"""
-		# TODO: Find bucket where given key belongs
-		# TODO: Check if key-value entry exists in bucket
-		# TODO: If found, return value associated with given key
-		# TODO: Otherwise, raise error to tell user get failed
-		# Hint: raise KeyError('Key not found: {}'.format(key))
+		# Check if key-value entry exists in bucket
+		if contains(myKey):
+			# If found, find bucket where myKey belongs
+			index = self._bucket_index(myKey)
+			bucket = self.buckets[index]
+			# If found, return value associated with myKey
+			for key, value in bucket.items():
+				if key == myKey:
+					return value
+		# Otherwise, raise error to tell user get failed
+		else:
+			raise KeyError(f'Key not found: {key}')
 
 	def set(self, key, value):
 		"""
@@ -118,10 +135,13 @@ class HashTable(object):
 			TODO: Running time: O(???)
 			TODO: Why and under what conditions?
 		"""
-		# TODO: Find bucket where given key belongs
-		# TODO: Check if key-value entry exists in bucket
-		# TODO: If found, update value associated with given key
-		# TODO: Otherwise, insert given key-value entry into bucket
+		# Check if key-value entry exists in bucket
+		if contains(key):
+			# If found, find bucket where given key belongs
+			index = self._bucket_index(key)
+			# TODO: If found, update value associated with given key
+		else:
+			# TODO: Otherwise, insert given key-value entry into bucket
 
 	def delete(self, key):
 		"""
@@ -130,7 +150,8 @@ class HashTable(object):
 			TODO: Running time: O(???)
 			TODO: Why and under what conditions?
 		"""
-		# TODO: Find bucket where given key belongs
+		# Find bucket where given key belongs
+		index = self._bucket_index(key)
 		# TODO: Check if key-value entry exists in bucket
 		# TODO: If found, delete entry associated with given key
 		# TODO: Otherwise, raise error to tell user delete failed
