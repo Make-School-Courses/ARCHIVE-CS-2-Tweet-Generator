@@ -33,7 +33,7 @@ class HashTable(object):
 	def keys(self):
 		"""
 			Return a list of all keys in this hash table.
-			Running time: O(n^2)
+			Running time: O(b×l = n) | b = buckets & l = avg size of buckets, n÷b
 			With a nested for loop, we must run the 2nd loop for each item in the 1st loop.
 		"""
 		# Collect all keys in each bucket
@@ -47,22 +47,23 @@ class HashTable(object):
 	def values(self):
 		"""
 			Return a list of all values in this hash table.
-			Running time: O(n^2 Why and under what conditions?
+			Running time: O(b×l = n) | b = buckets & l = avg size of buckets, n÷b
 			With a nested for loop, we must run the 2nd loop for each item in the 1st loop.
 		"""
-		all_vals = []
+		all_values = []
 		# Loop through all buckets
 		for bucket in self.buckets:
 			# Collect all values in each bucket
 			for key, value in bucket.items():
-				all_vals.append(value)
-		return all_vals
+				all_values.append(value)
+		return all_values
 
 	def items(self):
 		"""
 			Return a list of all items (key-value pairs) in this hash table.
-			Running time: O(n)
-			TODO: Why and under what conditions?
+			Running time: O(b) | b = buckets & l = avg size of buckets, n÷b
+			There is only one for loop -- that's for each bucket.
+			The extend function is O(1) so its not influencing the final Order.
 		"""
 		# Collect all pairs of key-value entries in each bucket
 		all_items = []
@@ -73,20 +74,19 @@ class HashTable(object):
 	def length(self):
 		"""
 			Return the number of key-value entries by traversing its buckets.
-			TODO: Running time: O(n)
-			TODO: Why and under what conditions?
+			Running time: O(b) | b = buckets & l = avg size of buckets, n÷b
+			Because size is a parameter in LinkedList, the program loops through each bucket and adds that to counter.
 		"""
 		counter = 0
 		# Loop through all buckets
 		for bucket in self.buckets:
+			# Count number of key-value entries in each bucket
 			counter += bucket.size
 		return counter
 
-		# TODO: Count number of key-value entries in each bucket
-
 	def contains(self, key):
 		"""
-			Return True if this hash table contains the given key, or False.
+			TODO: Return True if this hash table contains the given key, or False.
 			TODO: Running time: O(n)
 			TODO: Why and under what conditions?
 		"""
@@ -95,7 +95,7 @@ class HashTable(object):
 
 	def get(self, key):
 		"""
-			Return the value associated with the given key, or raise KeyError.
+			TODO: Return the value associated with the given key, or raise KeyError.
 			TODO: Running time: O(???)
 			TODO: Why and under what conditions?
 		"""
@@ -107,7 +107,7 @@ class HashTable(object):
 
 	def set(self, key, value):
 		"""
-			Insert or update the given key with its associated value.
+			TODO: Insert or update the given key with its associated value.
 			TODO: Running time: O(???)
 			TODO: Why and under what conditions?
 		"""
@@ -118,7 +118,7 @@ class HashTable(object):
 
 	def delete(self, key):
 		"""
-			Delete the given key from this hash table, or raise KeyError.
+			TODO: Delete the given key from this hash table, or raise KeyError.
 			TODO: Running time: O(???)
 			TODO: Why and under what conditions?
 		"""
