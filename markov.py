@@ -12,7 +12,7 @@ class Markov(object):
 
 	def create(self):
 		for grapheme in self.corpus:
-			if grapheme == ' ':
+			if grapheme == ' ': # this can be improved greatly
 				self.saveWord()
 			else:
 				self.word += grapheme
@@ -30,9 +30,9 @@ class Markov(object):
 		if phrase in self.dict:
 			self.dict[phrase] += 1
 		else:
-			self.dict[phrase] = 1
+			self.dict[phrase]  = 1
 		del self.phrase[0]
 
 if __name__ == '__main__':
 	fishy = "one fish two fish red fish blue fish"
-	model = Markov(fishy, 2)
+	model = Markov(fishy, 5)
