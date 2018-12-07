@@ -31,8 +31,8 @@ class Markov(object):
 			self.dict[phrase] += 1
 		else:
 			self.dict[phrase] = 1
-		self.phrase = []
+		del self.phrase[0]
 
 if __name__ == '__main__':
 	fishy = "one fish two fish red fish blue fish"
-	model = Markov(fishy, 1)
+	model = Markov(fishy, 2)
