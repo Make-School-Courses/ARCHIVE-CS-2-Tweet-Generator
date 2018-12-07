@@ -1,4 +1,4 @@
-class Markov(object):
+class Markov():
 	def __init__(self, corpus, order):
 		# import arguments
 		self.corpus = corpus
