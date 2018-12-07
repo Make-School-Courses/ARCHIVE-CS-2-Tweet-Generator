@@ -1,3 +1,5 @@
+import re
+
 def getCorpus(file):
 	with open(f'{file}', 'r') as myfile:
 		data = myfile.read()
@@ -14,8 +16,7 @@ def clean(corpus, filter):
 				cleaned += ' '
 			else:
 				pass
-	return cleaned
-
+	return re.sub(' +', ' ',cleaned)
 
 if __name__ == '__main__':
 	corpus = getCorpus('dnd_phb.txt')
