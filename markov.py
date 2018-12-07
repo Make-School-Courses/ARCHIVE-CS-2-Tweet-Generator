@@ -1,12 +1,15 @@
 class Markov(object):
 	def __init__(self, corpus, order):
+		# import arguments
 		self.corpus = corpus
 		self.order = order
-
+		# initialize 'empty' variables
 		self.word = ''
 		self.phrase = []
 		self.dict = {}
-
+		self.types = 0
+		self.tokens = 0
+		# call saveDict
 		self.saveDict()
 
 	def saveWord(self):
@@ -40,6 +43,8 @@ class Markov(object):
 			self.dict[phrase] += 1
 		else:
 			self.dict[phrase]  = 1
+			self.types += 1
+		self.tokens  += 1
 		del self.phrase[0]
 
 	def saveDict(self):
@@ -63,5 +68,7 @@ class Markov(object):
 
 if __name__ == '__main__':
 	fishy = "one fish two fish red fish blue fish"
-	model = Markov(fishy, 2)
+	model = Markov(fishy, 1)
 	print(model.dict)
+	print(model.types)
+	print(model.tokens)
