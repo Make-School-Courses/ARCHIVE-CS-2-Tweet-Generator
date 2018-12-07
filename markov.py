@@ -67,8 +67,8 @@ class Markov(object):
 
 
 if __name__ == '__main__':
-	fishy = "one fish two fish red fish blue fish"
-	model = Markov(fishy, 2)
+	fishy = "One fish two fish, red fish blue fish"
+	model = Markov(fishy, 1)
 	print(model.dict)
 	print(model.types)
 	print(model.tokens)
