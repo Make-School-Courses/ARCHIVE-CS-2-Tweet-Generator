@@ -1,28 +1,38 @@
-'''
-extract text from corpus
-clean text
+class Markov(object):
+	def __init__(self, corpus, order):
+		self.corpus = corpus
+		self.order = order
 
-create word-pair
-create dictionary
+		self.dict = {}
+		self.phrase = []
+		self.word = ''
 
-for each character in corpus:
-	if next character is ' '
-		clear word-pair
-		next character
-	else:
-		add character to word
-		next character
-'''
+		self.create()
+		print(self.dict)
 
-def clean(corpus):
-	return corpus
+	def create(self):
+		for grapheme in self.corpus:
+			if grapheme == ' ':
+				self.saveWord()
+			else:
+				self.word += grapheme
+		self.saveWord()
 
-def makeDict(corpus):
-	string = ''
-	for grapheme in corpus:
-		if grapheme == ' ':
-			pass
-			# skip
-			# save to word
+	def saveWord(self):
+		if len(self.phrase)  < self.order:
+			self.phrase += [self.word]
+		if len(self.phrase) == self.order:
+			self.savePhrase()
+		self.word = ''
+
+	def savePhrase(self):
+		phrase = tuple(self.phrase)
+		if phrase in self.dict:
+			self.dict[phrase] += 1
 		else:
-			pass
+			self.dict[phrase] = 1
+		self.phrase = []
+
+if __name__ == '__main__':
+	fishy = "one fish two fish red fish blue fish"
+	model = Markov(fishy, 1)
