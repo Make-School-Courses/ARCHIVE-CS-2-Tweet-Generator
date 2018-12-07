@@ -1,3 +1,8 @@
+'''
+	This file is feature complete.
+	The class outputs a Markov Chain of nth order, with inputs of corpus and order.
+'''
+
 class Markov():
 	def __init__(self, corpus, order):
 		# import arguments
@@ -69,6 +74,6 @@ class Markov():
 if __name__ == '__main__':
 	fishy = "One fish two fish, red fish blue fish"
 	model = Markov(fishy, 1)
-	print(model.dict)
-	print(model.types)
-	print(model.tokens)
+	print(f"DICTIONARY:\n{model.dict}\n")
+	print(f"UNIQUE TYPES: {model.types}\n")
+	print(f"TOTAL TOKENS: {model.tokens}\n")
