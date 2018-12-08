@@ -35,6 +35,7 @@ class Listogram(list):
 				array[1] += count
 				break
 		else:
+			self.types += 1
 			self.append([word,count])
 
 
