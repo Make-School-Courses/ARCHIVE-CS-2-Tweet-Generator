@@ -13570,7 +13570,7 @@ Enter ORLANDO, with a paper
   me to it, and I'll show it you; and, by the way, you shall tell me
   where in the forest you live. Will you go? ORLANDO. With all my
   heart, good youth. ROSALIND. Nay, you must call me Rosalind. Come,
-  sister, will you go?                                                 
+  sister, will you go?
    Exeunt
 
 SCENE III. The forest
@@ -33342,7 +33342,7 @@ thee.
 FALSTAFF.
 I call thee coward!  I’ll see thee damn’d ere I call thee coward: but I
 would give a thousand pound, I could run as fast as thou canst. You are
-straight enough in the shoulders; you care not who sees your back: 
+straight enough in the shoulders; you care not who sees your back:
 call you that backing of your friends? A plague upon such backing! give
 me them that will face me.—Give me a cup of sack: I am a rogue, if I
 drunk to-day.
@@ -35961,10 +35961,10 @@ Our soldiers stand full fairly for the day.
 
 FALSTAFF.
 Though I could ’scape shot-free at London, I fear the shot here; here’s
-no scoring but upon the pate.—Soft! who are you? Sir Walter Blunt: 
+no scoring but upon the pate.—Soft! who are you? Sir Walter Blunt:
 there’s honour for you! here’s no vanity! I am as hot as molten lead,
 and as heavy too:  God keep lead out of me! I need no more weight than
-mine own bowels. I have led my ragamuffins where they are peppered: 
+mine own bowels. I have led my ragamuffins where they are peppered:
 there’s not three of my hundred and fifty left alive; and they are for
 the town’s end, to beg during life. But who comes here?
 
@@ -51807,7 +51807,7 @@ Enter KING EDWARD, GLOUCESTER, CLARENCE, and LADY GREY
 SCENE III. France.  The KING'S palace
 
 Flourish.  Enter LEWIS the French King, his sister BONA, his Admiral
-call'd BOURBON; PRINCE EDWARD, QUEEN MARGARET, and the EARL of OXFORD. 
+call'd BOURBON; PRINCE EDWARD, QUEEN MARGARET, and the EARL of OXFORD.
 LEWIS sits, and riseth up again
 
   LEWIS. Fair Queen of England, worthy Margaret,
@@ -83131,7 +83131,7 @@ Enter FALSTAFF and PISTOL
 
   FORD. Bless you, sir! FALSTAFF. And you, sir! Would you speak with
   me? FORD. I make bold to press with so little preparation upon you.
-  FALSTAFF. You're welcome. What's your will? Give us leave, drawer.   
+  FALSTAFF. You're welcome. What's your will? Give us leave, drawer.
                                       Exit BARDOLPH FORD. Sir, I am a
   gentleman that have spent much; my name is Brook. FALSTAFF. Good
   Master Brook, I desire more acquaintance of you. FORD. Good Sir John,
@@ -84791,7 +84791,7 @@ Enter SIR HUGH EVANS like a satyr, with OTHERS as fairies
 
   EVANS. Trib, trib, fairies; come; and remember your parts. Be pold, I
   pray you; follow me into the pit; and when I give the watch-ords, do
-  as I pid you. Come, come; trib, trib.                                
+  as I pid you. Come, come; trib, trib.
                   Exeunt
 
 SCENE 5.
@@ -97502,7 +97502,7 @@ SCENE III. Tyre. An ante-chamber in the Palace.
 
 THALIARD.
 So, this is Tyre, and this the court. Here must I kill King Pericles;
-and if I do it not, I am sure to be hanged at home: ’tis dangerous. 
+and if I do it not, I am sure to be hanged at home: ’tis dangerous.
 Well, I perceive he was a wise fellow, and had good discretion, that,
 being bid to ask what he would of the king, desired he might know none
 of his secrets: now do I see he had some reason for’t; for if a king
@@ -100286,7 +100286,7 @@ But amongst honest women.
 
 BOULT.
 Faith, my acquaintance lies little amongst them. But since my master
-and mistress have bought you, there’s no going but by their consent: 
+and mistress have bought you, there’s no going but by their consent:
 therefore I will make them acquainted with your purpose, and I doubt
 not but I shall find them tractable enough. Come, I’ll do for thee what
 I can; come your ways.
@@ -143075,7 +143075,7 @@ So it is.  [Exeunt.]
 
 SCENE 4.  (The same; a Block prepared.)
 
-[Enter Palamon and his Knightes pyniond: Iaylor, Executioner, &c. 
+[Enter Palamon and his Knightes pyniond: Iaylor, Executioner, &c.
 Gard.]
 
 (PALAMON.)
@@ -151140,10 +151140,10 @@ In her light chariot quickly is convey’d;           1192
   Means to immure herself and not be seen.
 
 
-    
+
 
   FINIS
-    
+
 
 
 
@@ -151558,13 +151558,3 @@ This Web site includes information about Project Gutenberg-tm, including
 how to make donations to the Project Gutenberg Literary Archive
 Foundation, how to help produce our new eBooks, and how to subscribe to
 our email newsletter to hear about new eBooks.
-
-
-
-
-
-
-
-
-
-

@@ -11,6 +11,5 @@ def generate(corpora, order):
 	print(Engine.sentance)
 
 if __name__ == '__main__':
-	# source = 'corpora/dnd_phb.txt'
-	source = ['corpora/50_shades.txt','corpora/frankenstein.txt']
+	source = tuple(['corpora/frankenstein_450.txt'])
 	generate(source, 3)
