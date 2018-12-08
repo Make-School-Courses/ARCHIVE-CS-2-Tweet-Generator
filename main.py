@@ -11,5 +11,5 @@ def generate(corpora, order):
 	print(Engine.sentance)
 
 if __name__ == '__main__':
-	source = tuple(['corpora/frankenstein_450.txt'])
+	source = tuple(['corpora/sherlock_300.txt'])
 	generate(source, 3)
