@@ -1,25 +1,25 @@
 import re
 
-def getCorpus(file):
-	with open(f'{file}', 'r') as myfile:
-		data = myfile.read()
-	return data
+def readCorpus(source):
+	'''Read the input text'''
+	with open(source, 'r') as file:
+		text = file.read()
+	return text
 
-def clean(corpus, filter):
-	cleaned = ''
-	for grapheme in corpus:
-		for checker in filter:
-			if grapheme == checker:
-				cleaned += grapheme
-				break
-			elif grapheme == "\n":
-				cleaned += ' '
-			else:
-				pass
-	return re.sub(' +', ' ',cleaned)
+
+def cleanText(text):
+	'''Clean the input text'''
+	text = re.sub("[^a-zA-Z'\-,.!?&]", " ", text)
+	text = text.split()
+	text = ' '.join(text)
+	return text
 
 if __name__ == '__main__':
-	corpus = getCorpus('dnd_phb.txt')
-	filter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789 .,;!?"
-	cleaned = clean(corpus, filter)
-	print(cleaned)
+	# source = 'corpora/dnd_phb.txt'
+	source = 'corpora/frankenstein.txt'
+	text = readCorpus(source)
+	text = cleanText(text)
+	print(text)
+
+# had some help from my main man, Fang!
+# https://github.com/MakeFang/TweetGen/blob/master/Tweet_Generator/tokenization.py
