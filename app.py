@@ -2,10 +2,10 @@
 from flask import Flask
 app = Flask(__name__)
 
-
 @app.route('/')
 def deploy():
-	source = tuple(['corpora/sherlock_300.txt'])
+	return 'hello'
+	source = tuple(['/corpora/sherlock_300.txt'])
 	return generate(source, 3)
 
 # import other important files
