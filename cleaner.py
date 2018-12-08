@@ -6,7 +6,6 @@ def readCorpus(source):
 		text = file.read()
 	return text
 
-
 def cleanText(text):
 	'''Clean the input text'''
 	text = re.sub("[^a-zA-Z'\-,.!?&]", " ", text)

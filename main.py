@@ -1,11 +1,13 @@
-from random_walk import *
 from cleaner import *
+from markov import *
 
+def generate(source, order):
+	text = readCorpus(source)
+	text = cleanText(text)
+	Model = Markov(text, order)
+	print(Model.dict)
 
 if __name__ == '__main__':
-	corpus = getCorpus('dnd_phb.txt')
-	filter = "ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789 .,;!?&"
-	cleaned = clean(corpus, filter)
-	print("ITS BEEN CLEANED!")
-	Walk = RandomWalk(cleaned, 3)
-	Walk.randomWalk()
+	# source = 'corpora/dnd_phb.txt'
+	source = 'corpora/frankenstein.txt'
+	generate(source, 2)
