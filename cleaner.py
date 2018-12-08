@@ -14,7 +14,6 @@ def cleanText(text):
 	return text
 
 if __name__ == '__main__':
-	# source = 'corpora/dnd_phb.txt'
 	source = 'corpora/frankenstein.txt'
 	text = readCorpus(source)
 	text = cleanText(text)
