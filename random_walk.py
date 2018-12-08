@@ -58,10 +58,14 @@ class RandomWalk(MarkovChain):
 		self.subTokens = self.tokens
 		self.subTypes = self.types
 		if self.order > 0:
-			index = self.order - 1
 			for key in self.dict:
+				index = self.order - 1
+				print('\n----------')
+				print(f'phs: {self.subPhrase}')
+				print(f'key: {key}')
 				while index > 0:
 					if self.subPhrase[index] != key[index - 1]:
+						print('x')
 						self.subTokens -= self.vocab[key]
 						self.subTypes -= 1
 						del self.vocab[key]
@@ -87,19 +91,19 @@ class RandomWalk(MarkovChain):
 	def randomWalk(self):
 		self.filterDict(self.starters)
 		# print(f'vocab: {self.vocab}')
+		self.subPhrase = self.randomWord()
+		for word in self.subPhrase:
+			self.sentance.append(word)
+		self.filterPhrase()
 		while self.subPhrase not in self.stoppers:
 			self.subPhrase = self.randomWord()
-			self.saveToSentance()
+			self.sentance.append(self.subPhrase[len(self.subPhrase) - 1])
 			self.filterPhrase()
 			print(self.vocab)
 			# print(f'phrase: {self.subPhrase}')
 		self.sentance = ' '.join(self.sentance)
 
 	# # # # # #
-
-	def saveToSentance(self):
-		for word in self.subPhrase:
-			self.sentance.append(word)
 
 if __name__ == '__main__':
 	fishy = "One fish two fish red fish blue fish."
