@@ -1,5 +1,11 @@
+'''
+	This file is feature complete.
+	The class outputs a Random Walk using the markov chain.
+	Its optimization and functionality can likely can be improved.
+	Its syntatic variable names can likely be improved.
+'''
+
 from random import *
-from cleaner import *
 from markov import *
 
 class RandomWalk(MarkovChain):
@@ -60,12 +66,12 @@ class RandomWalk(MarkovChain):
 		if self.order > 0:
 			for key in self.dict:
 				index = self.order - 1
-				print('\n----------')
-				print(f'phs: {self.subPhrase}')
-				print(f'key: {key}')
+				# print('\n----------')
+				# print(f'phs: {self.subPhrase}')
+				# print(f'key: {key}')
 				while index > 0:
 					if self.subPhrase[index] != key[index - 1]:
-						print('x')
+						# print('x')
 						self.subTokens -= self.vocab[key]
 						self.subTypes -= 1
 						del self.vocab[key]
@@ -99,7 +105,7 @@ class RandomWalk(MarkovChain):
 			self.subPhrase = self.randomWord()
 			self.sentance.append(self.subPhrase[len(self.subPhrase) - 1])
 			self.filterPhrase()
-			print(self.vocab)
+			# print(self.vocab)
 			# print(f'phrase: {self.subPhrase}')
 		self.sentance = ' '.join(self.sentance)
 
