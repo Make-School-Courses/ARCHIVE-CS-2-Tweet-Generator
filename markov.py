@@ -3,7 +3,7 @@
 	The class outputs a Markov Chain of nth order, with inputs of corpus and order.
 '''
 
-class Markov():
+class MarkovChain():
 	def __init__(self, corpus, order):
 		# import arguments
 		self.corpus = corpus
@@ -73,7 +73,7 @@ class Markov():
 
 if __name__ == '__main__':
 	fishy = "One fish two fish, red fish blue fish"
-	model = Markov(fishy, 1)
-	print(f"DICTIONARY:\n{model.dict}\n")
-	print(f"UNIQUE TYPES: {model.types}\n")
-	print(f"TOTAL TOKENS: {model.tokens}\n")
+	Model = MarkovChain(fishy, 1)
+	print(f"DICTIONARY:\n{Model.dict}\n")
+	print(f"UNIQUE TYPES: {Model.types}\n")
+	print(f"TOTAL TOKENS: {Model.tokens}\n")
