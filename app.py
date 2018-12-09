@@ -20,7 +20,7 @@ def generate(corpora, order):
 @app.route('/')
 def deploy():
 	fishy = "One fish two fish, red fish blue fish"
-	source = tuple([fishy]) # '/corpora/sherlock_300.txt'
+	source = tuple(['corpora/sherlock_300.txt']) # '/corpora/sherlock_300.txt'
 	return generate(source, 3)
 
 if __name__ == '__main__':
