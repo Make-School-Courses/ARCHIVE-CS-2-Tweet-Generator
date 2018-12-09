@@ -1,5 +1,5 @@
 # send our python in a bottle to the open seas of the web 🌊 (use flask)
-from flask import *
+from flask import Flask
 from twitter import *
 app = Flask(__name__)
 
@@ -21,20 +21,28 @@ def generate(corpora, order):
 	print(Engine.sentance)
 	return Engine.sentance
 
-mytemplate = Template("hello world!")
-print(mytemplate.render())
-
 @app.route('/')
 def deploy():
 	fishy = "One fish two fish, red fish blue fish"
 	source = tuple(['corpora/frankenstein_450.txt'])
-	return generate(source, 3)
+	sentance = generate(source, 3)
+	tweet(sentance)
+	html = f'''
+		<h1 style="text-align: center">{sentance}</h1>
+		<br />
+		<p style="text-align: center"><em>
+			<a href="https://twitter.com/frankensteinen1">
+				this message was also tweeted! check it out!
+			</a>
+		</p></em>
+	'''
+	return html
 
-@app.route('/tweet', methods=['POST'])
-def tweet():
-	status = request.form['sentence']
-	twitter.tweet(status)
-	return redirect('../')
+# @app.route('/tweet', methods=['POST'])
+# def tweet():
+# 	status = request.form['sentence']
+# 	tweet(status)
+# 	return redirect('/')
 
 if __name__ == '__main__':
 	source = tuple(['corpora/frankenstein_450.txt'])
