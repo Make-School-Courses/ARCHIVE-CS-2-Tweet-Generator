@@ -26,8 +26,10 @@ def deploy():
 	##### CANNOT GET WEB-POSTED TWEETS TO WORK
 	# tweet(sentance)
 	html = f'''
-		<h1 style="text-align: center">{sentance}</h1>
-		<br />'''
+		<div style="display:flex; align-items:center; justify-content:center; max-width:50%">
+			<h1 style="text-align: center">{sentance}</h1>
+			<hr />
+		</div>'''
 	##### CANNOT GET WEB-POSTED TWEETS TO WORK
 	# <p style="text-align: center"><em>
 	# 	<a href="https://twitter.com/frankensteinen1">
