@@ -7,9 +7,6 @@ app = Flask(__name__)
 from cleaner import *
 from random_walk import *
 
-# import mako
-from mako.template import Template
-
 # generate a sentance from our corpus at nth order
 def generate(corpora, order):
 	source = ''
