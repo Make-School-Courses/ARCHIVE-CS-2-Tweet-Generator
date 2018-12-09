@@ -20,9 +20,9 @@ def generate(corpora, order):
 @app.route('/')
 def deploy():
 	fishy = "One fish two fish, red fish blue fish"
-	source = tuple(['corpora/sherlock_300.txt']) # '/corpora/sherlock_300.txt'
+	source = tuple(['corpora/frankenstein_450.txt'])
 	return generate(source, 3)
 
 if __name__ == '__main__':
-	source = tuple(['corpora/sherlock_300.txt'])
+	source = tuple(['corpora/frankenstein_450.txt'])
 	generate(source, 3)
