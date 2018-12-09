@@ -27,7 +27,7 @@ def deploy():
 	# tweet(sentance)
 	html = f'''
 		<div style="height:100%; display:flex; align-items:center; justify-content:center; max-width:50%">
-			<h1>{sentance}</h1>
+			<h1 style="text-align:center">{sentance}</h1>
 			<hr />
 		</div>'''
 	##### CANNOT GET WEB-POSTED TWEETS TO WORK
