@@ -7,6 +7,9 @@ app = Flask(__name__)
 from cleaner import *
 from random_walk import *
 
+# import mako
+from mako.template import Template
+
 # generate a sentance from our corpus at nth order
 def generate(corpora, order):
 	source = ''
@@ -17,6 +20,9 @@ def generate(corpora, order):
 	Engine = RandomWalk(source, order)
 	print(Engine.sentance)
 	return Engine.sentance
+
+mytemplate = Template("hello world!")
+print(mytemplate.render())
 
 @app.route('/')
 def deploy():
@@ -29,7 +35,6 @@ def tweet():
 	status = request.form['sentence']
 	twitter.tweet(status)
 	return redirect('../')
-
 
 if __name__ == '__main__':
 	source = tuple(['corpora/frankenstein_450.txt'])
