@@ -19,9 +19,8 @@ def generate(corpora, order):
 
 @app.route('/')
 def deploy():
-	return 'hello'
-	# source = tuple(['/corpora/sherlock_300.txt'])
-	# return generate(source, 3)
+	source = tuple(['/corpora/sherlock_300.txt'])
+	return generate(source, 3)
 
 if __name__ == '__main__':
 	source = tuple(['corpora/sherlock_300.txt'])
