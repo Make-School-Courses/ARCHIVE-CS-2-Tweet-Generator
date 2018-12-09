@@ -23,16 +23,17 @@ def deploy():
 	fishy = "One fish two fish, red fish blue fish"
 	source = tuple(['corpora/frankenstein_450.txt'])
 	sentance = generate(source, 3)
-	tweet(sentance)
+	##### CANNOT GET WEB-POSTED TWEETS TO WORK
+	# tweet(sentance)
 	html = f'''
 		<h1 style="text-align: center">{sentance}</h1>
-		<br />
-		<p style="text-align: center"><em>
-			<a href="https://twitter.com/frankensteinen1">
-				this message was also tweeted! check it out!
-			</a>
-		</p></em>
-	'''
+		<br />'''
+	##### CANNOT GET WEB-POSTED TWEETS TO WORK
+	# <p style="text-align: center"><em>
+	# 	<a href="https://twitter.com/frankensteinen1">
+	# 		this message was also tweeted! check it out!
+	# 	</a>
+	# </p></em>
 	return html
 
 # @app.route('/tweet', methods=['POST'])
