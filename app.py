@@ -2,12 +2,6 @@
 from flask import Flask
 app = Flask(__name__)
 
-@app.route('/')
-def deploy():
-	return 'hello'
-	source = tuple(['/corpora/sherlock_300.txt'])
-	return generate(source, 3)
-
 # import other important files
 from cleaner import *
 from random_walk import *
@@ -22,6 +16,12 @@ def generate(corpora, order):
 	Engine = RandomWalk(source, order)
 	print(Engine.sentance)
 	return Engine.sentance
+
+@app.route('/')
+def deploy():
+	return 'hello'
+	# source = tuple(['/corpora/sherlock_300.txt'])
+	# return generate(source, 3)
 
 if __name__ == '__main__':
 	source = tuple(['corpora/sherlock_300.txt'])
