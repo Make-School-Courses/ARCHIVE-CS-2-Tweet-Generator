@@ -23,7 +23,7 @@ def deploy():
 	fishy = "One fish two fish, red fish blue fish"
 	source = tuple(['corpora/frankenstein_450.txt'])
 	sentance = generate(source, 3)
-	# tweet(sentance)
+	tweet(sentance)
 	html = f'''
 		<h1 style="text-align: center">{sentance}</h1>
 		<br />
