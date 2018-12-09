@@ -28,6 +28,7 @@ def deploy():
 	html = f'''
 		<div style="height:100%; display:flex; align-items:center; justify-content:center">
 			<h1 style="text-align:center; width: 50%; margin:0 auto">{sentance}</h1>
+			<br />
 		</div>'''
 	##### CANNOT GET WEB-POSTED TWEETS TO WORK
 	# <p style="text-align: center"><em>
