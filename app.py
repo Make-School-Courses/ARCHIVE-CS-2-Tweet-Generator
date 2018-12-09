@@ -1,5 +1,6 @@
 # send our python in a bottle to the open seas of the web 🌊 (use flask)
-from flask import Flask
+from flask import *
+from twitter import *
 app = Flask(__name__)
 
 # import other important files
@@ -22,6 +23,13 @@ def deploy():
 	fishy = "One fish two fish, red fish blue fish"
 	source = tuple(['corpora/frankenstein_450.txt'])
 	return generate(source, 3)
+
+@app.route('/tweet', methods=['POST'])
+def tweet():
+	status = request.form['sentence']
+	twitter.tweet(status)
+	return redirect('../')
+
 
 if __name__ == '__main__':
 	source = tuple(['corpora/frankenstein_450.txt'])
