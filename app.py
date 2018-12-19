@@ -24,7 +24,6 @@ def deploy():
 	fishy = "One fish two fish, red fish blue fish"
 	source = tuple(['corpora/frankenstein_450.txt','corpora/sherlock_300.txt'])
 	sentance = generate(source, 3)
-	##### CANNOT GET WEB-POSTED TWEETS TO WORK
 	tweet(sentance)
 	html = f'''
 		<div style="height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center">
@@ -38,15 +37,7 @@ def deploy():
 				</em>
 			</p>
 		</div>'''
-	##### CANNOT GET WEB-POSTED TWEETS TO WORK
-
 	return html
-
-# @app.route('/tweet', methods=['POST'])
-# def tweet():
-# 	status = request.form['sentence']
-# 	tweet(status)
-# 	return redirect('/')
 
 if __name__ == '__main__':
 	source = tuple(['corpora/frankenstein_450.txt','corpora/sherlock_300.txt'])
