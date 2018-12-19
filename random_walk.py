@@ -84,8 +84,7 @@ class RandomWalk(MarkovChain):
 						break
 					index -= 1
 
-	# # # # # #
-
+	# # # # # # # # # # # # # # # #
 	# def randomWordByCount(self):
 	# 	counter = 0
 	# 	random = randrange(self.subTokens+1)
@@ -99,6 +98,7 @@ class RandomWalk(MarkovChain):
 	def randomWordByProb(self):
 		counter = 0
 		random = randrange(self.subTokens+1) / self.subTokens
+		# returns a range 0 < n ≤ 1
 		for key in self.vocab:
 			counter += self.vocab[key] / self.subTokens
 			if counter >= random:
