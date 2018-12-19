@@ -240,12 +240,20 @@ def display_dict(input_data = dictionary_main()):
 	output = textify_dict(hist)
 	return output
 
-def display_weight(input_data = dictionary_main()):
+def display_weight(input_data):
 	hist = histogram(input_data)
 	hist = calculate_weight(hist) # testing calculate weight
-	# output = textify_dict(hist)
-	return random_choice(hist)
+	string = prettify(hist)
+	return string
 
+def prettify(input_data):
+	string = ''
+	for item in input_data:
+		string += item
+		string += ': '
+		string += str(input_data[item] * 1000)
+		string += '‰\n'
+	return string
 
 
 # WEIGHTED FUNCTION
@@ -263,32 +271,35 @@ def random_choice(weight_dict):
 	cumulative = 0
 	rand_select = random.random()
 	for word in weight_dict:
-		if (total_weight <= rand_select < weight_dict[word] + total_weight):
+		if (cumulative <= rand_select < weight_dict[word] + cumulative):
 			print("SELECTED: " + word)
 			return word
-		total_weight += weight_dict[word]
+		cumulative += weight_dict[word]
 	print(rand_select)
 	# for word in weight_dict:
 	# 	if weight_dict
 
 
 ### STARTER KIT
-
+# MUST DO RANDOM WEIGHTING
 
 @app.route('/')
 def hello_world():
 	return display_weight(publication_random())
 
 if __name__ == '__main__':
-	# print("\nIt looks like you used a parameter when you ran this file.\nI'm going to assume that this is a file, and I'm going to runa  ")
+	# print("\nIt looks like you used a parameter when you ran this file.\nI'm going to assume that this is a file, and I'm going to run")
 
-	display_weight(publication_random())
+	entry = user_number("\nI generate several words.\nHow many should I create?")
+	print("\nRandom Words:\n" + rearrange(entry))
 
-	# entry = user_number("\nI generate several words.\nHow many should I create?")
-	# print("\nRandom Words:\n" + rearrange(entry))
+	entry = user_string("\nI make anagrams, so I need a word.\nWhat base word should I use today?")
+	print("\nAnagrams:\n" + anagrams(entry))
 
-	# entry = user_string("\nI make anagrams, so I need a word.\nWhat base word should I use today?")
-	# print("\nAnagrams:\n" + anagrams(entry))
+	print("\nI do palindromes too, but I\ndon't need any inputs for that!\nI'll go ahead and get started.")
+	print("\nPalindromes:\n" + palindromes())
 
-	# print("\nI do palindromes too, but I\ndon't need any inputs for that!\nI'll go ahead and get started.")
-	# print("\nPalindromes:\n" + palindromes())
+	print("\nI'm going to spit out a large histogram of words, \nsorted by the PERMILLE (‰) of the text that it is used in.")
+	input("press enter to continue: >> ")
+	my_dict = publication_random()
+	print("\nDisplay Weight:\n" + display_weight(my_dict))
