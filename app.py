@@ -14,6 +14,7 @@ def generate(corpora, order):
 		text = readCorpus(work)
 		text = cleanText(text)
 		source += text
+		source += ' '
 	Engine = RandomWalk(source, order)
 	print(Engine.sentance)
 	return Engine.sentance
@@ -45,5 +46,5 @@ def deploy():
 # 	return redirect('/')
 
 if __name__ == '__main__':
-	source = tuple(['corpora/frankenstein_450.txt','corpora/sherlock_300.txt'])
-	generate(source, 3)
+	source = tuple(['corpora/frankenstein_450.txt', 'corpora/fifty_shades_950.txt', 'corpora/dracula_850.txt'])
+	generate(source, 2)
