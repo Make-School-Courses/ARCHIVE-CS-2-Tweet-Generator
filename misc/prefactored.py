@@ -300,6 +300,6 @@ if __name__ == '__main__':
 	print("\nPalindromes:\n" + palindromes())
 
 	print("\nI'm going to spit out a large histogram of words, \nsorted by the PERMILLE (‰) of the text that it is used in.")
-	input("press enter to continue: >> ")
+	input("press enter to continue: ")
 	my_dict = publication_random()
 	print("\nDisplay Weight:\n" + display_weight(my_dict))
