@@ -86,15 +86,21 @@ class RandomWalk(MarkovChain):
 
 	# # # # # #
 
-	def randomWord(self):
+	# def randomWordByCount(self):
+	# 	counter = 0
+	# 	random = randrange(self.subTokens+1)
+	# 	for key in self.vocab:
+	# 		counter += self.vocab[key]
+	# 		if counter >= random:
+	# 			return key
+	# 	else:
+	# 		raise ValueError(f"\ncounter: {counter}  |  random: {random}\nSUMMED COUNTER DIDN'T MEET RANDOM")
+
+	def randomWordByProb(self):
 		counter = 0
-		random = randrange(self.subTokens+1)
-		# print(f'\n========\ncounter {counter}')
-		# print(f'random {random}')
+		random = randrange(self.subTokens+1) / self.subTokens
 		for key in self.vocab:
-			counter += self.vocab[key]
-			# print(f'\n--------\ncounter {counter}')
-			# print(f'key: {key}')
+			counter += self.vocab[key] / self.subTokens
 			if counter >= random:
 				return key
 		else:
@@ -103,12 +109,12 @@ class RandomWalk(MarkovChain):
 	def randomWalk(self):
 		self.filterDict(self.starters)
 		# print(f'vocab: {self.vocab}')
-		self.subPhrase = self.randomWord()
+		self.subPhrase = self.randomWordByProb()
 		for word in self.subPhrase:
 			self.sentance.append(word)
 		self.filterPhrase()
 		while self.subPhrase not in self.stoppers:
-			self.subPhrase = self.randomWord()
+			self.subPhrase = self.randomWordByProb()
 			self.sentance.append(self.subPhrase[len(self.subPhrase) - 1])
 			self.filterPhrase()
 			# print(self.vocab)
