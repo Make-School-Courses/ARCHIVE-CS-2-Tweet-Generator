@@ -43,21 +43,26 @@ class RandomWalk(MarkovChain):
 	# # # # # #
 
 	def filterDict(self, sample, intersect = True):
-		self.vocab = self.dict.copy()
-		self.subTokens = self.tokens
-		self.subTypes = self.types
-		if intersect:
+		if intersect: # keep only these items in dictionary
+			# clear the temporary dict
+			self.subTokens = 0
+			self.subTypes = 0
+			self.vocab = {}
+			# add matching items to dict
 			for phrase in sample:
-				if not self.dict[phrase]: # not in dict
-					self.subTokens -= self.vocab[key]
-					self.subTypes -= 1
-					del self.vocab[key]
-		else:
+				self.subTokens += self.dict[phrase]
+				self.subTypes += 1
+				self.vocab[phrase] = self.dict[phrase]
+		else: # remove items from dictionary
+			# create a copy of the whole dict
+			self.vocab = self.dict.copy()
+			self.subTokens = self.tokens
+			self.subTypes = self.types
+			# remove items from the dict
 			for phrase in sample:
-				if self.dict[phrase]: # must be in dict
-					self.subTokens -= self.vocab[key]
-					self.subTypes -= 1
-					del self.vocab[key]
+				self.subTokens -= self.vocab[phrase]
+				self.subTypes -= 1
+				del self.vocab[phrase]
 
 	def filterPhrase(self):
 		self.vocab = self.dict.copy()

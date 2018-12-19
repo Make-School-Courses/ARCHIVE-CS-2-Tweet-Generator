@@ -21,7 +21,7 @@ def generate(corpora, order):
 @app.route('/')
 def deploy():
 	fishy = "One fish two fish, red fish blue fish"
-	source = tuple(['corpora/sherlock_300.txt'])
+	source = tuple(['corpora/frankenstein_450.txt','sherlock_300.txt'])
 	sentance = generate(source, 3)
 	##### CANNOT GET WEB-POSTED TWEETS TO WORK
 	# tweet(sentance)
@@ -45,5 +45,5 @@ def deploy():
 # 	return redirect('/')
 
 if __name__ == '__main__':
-	source = tuple(['corpora/frankenstein_450.txt'])
+	source = tuple(['corpora/frankenstein_450.txt','corpora/sherlock_300.txt'])
 	generate(source, 3)
