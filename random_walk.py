@@ -21,6 +21,7 @@ class RandomWalk(MarkovChain):
 		# call stoppers and starters
 		self.stoppers = self.getStop()
 		self.starters = self.getStart()
+		self.distribution = self.getDistribution()
 		# finally call randomWalk()
 		self.randomWalk()
 
@@ -29,7 +30,7 @@ class RandomWalk(MarkovChain):
 	def getStart(self):
 		types = []
 		for key in self.dict:
-			if key[0][0].isupper():
+			if key[0] !='' and key[0][0].isupper():
 				types.append(key)
 		return types
 
@@ -115,7 +116,18 @@ class RandomWalk(MarkovChain):
 
 	# # # # # #
 
+	def getDistribution(self):
+		# WARNING: this function is displayed in permille, not percent!!!
+		# That means that 1000‰ = 1. Again, 1‰ ≠ 1%!!!
+		string = ''
+		for key in self.dict:
+			value = self.dict[key] / self.tokens * 1000
+			string += f'{key}: {value}‰\n'
+		return string
+
+
 if __name__ == '__main__':
 	fishy = "One fish two fish red fish blue fish."
 	Engine = RandomWalk(fishy, 3)
+	print(Engine.distribution)
 	print(Engine.sentance)

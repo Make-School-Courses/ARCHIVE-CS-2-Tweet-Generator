@@ -46,5 +46,6 @@ def deploy():
 # 	return redirect('/')
 
 if __name__ == '__main__':
-	source = tuple(['corpora/frankenstein_450.txt', 'corpora/fifty_shades_950.txt', 'corpora/dracula_850.txt'])
-	generate(source, 2)
+	source = tuple(['corpora/frankenstein_450.txt','corpora/sherlock_300.txt'])
+
+	generate(source, 3)
