@@ -106,7 +106,6 @@ class RandomWalk(MarkovChain):
 			self.sentance.append(self.subPhrase[len(self.subPhrase) - 1])
 			self.filterPhrase()
 			# print(self.vocab)
-			print(f'phrase: {self.subPhrase}')
 		self.sentance = ' '.join(self.sentance)
 
 	# # # # # #
