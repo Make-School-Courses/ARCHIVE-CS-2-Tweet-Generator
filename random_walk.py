@@ -47,14 +47,14 @@ class RandomWalk(MarkovChain):
 		self.subTokens = self.tokens
 		self.subTypes = self.types
 		if intersect:
-			for key in self.dict:
-				if key not in sample: # not in sample
+			for phrase in sample:
+				if not self.dict[phrase]: # not in dict
 					self.subTokens -= self.vocab[key]
 					self.subTypes -= 1
 					del self.vocab[key]
 		else:
-			for key in self.dict:
-				if key in sample: # must be in sample
+			for phrase in sample:
+				if self.dict[phrase]: # must be in dict
 					self.subTokens -= self.vocab[key]
 					self.subTypes -= 1
 					del self.vocab[key]
@@ -106,7 +106,7 @@ class RandomWalk(MarkovChain):
 			self.sentance.append(self.subPhrase[len(self.subPhrase) - 1])
 			self.filterPhrase()
 			# print(self.vocab)
-			# print(f'phrase: {self.subPhrase}')
+			print(f'phrase: {self.subPhrase}')
 		self.sentance = ' '.join(self.sentance)
 
 	# # # # # #
