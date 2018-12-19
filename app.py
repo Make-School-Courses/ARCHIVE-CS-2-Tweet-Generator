@@ -22,21 +22,24 @@ def generate(corpora, order):
 @app.route('/')
 def deploy():
 	fishy = "One fish two fish, red fish blue fish"
-	source = tuple(['corpora/frankenstein_450.txt','sherlock_300.txt'])
+	source = tuple(['corpora/frankenstein_450.txt','corpora/sherlock_300.txt'])
 	sentance = generate(source, 3)
 	##### CANNOT GET WEB-POSTED TWEETS TO WORK
-	# tweet(sentance)
+	tweet(sentance)
 	html = f'''
-		<div style="height:100%; display:flex; align-items:center; justify-content:center">
+		<div style="height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center">
 			<h1 style="text-align:center; width: 50%; margin:0 auto">{sentance}</h1>
-			<br />
+			<hr />
+			<p style="text-align: center">
+				<em>
+					<a href="https://twitter.com/frankensteinen1">
+						this message was also tweeted! check it out!
+					</a>
+				</em>
+			</p>
 		</div>'''
 	##### CANNOT GET WEB-POSTED TWEETS TO WORK
-	# <p style="text-align: center"><em>
-	# 	<a href="https://twitter.com/frankensteinen1">
-	# 		this message was also tweeted! check it out!
-	# 	</a>
-	# </p></em>
+
 	return html
 
 # @app.route('/tweet', methods=['POST'])
@@ -47,5 +50,4 @@ def deploy():
 
 if __name__ == '__main__':
 	source = tuple(['corpora/frankenstein_450.txt','corpora/sherlock_300.txt'])
-
 	generate(source, 3)
