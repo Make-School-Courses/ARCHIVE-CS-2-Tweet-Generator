@@ -1,4 +1,6 @@
-# CS 2: Tweet Generator: Text Processing & Probability
+# ARCHIVE - CS 2: Tweet Generator: Text Processing & Probability
+
+## NOTE: This repo is no longer maintained
 
 ## Course Schedule
 
