@@ -2,6 +2,7 @@
 
 ## NOTE: This repo is no longer maintained
 
+
 ## Course Schedule
 
 **Course Dates:** Monday, October 23 – Friday, December 8, 2017 (6 weeks)
