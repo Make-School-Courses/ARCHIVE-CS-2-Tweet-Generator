@@ -35,14 +35,14 @@ class HashTable:
 		"""
 		Return a list of all keys in this hash table.
 
-		Running time: O(b×l = n) | b = buckets & l = avg size of buckets, n÷b
+		Running time: O(b*x = n) | b = buckets & x = avg size of buckets, n/b
 		With a nested for loop, we must run the 2nd loop for each item in the 1st loop.
 		"""
 		# Collect all keys in each bucket
 		all_keys = []
 		for bucket in self.buckets:
 			# Collect all values in each bucket
-			for key, value in bucket.items():
+			for key, _ in bucket.items():
 				all_keys.append(key)
 		return all_keys
 
@@ -50,14 +50,14 @@ class HashTable:
 		"""
 		Return a list of all values in this hash table.
 
-		Running time: O(b×l = n) | b = buckets & l = avg size of buckets, n÷b
+		Running time: O(b*x = n) | b = buckets & x = avg size of buckets, n/b
 		With a nested for loop, we must run the 2nd loop for each item in the 1st loop.
 		"""
 		all_values = []
 		# Loop through all buckets
 		for bucket in self.buckets:
 			# Collect all values in each bucket
-			for key, value in bucket.items():
+			for _, value in bucket.items():
 				all_values.append(value)
 		return all_values
 
@@ -101,12 +101,7 @@ class HashTable:
 		index = self._bucket_index(myKey)
 		bucket = self.buckets[index]
 		# Check if key-value entry exists in bucket
-		for key, value in bucket.items():
-			# If found, return True
-			if key == myKey:
-				return True
-		# Otherwise, return False
-		return False
+		return any(key == myKey for key, _ in bucket.items())
 
 	def get(self, myKey):
 		"""
@@ -154,8 +149,11 @@ class HashTable:
 		# Find bucket where myKey belongs
 		index = self._bucket_index(myKey)
 		bucket = self.buckets[index]
+
 		# Create quality to pass into find()
-		quality = lambda data: data[0] == myKey
+		def quality(data):
+			return data[0] == myKey
+
 		result = bucket.find(quality)
 		# Check if key-value entry exists in bucket, and delete it
 		if result:

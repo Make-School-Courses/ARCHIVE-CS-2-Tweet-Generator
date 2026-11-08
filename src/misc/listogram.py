@@ -51,10 +51,7 @@ class Listogram(list):
 		Return boolean indicating if given word is in this histogram.
 		"""
 		# Check if word is in this histogram
-		for pairing in self:
-			if pairing[0] == word:
-				return True
-		return False
+		return any(pairing[0] == word for pairing in self)
 
 	def _index(self, word):
 		"""
@@ -62,12 +59,9 @@ class Listogram(list):
 		in this histogram, or None if given word is not found.
 		"""
 		# Implement linear search to find index of entry with given word
-		index = 0
-		for pairing in self:
+		for index, pairing in enumerate(self):
 			if pairing[0] == word:
 				return index
-			else:
-				index += 1
 		return None
 
 

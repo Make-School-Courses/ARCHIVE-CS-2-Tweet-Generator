@@ -28,17 +28,15 @@ class Tuplegram(list):
 		"""
 		# TODO: Increase word frequency by count
 		self.tokens += count
-		index = 0
 		for item in self:
-			index += 1
 			if item[0] == word:
-				newItem = tuple([item[0], item[1] + count])
+				newItem = (item[0], item[1] + count)
 				self.remove(item)
 				self.append(newItem)
 				break
 		else:
 			self.types += 1
-			self.append(tuple([word, count]))
+			self.append((word, count))
 
 	def frequency(self, word):
 		"""
@@ -55,10 +53,7 @@ class Tuplegram(list):
 		Return boolean indicating if given word is in this histogram.
 		"""
 		# Check if word is in this histogram
-		for pairing in self:
-			if pairing[0] == word:
-				return True
-		return False
+		return any(pairing[0] == word for pairing in self)
 
 	def _index(self, word):
 		"""
@@ -66,12 +61,9 @@ class Tuplegram(list):
 		in this histogram, or None if given word is not found.
 		"""
 		# Implement linear search to find index of entry with given word
-		index = 0
-		for pairing in self:
+		for index, pairing in enumerate(self):
 			if pairing[0] == word:
 				return index
-			else:
-				index += 1
 		return None
 
 

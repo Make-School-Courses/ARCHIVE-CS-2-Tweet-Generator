@@ -26,7 +26,6 @@ def generate(corpora, order):
 
 @app.route("/")
 def deploy():
-	fishy = "One fish two fish, red fish blue fish"
 	source = (DATA_DIR / "frankenstein_450.txt", DATA_DIR / "sherlock_300.txt")
 	sentance = generate(source, 3)
 	tweet(sentance)

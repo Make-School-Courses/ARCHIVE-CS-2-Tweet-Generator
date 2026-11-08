@@ -1,6 +1,7 @@
 #!python
 
 import unittest
+from typing import ClassVar
 
 from src.misc.listogram import Listogram
 
@@ -11,10 +12,10 @@ if not hasattr(unittest.TestCase, "assertCountEqual"):
 
 class ListogramTest(unittest.TestCase):
 	# Test fixtures: known inputs and their expected results
-	fish_words = ["one", "fish", "two", "fish", "red", "fish", "blue", "fish"]
-	fish_list = [["one", 1], ["fish", 4], ["two", 1], ["red", 1], ["blue", 1]]
+	fish_words: ClassVar = ["one", "fish", "two", "fish", "red", "fish", "blue", "fish"]
+	fish_list: ClassVar = [["one", 1], ["fish", 4], ["two", 1], ["red", 1], ["blue", 1]]
 	# 📣🚨 FISH LIST HAS BEEN CHANGED TO LIST OF LISTS, FROM LIST OF TUPLES
-	fish_dict = {"one": 1, "fish": 4, "two": 1, "red": 1, "blue": 1}
+	fish_dict: ClassVar = {"one": 1, "fish": 4, "two": 1, "red": 1, "blue": 1}
 
 	def test_entries(self):
 		# NOTE: This test assumes Listogram is implemented as a list of tuples,

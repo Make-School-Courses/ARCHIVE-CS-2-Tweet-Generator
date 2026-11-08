@@ -16,10 +16,8 @@ def dictionary_main():
 	It is the primary dictionary on your machine, so it holds many words.
 	It isn't originally in list format.
 	"""
-	file = open("/usr/share/dict/words")
-	text = file.read()
-	file.close()
-	return text
+	with open("/usr/share/dict/words") as file:
+		return file.read()
 
 
 def publication_random():
@@ -39,10 +37,8 @@ def publication_example():
 	It is the primary dictionary on your machine, so it holds many words.
 	It isn't originally in list format.
 	"""
-	file = open(DATA_EXAMPLE)
-	text = file.read()
-	file.close()
-	return text
+	with open(DATA_EXAMPLE) as file:
+		return file.read()
 
 
 def user_number(feed):
@@ -51,22 +47,16 @@ def user_number(feed):
 		try:
 			number = int(input("enter integer:\n>> "))
 			assert isinstance(number, int)  # throws an error if its not an integer
-			assert number != None
+			assert number is not None
 			assert number != ""
 			return number
-		except:
+		except ValueError:
 			print("INVALID INPUT.\nplease try again.\n")
 
 
 def user_string(feed):
 	print(feed)
-	while True:
-		try:
-			string = str(input("enter string:\n>> "))
-			assert isinstance(string, str)  # throws an error if its not an string
-			return string
-		except:
-			print("INVALID INPUT.\nplease try again.\n")
+	return input("enter string:\n>> ")
 
 
 def listify_data(input_data):
@@ -140,9 +130,8 @@ def lowerfy_list(input_list):
 	the final output_text string is returned
 	"""
 	output_list = []
-	for string in input_list:
-		string = string.lower()
-		output_list += [string]
+	for text in input_list:
+		output_list += [text.lower()]
 	return output_list
 
 
@@ -164,7 +153,9 @@ def reverse_text(old_word):
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
 
 
-def rearrange(iterations, input_data=dictionary_main()):
+def rearrange(iterations, input_data=None):
+	if input_data is None:
+		input_data = dictionary_main()
 	data = input_data
 	data = listify_data(data)
 	data = lowerfy_list(data)
@@ -177,7 +168,9 @@ def rearrange(iterations, input_data=dictionary_main()):
 ### ANAGRAMS
 
 
-def anagrams(input_word, input_data=dictionary_main()):
+def anagrams(input_word, input_data=None):
+	if input_data is None:
+		input_data = dictionary_main()
 	data = input_data
 	data = listify_data(data)
 	data = lowerfy_list(data)
@@ -195,16 +188,15 @@ def verify_anagram(input_word, verify_word):
 	verify_list = list(verify_word)
 	input_list.sort()
 	verify_list.sort()
-	if input_list == verify_list:
-		return True
-	else:
-		return False
+	return input_list == verify_list
 
 
 ### PALINDROMES
 
 
-def palindromes(input_data=dictionary_main()):
+def palindromes(input_data=None):
+	if input_data is None:
+		input_data = dictionary_main()
 	data = input_data
 	data = listify_data(data)
 	data = lowerfy_list(data)
@@ -229,7 +221,9 @@ def verify_palindrome(input_word):
 # HISTOGRAM
 
 
-def histogram(input_data=dictionary_main()):
+def histogram(input_data=None):
+	if input_data is None:
+		input_data = dictionary_main()
 	data = listify_data(input_data)
 	data = lowerfy_list(data)
 	# data = undupli_list(data) ## This removes duplicates. If this is correct, there will be no outputs when this is uncommented.
@@ -242,25 +236,26 @@ def histogram(input_data=dictionary_main()):
 	return hist
 
 
-def histogram_arrays(input_data=dictionary_main()):
+def histogram_arrays(input_data=None):
+	if input_data is None:
+		input_data = dictionary_main()
 	data = listify_data(input_data)
 	data = lowerfy_list(data)
 	hist = []
 
 	for word in data:
-		found = False
 		for item in hist:
 			if word == item[0]:
-				found = True
-		if found:
-			item[1] += 1
+				item[1] += 1
+				break
 		else:
-			item[0] = word
-			item[1] = 1
+			hist.append([word, 1])
 	return hist
 
 
-def display_dict(input_data=dictionary_main()):
+def display_dict(input_data=None):
+	if input_data is None:
+		input_data = dictionary_main()
 	hist = histogram(input_data)
 	output = textify_dict(hist)
 	return output

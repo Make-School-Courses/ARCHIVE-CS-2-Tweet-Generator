@@ -92,7 +92,7 @@ class LinkedList:
 		# Create new node to hold given data
 		new_node = Node(data)
 		# Append node after tail if it exists
-		if self.head != None:
+		if self.head is not None:
 			self.tail.next = new_node
 		# Set first node if it doesn't exist
 		else:
@@ -112,7 +112,7 @@ class LinkedList:
 		# Create new node to hold given data
 		new_node = Node(data)
 		# Prepend node before head node, if it exists
-		if self.head != None:
+		if self.head is not None:
 			new_node.next = self.head
 		# if it doesn't exist, than this node is the first and last
 		else:
@@ -134,9 +134,9 @@ class LinkedList:
 		"""
 		# Loop through all nodes to find one node's data where quality(data) is True
 		get_node = self.head
-		while get_node != None:
+		while get_node is not None:
 			# Check if this node's data satisfies given quality function.
-			if quality(get_node.data) == True:
+			if quality(get_node.data):
 				return get_node.data
 			# If it doesn't, search the next node, if there is one.
 			else:
@@ -164,20 +164,20 @@ class LinkedList:
 		found = False
 
 		# LOOP THROUGH ALL NODES TO FIND ONE NODE'S DATA THAT MATCHES INPUT
-		while get_node != None:
+		while get_node is not None:
 			# If this node's data equals the input, skip around it.
 			if get_node.data == data:
 				found = True
 				# Set Head & Tail
-				if (prv_node == None) and (get_node.next == None):
+				if (prv_node is None) and (get_node.next is None):
 					self.head = None
 					self.tail = None
 				# Set Head
-				elif prv_node == None:
+				elif prv_node is None:
 					self.head = get_node.next
 					get_node = None
 				# Set Tail
-				elif get_node.next == None:
+				elif get_node.next is None:
 					self.tail = prv_node
 					get_node = None
 					prv_node.next = None

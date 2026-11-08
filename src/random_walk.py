@@ -23,6 +23,10 @@ class RandomWalk(MarkovChain):
 		# call stoppers and starters
 		self.stoppers = self.getStop()
 		self.starters = self.getStart()
+		if not self.starters:
+			raise ValueError("corpus must contain at least one word")
+		if not self.stoppers:
+			raise ValueError("corpus must contain sentence-ending punctuation")
 		self.distribution = self.getDistribution()
 		# finally call randomWalk()
 		self.randomWalk()
@@ -34,12 +38,14 @@ class RandomWalk(MarkovChain):
 		for key in self.dict:
 			if key[0] != "" and key[0][0].isupper():
 				types.append(key)
+		if not types:
+			types = [key for key in self.dict if key[0] != ""]
 		return types
 
 	def getStop(self):
 		types = []
 		for key in self.dict:
-			if key[len(key) - 1].endswith("."):
+			if key[len(key) - 1].endswith((".", "!", "?")):
 				types.append(key)
 		return types
 
@@ -98,16 +104,15 @@ class RandomWalk(MarkovChain):
 	# 		raise ValueError(f"\ncounter: {counter}  |  random: {random}\nSUMMED COUNTER DIDN'T MEET RANDOM")
 
 	def randomWordByProb(self):
-		counter = 0
-		random = randrange(self.subTokens + 1) / self.subTokens
-		# returns a range 0 < n ≤ 1
+		if self.subTokens <= 0:
+			raise ValueError("cannot select a word from an empty distribution")
+
+		selection = randrange(self.subTokens)
 		for key in self.vocab:
-			counter += self.vocab[key] / self.subTokens
-			if counter >= random:
+			selection -= self.vocab[key]
+			if selection < 0:
 				return key
-		raise ValueError(
-			f"\ncounter: {counter}  |  random: {random}\nSUMMED COUNTER DIDN'T MEET RANDOM"
-		)
+		raise RuntimeError("word counts do not match the distribution total")
 
 	def randomWalk(self):
 		self.filterDict(self.starters)
