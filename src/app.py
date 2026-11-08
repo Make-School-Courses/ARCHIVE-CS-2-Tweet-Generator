@@ -1,11 +1,15 @@
 # send our python in a bottle to the open seas of the web 🌊 (use flask)
 from flask import Flask
-from twitter import *
+from pathlib import Path
+
+from .twitter import tweet
 app = Flask(__name__)
 
 # import other important files
-from cleaner import *
-from random_walk import *
+from .cleaner import cleanText, readCorpus
+from .random_walk import RandomWalk
+
+DATA_DIR = Path(__file__).resolve().parent / 'data' / 'corpora'
 
 # generate a sentance from our corpus at nth order
 def generate(corpora, order):
@@ -22,7 +26,7 @@ def generate(corpora, order):
 @app.route('/')
 def deploy():
 	fishy = "One fish two fish, red fish blue fish"
-	source = tuple(['corpora/frankenstein_450.txt','corpora/sherlock_300.txt'])
+	source = (DATA_DIR / 'frankenstein_450.txt', DATA_DIR / 'sherlock_300.txt')
 	sentance = generate(source, 3)
 	tweet(sentance)
 	html = f'''
@@ -40,5 +44,5 @@ def deploy():
 	return html
 
 if __name__ == '__main__':
-	source = tuple(['corpora/frankenstein_450.txt','corpora/sherlock_300.txt'])
+	source = (DATA_DIR / 'frankenstein_450.txt', DATA_DIR / 'sherlock_300.txt')
 	generate(source, 3)

@@ -1,6 +1,6 @@
 #!python
 
-from listogram import Listogram
+from src.misc.listogram import Listogram
 import unittest
 # Python 2 and 3 compatibility: unittest module renamed this assertion method
 if not hasattr(unittest.TestCase, 'assertCountEqual'):

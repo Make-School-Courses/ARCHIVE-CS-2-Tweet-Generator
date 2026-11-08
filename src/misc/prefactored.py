@@ -5,6 +5,9 @@ import urllib.request # imports internet textfile reader
 import random # psuedo-random number generator module
 import sys # module allows program to access terminal parameters
 import re # the powerful "regular expression" for decompartimentalizing strings
+from pathlib import Path
+
+DATA_EXAMPLE = Path(__file__).resolve().parent.parent / "data" / "example.txt"
 
 def dictionary_main():
 	# opens primary dictionary on the machine.
@@ -34,7 +37,7 @@ def publication_example():
 		It is the primary dictionary on your machine, so it holds many words.
 		It isn't originally in list format.
 	'''
-	file = open("./example.txt", "r")
+	file = open(DATA_EXAMPLE, "r")
 	text = file.read()
 	file.close()
 	return text

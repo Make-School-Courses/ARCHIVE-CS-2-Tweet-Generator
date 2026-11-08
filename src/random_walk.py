@@ -5,8 +5,9 @@
 	Its syntatic variable names can likely be improved.
 '''
 
-from random import *
-from markov import *
+from random import randrange
+
+from .markov import MarkovChain
 
 class RandomWalk(MarkovChain):
 	def __init__(self, corpus, order):
