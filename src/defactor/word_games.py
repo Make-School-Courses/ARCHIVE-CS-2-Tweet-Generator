@@ -10,17 +10,19 @@ DATA_EXAMPLE = Path(__file__).resolve().parent.parent / "data" / "example.txt"
 
 
 def dictionary_main():
-	# opens primary dictionary on the machine.
 	"""
-	This shouldn't vary too much machine to machine, but it may.
-	It is the primary dictionary on your machine, so it holds many words.
-	It isn't originally in list format.
+	Read the system word list at
+	`/usr/share/dict/words`.
 	"""
 	with open("/usr/share/dict/words") as file:
 		return file.read()
 
 
 def publication_random():
+	"""
+	Fetch a random Project Gutenberg book,
+	and stringify its response bytes.
+	"""
 	book = round((random.random() * 49544) + 1)
 	link = f"http://www.gutenberg.org/cache/epub/{book}/pg{book}.txt"
 	with urllib.request.urlopen(link) as response:
@@ -32,16 +34,16 @@ def publication_random():
 
 
 def publication_example():
-	# opens primary dictionary on the machine.
-	"""
-	It is the primary dictionary on your machine, so it holds many words.
-	It isn't originally in list format.
-	"""
+	"""Read the bundled example text file."""
 	with open(DATA_EXAMPLE) as file:
 		return file.read()
 
 
 def user_number(feed):
+	"""
+	Prompt until the user enters
+	an integer.
+	"""
 	print(feed)
 	while True:
 		try:
@@ -55,27 +57,30 @@ def user_number(feed):
 
 
 def user_string(feed):
+	"""Display a prompt and return the user's input."""
 	print(feed)
 	return input("enter string:\n>> ")
 
 
 def listify_data(input_data):
-	# takes data and returns its list version.
 	"""
-	if its already a list, nothing happens.
-	if its a string, it uses REGULAR EXPRESSIONS to transform it into a list.
-	if its an unexpected data type, it throws an assertion error
+	Extract word-like tokens from the string
+	representation of `input_data`.
+	Tokens contain letters, digits,
+	underscores, or apostrophes.
 	"""
 	input_data = str(input_data)
 	if type(input_data) is str:
 		input_data = re.findall(r"[\w']+", input_data)
-		# I still must configure the thing to remove /n /r /xc3
 	assert type(input_data) is list
 	return input_data
 
 
 def undupli_list(input_list):
-	# removes duplicates from a list.
+	"""
+	Remove duplicates while preserving
+	the first occurrence of each item.
+	"""
 	output_list = []
 	for word in input_list:
 		if word not in output_list:
@@ -84,11 +89,11 @@ def undupli_list(input_list):
 
 
 def randify_list(input_list, iterations):
-	# randomly shuffles a list.
 	"""
-	picks a random digit, min 0 max current length of input list
-	pops current digit into output list
-	the `iterations` variable determines the number of words to output
+	Randomly remove up to `iterations` items
+	from `input_list`, returning them.
+	This mutates `input_list`. If `iterations`
+	is zero, all remaining items are returned.
 	"""
 	output_list = []
 	while len(input_list) > 0 and (len(output_list) < iterations or iterations == 0):
@@ -99,12 +104,7 @@ def randify_list(input_list, iterations):
 
 
 def textify_list(input_list):
-	# turns a list into a space-deliminated string.
-	"""
-	output_text is the final return product.
-	each item is added with a space to output_text.
-	the final output_text string is returned
-	"""
+	"""Join a list of strings with single spaces."""
 	output_text = ""
 	for input_item in input_list:
 		if output_text != "":
@@ -115,6 +115,10 @@ def textify_list(input_list):
 
 
 def textify_dict(input_dict):
+	"""
+	Format positive counts as lines
+	ordered from lowest to highest.
+	"""
 	output_text = ""
 	for w in sorted(input_dict, key=input_dict.get, reverse=False):
 		if input_dict[w] > 0:
@@ -123,11 +127,9 @@ def textify_dict(input_dict):
 
 
 def lowerfy_list(input_list):
-	# takes a list of strings and runs lowercase on each item.
 	"""
-	output_text is the final return product.
-	each item is added with a space to output_text.
-	the final output_text string is returned
+	Return a new list with each
+	string converted to lowercase.
 	"""
 	output_list = []
 	for text in input_list:
@@ -136,7 +138,10 @@ def lowerfy_list(input_list):
 
 
 def reverse_text(old_word):
-	# simply reverses a text.
+	"""
+	Return the input string with
+	its characters in reverse order.
+	"""
 	new_word = ""
 	i = 1
 	for _ in old_word:
@@ -154,6 +159,10 @@ def reverse_text(old_word):
 
 
 def rearrange(iterations, input_data=None):
+	"""
+	Return up to `iterations` random words,
+	space-separated; zero selects all.
+	"""
 	if input_data is None:
 		input_data = dictionary_main()
 	data = input_data
@@ -169,6 +178,10 @@ def rearrange(iterations, input_data=None):
 
 
 def anagrams(input_word, input_data=None):
+	"""
+	Return lowercased tokens whose characters
+	match `input_word`, space-separated.
+	"""
 	if input_data is None:
 		input_data = dictionary_main()
 	data = input_data
@@ -184,6 +197,10 @@ def anagrams(input_word, input_data=None):
 
 
 def verify_anagram(input_word, verify_word):
+	"""
+	Return whether both strings contain
+	exactly the same characters.
+	"""
 	input_list = list(input_word)
 	verify_list = list(verify_word)
 	input_list.sort()
@@ -195,6 +212,9 @@ def verify_anagram(input_word, verify_word):
 
 
 def palindromes(input_data=None):
+	"""Return unique palindrome tokens
+	from the input text, space-separated.
+	"""
 	if input_data is None:
 		input_data = dictionary_main()
 	data = input_data
@@ -210,6 +230,10 @@ def palindromes(input_data=None):
 
 
 def verify_palindrome(input_word):
+	"""
+	Return whether the string reads
+	identically forwards and backwards.
+	"""
 	i = 1
 	while i <= len(input_word) / 2:
 		if input_word[i - 1] != input_word[-i]:
@@ -222,6 +246,10 @@ def verify_palindrome(input_word):
 
 
 def histogram(input_data=None):
+	"""
+	Count lowercase word-like tokens and
+	return their frequencies.
+	"""
 	if input_data is None:
 		input_data = dictionary_main()
 	data = listify_data(input_data)
@@ -237,6 +265,7 @@ def histogram(input_data=None):
 
 
 def histogram_arrays(input_data=None):
+	"""Return mutable pairs of words and counts."""
 	if input_data is None:
 		input_data = dictionary_main()
 	data = listify_data(input_data)
@@ -254,6 +283,10 @@ def histogram_arrays(input_data=None):
 
 
 def display_dict(input_data=None):
+	"""
+	Format token counts as lines, sorted
+	from lowest to highest frequency.
+	"""
 	if input_data is None:
 		input_data = dictionary_main()
 	hist = histogram(input_data)
@@ -262,6 +295,10 @@ def display_dict(input_data=None):
 
 
 def display_weight(input_data=None):
+	"""
+	Randomly select one token,
+	weighted by its frequency.
+	"""
 	if input_data is None:
 		input_data = dictionary_main()
 	hist = histogram(input_data)
@@ -274,6 +311,10 @@ def display_weight(input_data=None):
 
 
 def calculate_weight(input_dict):
+	"""
+	Normalize token counts into
+	proportions of the total.
+	"""
 	weight_dict = {}
 	dict_total = 0
 	for word in input_dict:
@@ -284,6 +325,10 @@ def calculate_weight(input_dict):
 
 
 def random_choice(weight_dict):
+	"""
+	Choose and print a token
+	according to its weight.
+	"""
 	cumulative = 0
 	rand_select = random.random()
 	for word in weight_dict:
@@ -301,6 +346,10 @@ def random_choice(weight_dict):
 
 @app.route("/")
 def hello_world():
+	"""
+	Return a random token weighted by
+	its frequency in a Project Gutenberg book.
+	"""
 	return display_weight(publication_random())
 
 
