@@ -3,14 +3,11 @@ from pathlib import Path
 
 from flask import Flask
 
+from .cleaner import cleanText, readCorpus
+from .random_walk import RandomWalk
 from .twitter import tweet
 
 app = Flask(__name__)
-
-# import other important files
-from .cleaner import cleanText, readCorpus
-from .random_walk import RandomWalk
-
 DATA_DIR = Path(__file__).resolve().parent / "data" / "corpora"
 
 

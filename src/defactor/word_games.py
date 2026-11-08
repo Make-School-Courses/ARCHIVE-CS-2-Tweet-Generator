@@ -1,12 +1,11 @@
-from flask import Flask
-
-app = Flask(__name__)
-
 import random  # psuedo-random number generator module
 import re  # the powerful "regular expression" for decompartimentalizing strings
 import urllib.request  # imports internet textfile reader
 from pathlib import Path
 
+from flask import Flask
+
+app = Flask(__name__)
 DATA_EXAMPLE = Path(__file__).resolve().parent.parent / "data" / "example.txt"
 
 
