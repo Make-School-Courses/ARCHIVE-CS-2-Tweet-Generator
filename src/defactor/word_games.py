@@ -1,6 +1,6 @@
-import random  # psuedo-random number generator module
-import re  # the powerful "regular expression" for decompartimentalizing strings
-import urllib.request  # imports internet textfile reader
+import random  # Generate random selections.
+import re  # Tokenize text with regular expressions.
+import urllib.request  # Fetch Project Gutenberg text.
 from pathlib import Path
 
 from flask import Flask
@@ -11,7 +11,7 @@ DATA_EXAMPLE = Path(__file__).resolve().parent.parent / "data" / "example.txt"
 
 def dictionary_main():
 	"""
-	Read the system word list at
+	Read the system word list from
 	`/usr/share/dict/words`.
 	"""
 	with open("/usr/share/dict/words") as file:
@@ -20,8 +20,8 @@ def dictionary_main():
 
 def publication_random():
 	"""
-	Fetch a random Project Gutenberg book,
-	and stringify its response bytes.
+	Fetch a random Project Gutenberg book
+	and stringify the response bytes.
 	"""
 	book = round((random.random() * 49544) + 1)
 	link = f"http://www.gutenberg.org/cache/epub/{book}/pg{book}.txt"
@@ -34,7 +34,7 @@ def publication_random():
 
 
 def publication_example():
-	"""Read the bundled example text file."""
+	"""Read the bundled example text from `DATA_EXAMPLE`."""
 	with open(DATA_EXAMPLE) as file:
 		return file.read()
 
@@ -48,7 +48,7 @@ def user_number(feed):
 	while True:
 		try:
 			number = int(input("enter integer:\n>> "))
-			assert isinstance(number, int)  # throws an error if its not an integer
+			assert isinstance(number, int)
 			assert number is not None
 			assert number != ""
 			return number
@@ -64,10 +64,8 @@ def user_string(feed):
 
 def listify_data(input_data):
 	"""
-	Extract word-like tokens from the string
-	representation of `input_data`.
-	Tokens contain letters, digits,
-	underscores, or apostrophes.
+	Split `str(input_data)` on word characters
+	and apostrophes.
 	"""
 	input_data = str(input_data)
 	if type(input_data) is str:
@@ -78,8 +76,8 @@ def listify_data(input_data):
 
 def undupli_list(input_list):
 	"""
-	Remove duplicates while preserving
-	the first occurrence of each item.
+	Return unique items from `input_list`,
+	preserving their original order.
 	"""
 	output_list = []
 	for word in input_list:
@@ -91,7 +89,7 @@ def undupli_list(input_list):
 def randify_list(input_list, iterations):
 	"""
 	Randomly remove up to `iterations` items
-	from `input_list`, returning them.
+	from `input_list` and return them.
 	This mutates `input_list`. If `iterations`
 	is zero, all remaining items are returned.
 	"""
@@ -104,7 +102,7 @@ def randify_list(input_list, iterations):
 
 
 def textify_list(input_list):
-	"""Join a list of strings with single spaces."""
+	"""Join `input_list` with single spaces."""
 	output_text = ""
 	for input_item in input_list:
 		if output_text != "":
@@ -116,8 +114,8 @@ def textify_list(input_list):
 
 def textify_dict(input_dict):
 	"""
-	Format positive counts as lines
-	ordered from lowest to highest.
+	Format positive counts as lines, sorted
+	from lowest to highest frequency.
 	"""
 	output_text = ""
 	for w in sorted(input_dict, key=input_dict.get, reverse=False):
@@ -128,8 +126,7 @@ def textify_dict(input_dict):
 
 def lowerfy_list(input_list):
 	"""
-	Return a new list with each
-	string converted to lowercase.
+	Return a lowercase copy of `input_list`.
 	"""
 	output_list = []
 	for text in input_list:
@@ -139,8 +136,8 @@ def lowerfy_list(input_list):
 
 def reverse_text(old_word):
 	"""
-	Return the input string with
-	its characters in reverse order.
+	Return `old_word` with its characters
+	in reverse order.
 	"""
 	new_word = ""
 	i = 1
@@ -150,37 +147,30 @@ def reverse_text(old_word):
 	return new_word
 
 
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-"""
-	Now setting up specific functions. These will each return complete jobs.
-	These functions will use the previously declared helpers to make code readable.
-"""
-# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
-
-
+# Word-generation functions
 def rearrange(iterations, input_data=None):
 	"""
-	Return up to `iterations` random words,
-	space-separated; zero selects all.
+	Return up to `iterations` random words
+	from `input_data`, joined by spaces.
+	Zero selects all words.
 	"""
 	if input_data is None:
 		input_data = dictionary_main()
 	data = input_data
 	data = listify_data(data)
 	data = lowerfy_list(data)
-	# data = undupli_list(data) ## This function takes too long!
 	data = randify_list(data, iterations)
 	data = textify_list(data)
 	return data
 
 
-### ANAGRAMS
+# Anagrams
 
 
 def anagrams(input_word, input_data=None):
 	"""
-	Return lowercased tokens whose characters
-	match `input_word`, space-separated.
+	Return matching lowercase tokens from
+	`input_data`, joined by spaces.
 	"""
 	if input_data is None:
 		input_data = dictionary_main()
@@ -198,8 +188,8 @@ def anagrams(input_word, input_data=None):
 
 def verify_anagram(input_word, verify_word):
 	"""
-	Return whether both strings contain
-	exactly the same characters.
+	Check if `input_word` and `verify_word`
+	contain the same characters.
 	"""
 	input_list = list(input_word)
 	verify_list = list(verify_word)
@@ -208,12 +198,13 @@ def verify_anagram(input_word, verify_word):
 	return input_list == verify_list
 
 
-### PALINDROMES
+# Palindromes
 
 
 def palindromes(input_data=None):
-	"""Return unique palindrome tokens
-	from the input text, space-separated.
+	"""
+	Return unique palindrome tokens from
+	`input_data`, joined by spaces.
 	"""
 	if input_data is None:
 		input_data = dictionary_main()
@@ -231,8 +222,8 @@ def palindromes(input_data=None):
 
 def verify_palindrome(input_word):
 	"""
-	Return whether the string reads
-	identically forwards and backwards.
+	Check if `input_word` reads the same
+	forwards and backwards.
 	"""
 	i = 1
 	while i <= len(input_word) / 2:
@@ -242,7 +233,7 @@ def verify_palindrome(input_word):
 	return True
 
 
-# HISTOGRAM
+# Histograms
 
 
 def histogram(input_data=None):
@@ -254,7 +245,6 @@ def histogram(input_data=None):
 		input_data = dictionary_main()
 	data = listify_data(input_data)
 	data = lowerfy_list(data)
-	# data = undupli_list(data) ## This removes duplicates. If this is correct, there will be no outputs when this is uncommented.
 	hist = {}
 	for word in data:
 		if word in hist:
@@ -265,7 +255,7 @@ def histogram(input_data=None):
 
 
 def histogram_arrays(input_data=None):
-	"""Return mutable pairs of words and counts."""
+	"""Return mutable `[word, count]` pairs."""
 	if input_data is None:
 		input_data = dictionary_main()
 	data = listify_data(input_data)
@@ -284,8 +274,8 @@ def histogram_arrays(input_data=None):
 
 def display_dict(input_data=None):
 	"""
-	Format token counts as lines, sorted
-	from lowest to highest frequency.
+	Format counts from `input_data` as lines,
+	sorted by ascending frequency.
 	"""
 	if input_data is None:
 		input_data = dictionary_main()
@@ -296,23 +286,22 @@ def display_dict(input_data=None):
 
 def display_weight(input_data=None):
 	"""
-	Randomly select one token,
-	weighted by its frequency.
+	Randomly select a token from
+	`input_data`, weighted by frequency.
 	"""
 	if input_data is None:
 		input_data = dictionary_main()
 	hist = histogram(input_data)
-	hist = calculate_weight(hist)  # testing calculate weight
-	# output = textify_dict(hist)
+	hist = calculate_weight(hist)
 	return random_choice(hist)
 
 
-# WEIGHTED FUNCTION
+# Weighted selection
 
 
 def calculate_weight(input_dict):
 	"""
-	Normalize token counts into
+	Convert counts in `input_dict` to
 	proportions of the total.
 	"""
 	weight_dict = {}
@@ -326,8 +315,8 @@ def calculate_weight(input_dict):
 
 def random_choice(weight_dict):
 	"""
-	Choose and print a token
-	according to its weight.
+	Choose and print a token from
+	`weight_dict` by its weight.
 	"""
 	cumulative = 0
 	rand_select = random.random()
@@ -337,11 +326,9 @@ def random_choice(weight_dict):
 			return word
 		cumulative += weight_dict[word]
 	print(rand_select)
-	# for word in weight_dict:
-	# 	if weight_dict
 
 
-### STARTER KIT
+# Flask route
 
 
 @app.route("/")
@@ -354,15 +341,5 @@ def hello_world():
 
 
 if __name__ == "__main__":
-	# print("\nIt looks like you used a parameter when you ran this file.\nI'm going to assume that this is a file, and I'm going to runa  ")
-
+	# Run the random-book word selector from the command line.
 	display_weight(publication_random())
-
-	# entry = user_number("\nI generate several words.\nHow many should I create?")
-	# print("\nRandom Words:\n" + rearrange(entry))
-
-	# entry = user_string("\nI make anagrams, so I need a word.\nWhat base word should I use today?")
-	# print("\nAnagrams:\n" + anagrams(entry))
-
-	# print("\nI do palindromes too, but I\ndon't need any inputs for that!\nI'll go ahead and get started.")
-	# print("\nPalindromes:\n" + palindromes())
