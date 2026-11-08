@@ -3,6 +3,10 @@ There are several corpora used for this project. Each of them have a character c
 
 > use `git add .; git commit -m "message";git push;git push heroku` when updating — its important to update heroku!
 
+Run locally with `python -m flask --app src.app run`; run tests with `python -m unittest discover -s tests`.
+Python 3.7 or newer is required.
+Run lint with `ruff check .`.
+
 ## Website
 https://tweet-generator-nak.herokuapp.com/
 

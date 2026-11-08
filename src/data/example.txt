@@ -1,0 +1,1927 @@
+﻿Project Gutenberg's Chronica de El-Rei D. Sancho II, by Rui de Pina
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.org
+
+
+Title: Chronica de El-Rei D. Sancho II
+
+Author: Rui de Pina
+
+Release Date: November 22, 2008 [EBook #27311]
+
+Language: Portuguese
+
+
+*** START OF THIS PROJECT GUTENBERG EBOOK CHRONICA DE EL-REI D. SANCHO II ***
+
+
+
+
+Produced by Rita Farinha and the Online Distributed
+Proofreading Team at http://www.pgdp.net (This file was
+produced from images generously made available by National
+Library of Portugal (Biblioteca Nacional de Portugal).)
+
+
+
+
+
+
+     *Nota de editor:* Devido à quantidade de erros tipográficos
+     existentes neste texto, foram tomadas várias decisões quanto à
+     versão final. Em caso de dúvida, a grafia foi mantida de acordo com
+     o original. No final deste livro encontrará a lista de erros
+     corrigidos.
+
+                                              Rita Farinha (Nov. 2008)
+
+
+
+
+BIBLIOTHECA
+
+DE
+
+Classicos Portuguezes
+
+Proprietario e fundador
+
+_MELLO D'AZEVEDO_
+
+
+
+
+Bibliotheca de Classicos Portuguezes
+
+Proprietario e fundador--Mello d'Azevedo
+
+
+(VOLUME LIII)
+
+
+CHRONICA
+
+DE
+
+EL-REI D. SANCHO II
+
+POR
+
+RUY DE PINA
+
+
+_ESCRIPTORIO_
+147--Rua dos Retrozeiros--147
+LISBOA
+
+1906
+
+
+
+
+CHRONICA
+DO MUITO ALTO, E MUITO ESCLARECIDO PRINCIPE
+D. SANCHO II.
+QUARTO REY DE PORTUGAL,
+COMPOSTA
+POR RUY DE PINA,
+Fidalgo da Casa Real, e Chronista Môr do Reyno.
+FIELMENTE COPIADA DE SEU ORIGINAL,
+Que se conserva no Archivo Real da Torre do Tombo.
+OFFERECIDA
+Á MAGESTADE SEMPRE AUGUSTA DELREY
+
+D. JOAÕ O V.
+
+NOSSO SENHOR
+
+LISBOA OCCIDENTAL.
+
+Na Officina FERREYRIANA.
+M.DCC.XXVIII.
+
+_Com todas as licenças necessarias._
+
+
+
+                                                             SENHOR
+
+
+As desgraças do infelicissimo Rei D. Sancho II deste nome só se podem
+dalgum modo fazer menos sensiveis vendo-se amparada esta sua brevissima
+Chronica com o Augusto nome de V. Magestade se entre tantos infortunios
+quantos foram os que tem padecido a posteridade da sua fama, póde haver
+algum genero de diminuição, foi a brevidade, com que todos os
+Historiadores trataram as acções da sua vida, porque até parece que
+enfastia a memoria das infelicidades. Mas como é tanto o esplendor das
+inimitaveis acções de V. Magestade, bastará a sua protecção Real para
+que retrocedendo tres seculos encha de gloria aquelle Reinado. A Real
+Pessoa de V. Magestade guarde Deos muitos annos como todos os seus
+vassallos dezejamos.
+
+
+                                            _Miguel Lopes Ferreira._
+
+
+
+
+AO EXCELLENTISSIMO SENHOR
+
+D. Francisco Xavier de Menezes
+
+
+     _Quarto conde da Ericeira, do Concelho de Sua Magestade, Sargento
+     mór de Batalha dos seus Exercitos, Deputado da Junta dos Tres
+     Estados, Perpetuo Senhor da Villa da Ericeira, e Senhor da de
+     Ancião, oitavo Senhor da Caza do Louriçal, Commendador das
+     Commendas de Santa Christina de Sarzedello, de S. Cipriano de
+     Angueyra, S. Martinho de Frazão, S. Payo de Fragoas, de S. Pedro de
+     Elvas, e de S. Bertholameu de Covilhã todas na Ordem de Christo,
+     Academico da Academia Real da Historia Portugueza, e um dos cinco
+     Censores della &c._
+
+
+A benignidade com que V. Excellencia desculpou a minha confiança quando
+procurei o seu amparo para offerecer a Sua Magestade a Chronica del-Rei
+Dom Affonso III me anima agora a buscar segunda vez a V. Excellencia,
+para que me faça a mercê de pôr aos pés del-Rei N. Senhor esta Chronica
+de D. Sancho II de Portugal. Na pessoa de V. Excellencia concorrem todas
+as circunstancias, que são necessarias para este beneficio, porque V.
+Excellencia é dotado de uma condição tão propensa para os estudiosos,
+que a immensa copia de livros, que com singular eleição tem juntos, mais
+são dos que delles se querem servir, que de V. Excellencia mesmo. É
+verdade que esta generosidade tem o seu principio na estopenda memoria
+de que V. Excellencia é dotado, pois basta ler um livro, para lhe
+escuzar outra vez a lição, mas tambem nace da particular satisfação que
+V. Excellencia tem de que todos sejam imitadores dos seus estudos. A
+ninguem melhor do que a V. Excellencia se devia dedicar esta Chronica,
+porque só V. Excellencia tem meios na sua grande capacidade para
+defender algumas materias, que nella se tratam, porque é certo que nem
+tudo foi concedido a todos, mas na pessoa de V. Excellencia se acha tudo
+o que dividido fez grandes a outros. Deos guarde a V. Excellencia muitos
+annos.
+
+
+                        Criado de Vossa Excellencia
+
+                                            _Miguel Lopes Ferreira._
+
+
+
+
+
+PROLOGO
+
+
+Aqui tens Amigo Leitor a brevissima Chronica do desgraçado Rei de
+Portugal D. Sancho II deste nome. Foi este Principe na vida, e na morte
+o exemplo de toda a infelicidade humana, para que depois pelos
+inscrutaveis juizos de Deos tivesse o premio de tantos infurtunios na
+eternidade da Bemaventurança. Na vida foi como dizem, tão sogeito aos
+validos, que não teve acção, que se podesse chamar sua, e na morte, foi
+tão infeliz, que a não teve na Patria. Tudo o que escreveram os
+Authores, foi duvidoso, porque uns o fazem cazado, e outros lhe negam o
+cazamento; uns o fazem pusilanime, e outros valeroso. Seguiram as penas
+dos Chronistas a inconstancia da sua fortuna, tudo deixáram em questões,
+porque o seu descuido lhes não deixou averiguar a certeza do que
+escreviam. O Doutor Fr. Antonio Brandão na Quarta parte da Monarchia
+Lusitana desaggrava em muitas acções a este Principe das injurias dos
+seus Chronistas, mostrando que fora valeroso, e que conquistara muitas
+Praças aos Mouros, como o dizem as doações que fez dellas ás Ordens
+Militares. Sem duvida que a administração do governo, que deram os povos
+a seu irmão D. Affonso Conde de Bolonha em França, foi a cauza do muito
+que tem padecido a Real opinião deste Principe, porque não ha quem senão
+atreva a um desgraçado, ainda que lhe anime as veas um sangue soberano.
+As parcialidades que naquelle tempo havia de introduzir necessariamente
+na Corte a politica, deviam de ser o fundamento desta variedade, porque
+uns para justificarem a acção, o deviam de condenar, e outros que seriam
+os menos, o haviam de desculpar. Venceo com o tempo a felicidade de seu
+irmão D. Affonso, e arrastada da lizonja gemeo a memoria de D. Sancho. O
+que escreveram os antigos, é o que agora te dou a ler nesta brevissima
+Chronica. Se quizeres ver resgatada de tanto descuido a fama deste
+piissimo Rei, vê o Mestre Brandão, que em tudo mostrou a sua diligencia.
+
+
+                                                             _Vale._
+
+
+
+
+
+LICENÇAS DO SANTO OFFICIO
+
+
+     _Approvação do Reverendissimo Padre Mestre D. Antonio Caetano de
+     Souza, Clerigo Regular da Divina Providencia, Qualificador do Santo
+     Officio, e Academico da Academia Real da Historia Portugueza_
+
+
+EMINENTÍSSIMO SENHOR
+
+
+Vi a Chronica de El-Rei D. Sancho o II, a quem os nossos Authores
+antigos chamam o Capelo, que tambem anda em nome do Chronista Ruy de
+Pina, como já disse na censura que fiz na de El-Rei D. Affonso II, seu
+pai, e não contem couza alguma para que V. Eminencia não conceda a
+licença que se pede para a imprimirem, este é o meu parecer. Lisboa
+Occidental 8 de Março de 1726.
+
+
+                                 _D. Antonio Caetano de Souza C. R._
+
+
+
+
+     _Approvação do Reverendissimo Padre Mestre Fr. Vicente das Chagas,
+     Religioso da Provincia de Santo Antonio dos Capuchos, Lente
+     jubilado na sagrada Theologia, Qualificador do Santo Officio, &c._
+
+
+EMINENTISSIMO SENHOR
+
+
+A Chronica d'El-Rei Dom Sancho o II a quem os Authores antigos chamam o
+Capelo, pelos vestidos honestos, de que sempre uzou, mais de feição de
+Religioso, que de Rei, não tem cousa que se oponha aos dogmas da nossa
+Santa Fé, ou bons costumes. Este Rei não teve exercicio de reinar todo o
+tempo de sua vida, porque pelos seus erros foi posto por Regedor no
+Reino seu irmão o Infante D. Affonso Conde de Bolonha, e errou o dito
+Rei D. Sancho se cuidou que havia de reger sempre: «Errat, si quis
+existimat tutum diu esse Regem». Diz Seneca «In sui Proverbiis in fine
+positis lit. E.» Mas se lhe tiraram o Reino, ou a regencia delle pelos
+seus erros, e culpas, não lhe podiam tirar o Reinar em o Ceo, morrendo
+(como dizem morreo) com sinaes de bom Christão, e Catholico Rei, e cheio
+de virtudes. Pelo que merece a licença que pede o Chronista para se
+imprimir. V. Eminencia fará o que for servido. Santo Antonio dos
+Capuchos de Lisboa Occidental 21 de Março de 1726.
+
+
+                                           _Fr. Vicente das Chagas._
+
+
+
+
+
+Vistas as informações, pode-se imprimir a Chronica del-Rei D. Sancho II,
+e depois de impressa tornará para se conferir, e dar licença que corra,
+sem a qual não correrá. Lisboa Occidental, 22 de Março de 1726.
+
+
+                    _Rocha, Fr. Lancastre. Teixeira. Silva. Cabedo._
+
+
+
+
+DO ORDINARIO
+
+
+     _Approvação do Reverendissimo Padre Mestre Fr. João Baptista
+     Troyano, Religioso da Ordem de N. Senhora do Monte do Carmo, Mestre
+     na Sagrada Theologia, Consultor do Santo Officio, Definidor
+     perpetuo, e Provincial absoluto, Secretario que foi da Provincia, e
+     Prior do convento do Carmo de Lisboa Occidental, &c._
+
+
+ILLUSTRISSIMO E REVERENDISSIMO SENHOR
+
+
+Por mandado de V. Illustrissima Reverendissima li a Chronica del-Rei D.
+Sancho II no Nome, e quarto dos Reis de Portugal, vulgarmente chamado
+Capelo, na fórma que a deixou escrita Ruy de Pina Chronista mór do
+Reino, e como nella se não encontre couza que se opponha aos dogmas da
+nossa Santa Fé Catholica, ou bons costumes, julgo se lhe póde conceder a
+licença que se pede, salvo, &c. Carmo de Lisboa Occidental 4 de Outubro
+de 1726.
+
+
+                        _Fr. João Baptista Troyano, Prior do Carmo._
+
+
+
+Pode-se imprimir vistas as informações, a Chronica del-Rei D. Sancho II,
+e depois de impressa tornará para se conferir, e dar licença sem a qual
+não correrá. Lisboa Occidental 1 de Junho de 1728.
+
+                                                           _Gouvea._
+
+
+
+
+DO PAÇO.
+
+
+     _Approvação do Excellentissimo Senhor D. Francisco Xavier de
+     Menezes, Conde da Ericeira, do Conselho de S. Magestade, Academico
+     da Academia Real da Historia Portugueza, e um dos cinco Censores
+     della, &c._
+
+
+                                                              SENHOR
+
+
+Na censura que fiz por ordem de V. Magestade á Chronica del-Rei D.
+Sebastião, ponderei largamente o juizo que fazia da utilidade que
+resultava á Historia de Portugal, de que se publicassem as memorias mais
+antigas, que se conservavam manuscritas na Torre do Tombo, e em muitas
+livrarias, ainda que tivessem alguns defeitos, que nasceram da sincera
+credulidade dos seus Authores, outros da corrupção das copias, e muitos
+que os modernos suppõem, que foram erros, e que póde ser sejam verdades,
+e que prevaleça a antiguidade de alguns seculos, que faz os Authores
+melhor instruidos de tradição sucessiva, e então mais vezinha ao tempo
+dos sucessos; á critica que fundada em documentos, e conjecturas, nem
+sempre descobre as dezejadas demonstrações. A Chronica del-Rei D. Sancho
+II sendo muito breve, merece maior exame, que as outras, porque era
+precizo ao seu escritor defender o que fez todo o Reino para autorizar a
+deposição daquelle Principe mais infelice, que culpado, e quanto mais
+razões buscou este escritor para culpar o seu Rei, tanto mais seguio a
+primeira errada maxima, continuada por muitos Historiadores, que se
+convencem a si mesmos com a força da razão, celebrando a fidelidade dos
+dous valerosos defensores de Coimbra, e Cerolico. Tambem se buscaram
+outros principios, que as Monarchias independentes, como é a de Portugal
+não admitem, nem acho inconveniente em que se imprimam as Historias do
+que o mundo fazia, e hoje não observa, porque assim conhecemos o genio
+dos seculos passados, e a parcialidade dos nossos Chronistas; sendo
+poucos em todas as nações, os que se livraram deste perigo, e não sendo
+o mesmo permetir V. Magestade a licença que se pede para sahirem a luz
+os livros antigos, que aprovar tudo o que elles dizem, e copiáram os
+outros, que o seguiram, e assim entendo que com esta censura que deve
+imprimir-se nas mais Edições desta Chronica, se dê a faculdade que
+pertende o seu curioso Collector, desta, e de todas as Historias antigas
+de Portugal. Lisboa Occidental 7 de Junho de 1728.
+
+
+                                                _Conde da Ericeira._
+
+
+Que se possa imprimir, visto as licenças do Santo Officio, e Ordinario,
+e depois de impresso tornará á Meza, para se conferir, e taxar, e sem
+isso não correrá, com declaração, que no mesmo livro se imprima esta
+censura do Conde da Ericeira. Lisboa Occidental 8 de Junho de 1728.
+
+                  _Marquez P. Pereira. Oliveira. Teixeira. Bonicho._
+
+
+
+
+_Coronica do muito alto e esclarecido Principe D. Sancho II, quarto Rei
+de Portugal a que vulgarmente chamavam o Capelo_
+
+
+
+
+CAPITULO I
+
+
+     _Como o Ifante D. Sancho Capelo, foi alevantado por Rei, e das
+     condições fracas que teve, e como cazou, e não como a sua honra e
+     estado Real compria, e se devia_
+
+
+El-Rei Dom Affonso deste nome o segundo, e dos Reis de Portugal o
+terceiro, faleceo na era de mil duzentos e vinte e tres, (1223) como em
+sua Coronica é declarado, e por seu falecimento foi logo alevantado, e
+obedecido por Rei o Ifante Dom Sancho, seu filho maior legitimo, e
+herdeiro, a que disseram Capelo, deste nome o segundo, e dos Reis de
+Portugal o quarto, em idade de dezaseis annos, e a cauza porque este
+sobrenome de Capelo lhe fosse posto, as lembranças antigas Despanha, e
+de Portugal, que delle falam, e assi o nomeam, não o declaram, sómente
+que lhe devia ser posto por sua maneira de vestidos honestos, que sempre
+trouxe, mais de feição de Religioso, que de Rei, nem Cavaleiro, porque
+foi Principe, que do começo de sua vida até que acabou em servir mais a
+Deos, que haver respeito ás couzas, e pompas do mundo, em cujo coração
+não houve a verdadeira fortaleza que pera Rei era mui necessaria, mas
+houve nelle sua pura simpreza com que dezejou que seus Reinos, e
+Vassalos fossem regidos por lei de natureza, e por regras, e concelhos
+de boa condição, sem outra prema, nem contradição de Lei, nem de algum
+direito positivo, e por esso na execução nas cousas da justiça era muito
+brando, e as não provia nem ponia, com aquelle rigor, e escarmento, que
+as culpas, e crimes de homens requeriam, e por esta sua natural, e fraca
+incrinação, e juntamente com os máos, e desassolutos Conselheiros, que
+de moço logo o recolheram, e porque não devidamente se regia o Reino de
+Portugal, e todolos naturaes delle em todalas couzas, assi espirituaes,
+como temporaes, durando o seu Reinado padeceram muitas perdas, e danos
+incomportaveis, que depois com quebra de seu nome, e pera provizão de
+seu Estado se remediaram, como ao diante se dirá.
+
+E ao tempo que este Rei Dom Sancho começou de Reinar em Portugal,
+governava os Reinos de Castella, e de Lião sua tia, a Rainha Dona
+Biringela, molher que foi del-Rei Dom Affonso de Lião, com El-Rei Dom
+Fernando seu filho, a qual era tia deste Rei Dom Sancho, irmã da Rainha
+Dona Orraca sua madre, e porque a Rainha Dona Biringela, a que este Rei
+Dom Sancho ficou encomendado, era Princeza de mui singulares virtudes e
+Reaes perfeições, e muita prudenia, doendo-se da governança de Portugal,
+e de uma evidente sua perdição, a que decrinava, ella muitas vezes
+enviou a conselhar a seu sobrinho assi bem, e verdadeiramente como a
+elle, e ao Reino compria, e principalmente pera fundamento de sua maior
+liança de o querer cazar, como seu Estado, e dinidade Real requeria. Ao
+que El Rei D. Sancho por máos concelhos dalguns seus não fieis, e
+danados conselheiros nunca obedeceo, antes por induzimento delles sem
+dispensação, e muito contra sua honra, e com grande escandalo, e nojo
+dos do Reino, cazou com Dona Mecia Lopes, Dona fermosa, e viuva, filha
+de Dom Lopo, senhor de Biscaya, que era parenta sua dentro no quarto
+gráu, a qual fôra já cazada com Dom Alvaro Pires de Castro, filho de Dom
+Pedro Fernandes de Castro, o Castellão, e posto que El-Rei Dom Sancho
+pelos Prelados, e povos, Senhores, e pessoas de titulo de seu Reino
+muitas vezes fosse requerido, amoestado, e aconselhado, que se apartasse
+desta molher, e recebesse outra qual, á sua honra, e conciencia
+convinha, elle, ou por afeição não quiz, ou por feitiços, de que diziam
+que era ligado, o não pôde nunca fazer, nem consentir, porque naquelle
+tempo segundo as couzas passavam, mui clara, e geralmente se dizia, que
+El-Rei andava em poder della enfeitiçado, e cego do juizo sem se poder
+apartar, e que ajudavam muito o mao conselho daquelles, que sostinham a
+parte da Rainha Dona Mecia, por cujo favor em que a este tempo havia o
+poder, e authoridade com grande desolução elles tomavam, e destroiam do
+Regno todolo que queriam, e assi o faziam, outros muitos grandes, e
+pequenos por seu exemplo, os quaes males El-Rei por fraqueza de coração
+não castigava, nem tornava a elles com aquella severidade, e rigor, que
+se devia, e assi teve El-Rei D. Sancho esta molher algum tempo sem della
+haver alguma geração, não cessando no Regno estes insultos, e
+desoluções, antes crecendo cada vez mais.
+
+
+
+
+CAPITULO II
+
+
+     _Do que o Papa a requerimento dos Prelados, e povo de Portugal
+     escreveo, e requereo a El-Rei Dom Sancho por sua Bulla_
+
+
+Pelo qual os Prelados, e povo de Portugal concirando a fealdade destas
+couzas, que era em grande ofença de Deos e cançasso e destroição da
+terra, e vendo que a continua, e perseverada aprezentação de suas
+querelas ante El-Rei não aproveitavam, todos em uma concordia se
+enviaram querelar ao Papa Honorio III na Igreja de Deos a esse tempo
+Presidente, que como bom, e Sancto Pastor, por aconselhar a El-Rei, e
+por verdadeiramente ao Regno, sabendo todas as cousas sobreditas, que
+com verdadeira relação lhe foram senificadas, enviou a El-Rei seu Breve,
+em que lhe vieram suas sanctas, e devidas amoestações, e nelle límitado
+tempo, em que inteiramente emendasse os erros de sua pessoa, e
+satisfizesse aos danos feitos por sua negligencia, em todo o Regno, e
+passado o tempo, que pera a emenda destas cousas lhe era assinado, sendo
+o Papa certificado, que em nada se satisfazia, enviou a elle de Roma por
+Delegado o Bispo Sabenense, o qual pela dureza, e pouca obediencia que
+nelle, e nos seus Conselheiros achou, poz condicionalmente em suas
+pessoas sentença de Excommunhão, e de antredito, e em todo o Regno sem
+outro devido, e peremptorio termo, que lhe assinou, se se não emendasse,
+e satisfizesse. Das quaes sentenças ficou por mero executor, por mandado
+especial do Papa, o Arcebispo de Braga, que por se não satisfazer aos
+males, tomadias e roubos, que eram feitos especialmente ás Igrejas, nem
+se leixavam de fazer tantos, o tornou a notificar ao Padre Santo, que
+por uzar de mais clemencia, e piedade com El-Rei Dom Sancho, e lhe
+afastar todalas couzas de sua essencia, lhe escreveo outra carta na
+entrada da qual lhe tirou aquella solennidade de amor, e benção
+Apostolica, que em outras escrevia aos outros Reis sempre costumada de
+escrever, ca lhe não poz Carissimo em Christo filho, nem disse nella:
+«Salutem & Apostolicam benedictionem».
+
+Com a Bulla, que a El-Rei Dom Sancho em sua pessoa, e em muitas partes
+de seu Regno, foi pubricada, elle foi muito anojado, e vendo se apertado
+de muitas necessidades, que nesta necessidade concorriam, aconselhado
+dos seus que o seguiam, disse que em todo queria, e prometia de obedecer
+ao Papa, e satisfazer inteiramente aos mandamentos da Sé Apostolica, e
+que elle logo emendaria, e faria aos seus emendar todolos danos, e
+perdas que eram feitos, e não consentiria, que dahi em diante em seu
+Regno por elle, nem pelos seus, lhe fizessem outros alguns, assi por
+suas cartas patentes, o segurou, e prometeo particularmente ao Papa,
+pelo qual a esta cautella, e com condição de todo comprir a certo tempo,
+foram todos absoltos da excommunhão, e levantado o antredito do Regno.
+
+
+
+
+CAPITULO III
+
+
+     _Como El-Rei Dom Sancho por amoestações do Papa se não quiz apartar
+     de Dona Mecia Lopes sua molher, e como lhe foi tomada_
+
+
+Mas como El-Rei Dom Sancho da excommunhão, e antredito se vio livre, e
+afrouxado, e os Delegados do Papa partidos do Regno, elle e os seus por
+mao conselho, e induzimento de maos homens, que comsigo trazia, não
+leixaram de proseguir, e uzar de todolos erros, e males, que dantes
+faziam, e esto durou por muitos annos, ca foi no tempo do dito Papa
+Honorio, e depois em vida do Papa Gregorio IX que a requerimento, e
+sopricação dos Prelados, e povo de Portugal, lhe enviava continuas
+amoestações, e sanctos conselhos, a que nunca quiz inteiramente
+obedecer, quazi de sua boa, e fraca condição, era faze-lo logo, a Rainha
+Dona Mecia sua molher, e aquelles que seguiam sua vontade o disviavam de
+seu bom proposito, especialmente em a não querer nem poder leixar por
+molher, sobre que muitas vezes, foi pelo Papa aconselhado, e amoestado,
+e excommungado, por quanto ella era filha do Conde Dom Lopo de Biscaya,
+como já disse, e era muito conjunto ao Real sangue dos Reis Despanha, de
+que El-Rei Dom Sancho descendia, e porém nunca por direito, nem por sua
+vontade a quiz de si apartar, ca por qualquer maneira que fosse, elle
+lhe era muito afeiçoado, e porém acha-se, que neste tempo, tendo-a
+El-Rei comsigo em Coimbra, um Reymão Viegas de Porto Carreiro, com
+gentes de Dom Martim Gil de Soveroza, naturaes de Portugal, e Vassallos
+del-Rei Dom Sancho, da frontaria de Galiza, donde eram, com multas
+gentes, que comsigo trouxeram, tomaram a dita Dona Mecia, e a leváram ao
+Castello Dourem, que ella tinha del-Rei por Arras de seu cazamento,
+sobre o qual El-Rei logo foi armado, e com a gente que pode requerendo
+lhes, que lhe entregassem sua molher, e elles o não quizeram fazer,
+antes resistiram a El Rei com armas, e forças, com que se tornou, e
+elles a levaram a Galiza, mas o que della se depois fez, ou com que
+fundamento, e cauza certa foi assi tomada, e levada, eu o não achei, nem
+soube, e porém até o tempo que o Papa Innocencio IV foi Prezidente na
+Igreja de Roma, nunca por El-Rei Dom Sancho nos males, e danos passados,
+se fez alguma emenda, nem deu satisfação, nem menos havia rigor de
+justiça, por cujo temor elles se leixassem de fazer.
+
+
+
+
+CAPITULO IV
+
+     _Do Concilio que o Papa Innocencio IV fez em Lião de França, onde
+     os Prelados, e os Senhores de Portugal, se foram querelar del Rei
+     Dom Sancho, e lhe pediram novo Regedor para o Regno, que por mingoa
+     da justiça se perdia, e lhe outorgou o Ifante Dom Affonso, Conde de
+     Bolonha, irmão do dito Rei Dom Sancho_
+
+
+Sobre o qual sendo El-Rei por muitos, e muitas vezes aconselhado do
+requerido, e pedido, que se emendasse, e castigasse os malfeitores, elle
+não o querendo, ou não podendo fazer, os Prelados, e povo se enviaram
+outra vez aggravar ao Papa Innocencio IV e pedir-lhe remedio, o qual por
+algumas vezes escreveo a El-Rei cartas de mui sanctos concelhos, e
+devidas amoestações, e assi outras ao Bispo de Coimbra, que em seu nome,
+e da sua parte o aconselhasse para se privar dos erros, e males, que
+consentia, e o esforçasse para castigo, e emenda daquelles, que os
+cometiam, encomendando ao dito Bispo, que de todo o que em El-Rei sobre
+esso achasse, e deste cazo lhe parecesse, lho fizesse saber por suas
+cartas, as quaes enviaria ao Concilio, que se havia então de fazer, como
+fez em Lião Solanova em França, para que foram convocados os Reis, e
+Principes Christãos, e assi muitos Prelados, no qual Concilio se
+acordaram muitas, e mui sanctas couzas por bem da universal Igreja, ante
+as quaes El Rei S. Luis, por mortal doença de um fernezim, de que
+escapou, tornando a seu entendimento, fez nelle voto de ir, como foi em
+pessoa, por se recobrar á Caza Santa, e á conquista de ultra mar, e
+levou em pessoa comsigo a Rainha Dona Margarida sua molher, filha do
+Conde de Proença, e desta ida tomou por cerco a Cidade Damiata no
+Egipto, que era de imigos, mas logo pelo grande poder do Soldão, El-Rei,
+e dous seus irmãos, que com elle passaram, a saber, Dom Affonso, e Dom
+Carlos em uma batalha foram tambem cativos, e resgatados pela mesma
+Cidade de Damiata, e das muitas gentes de seu exercito, muitos foram
+mortos, e os outros prezos, e cativos.
+
+E retornando El Rei S. Luis a França com esperança de vingar o mal
+passado, logo com outro grande exercito, que refez, tornou a ir sobre a
+Cidade de Tunes, com propozito de fazer o Rei della Christão, como lhe
+enviara prometer, e de conquistar por hi a terra dos Infieis, ao longo
+do mar até Alexandria pera dahi poder cobrar a Terra Sancta com menos
+trabalhos das pessoas, e deficuldades, e estando neste cerco, e tendo
+comsigo tres filhos, a saber Felippe Johane, e Pedro, elle faleceo de
+fruxo, e o dito seu filho Dom Joham de peste, e por estes merecimentos,
+e por outras muitas virtudes este Rei Luis foi pelo Papa Bonifacio
+Canonizado, e era primo com irmão deste Rei Dom Sancho, filhos de duas
+irmãs.
+
+E volvendo ao proposito de sua Istoria, El Rei Dom Sancho com todolos
+conselhos, e amoestações de amor, e de rigor pelos Papas, e pelos de seu
+Regno muitas vezes lhe foram feitos, nunca por sua natural fraqueza se
+quiz, ou nem se pode emendar, nem dar ordem como se os malfeitores
+emendassem, e castigassem, e privassem dos malificios que cometiam, pelo
+qual os Prelados, e mais principaes do Regno com todo o povo, por
+remediarem sua total perdição em que se viam, acordaram de enviar pedir
+no dito Consilio ao sobredito Papa Innocencio IV que lhes desse auto, e
+pertencente Regedor pera o Regno, pera o qual foram eleitos pera
+Embaixadores, e Procuradores Dom Joham Arcebispo de Braga, que em todo o
+Reinado del­­-Rei Dom Sancho tinha muitas perseguições, e perdas
+padecidas, e Dom Tiburço Bispo de Coimbra, e Ruy Comes de Briteiros, e
+Gomes Viegas, nobres Cavalleiros, e pessoas de muita authoridade no
+Regno, os quaes chegando ao Consilio, propozeram ante o Papa todalas
+querelas do Regno passadas, e a desesperação que havia pera se nunca
+emendarem antes ao despois se fazerem peor, pera cuja prova prezentaram
+aprovadas cartas, e verdadeiras inquirições, que pera esso levávam, e o
+Papa, que claramente gostou da verdade depois de sobre esso haver sua
+deliberação lhes respondeo que elles escolhessem, e tomassem por Regedor
+do Regno de Portugal, quem quizessem, e entendessem, que o faria bem,
+com tanto que fosse natural do Regno.
+
+E porque os ditos Prelados, e Cavalleiros, tinham já sobre este cazo
+assás deliberado, e consultado depois de lhe beijarem por esso seus
+santos pés, lhes disseram, que a pessoa natural que pera tal cargo
+achavam era o Ifante Dom Affonso, Conde de Bolonha, irmão do mesmo Rei D
+Sancho, e que este lhe pediam por mercê ques désse por Regedor, ca o
+Papa aprouve, e lho outorgou. Sobre o qual mandou logo chamar o dito
+Ifante Conde, que era em Bolonha de França, não longe do Papa, que era
+na dita Cidade de Lião, ao qual Sua Santidade fez larga relação das
+couzas de Portugal, que até aquelle tempo eram passadas, e com esso as
+necessidades que hi havia pera com paz, e justiça se remediarem, e lhe
+encomendou, e mandou que asseitasse o Regimento, defenção, e governação
+do dito Rego, e fizesse como se delle confiava, e o Conde sem
+contradição, nem escuza consentio no dito cargo, e o asseitou, e esto
+foi em Lião a seis dias de Setembro de mil duzentos quorenta, e cinco
+annos (1245).
+
+
+
+
+CAPITULO V
+
+
+     _Como o Conde de Bolonha, depois de asseitar a governança de
+     Portugal fez sobre esso juramento com algumas condições declaradas_
+
+
+Tanto que o Conde pelo Papa foi dado por Regedor de Portugal, elle, e os
+ditos Prelados, e Cavalleiros do Regno, por acordo que sobre esso antes
+se tomou se vieram todos á Cidade de Pariz, onde dentro nas cazas do
+Mestre Perochel da Cidade, sendo elle prezente, e Mestre Joham, Capelão
+do Papa Adaião da Igreja da Carnota, e Soeiro Soares Chançarel, e
+Estevão Annes Cavalleiro do Conde, e assi sendo prezentes os ditos
+Arcebispos, e Bispo, e Cavalleiros, e outras muitas pessoas Religiozas
+do Regno de Portugal, o dito Conde em prezença de todos, e tendo as mãos
+sobre um livro dos Santos Evangelhos, fez solenne juramento nesta fórma.
+
+«Eu Dom Affonso, Conde de Bolonha, filho Del-Rei Dom Affonso de crara
+memoria, Rei que foi de Portugal, prometo, e juro sobre estes Santos
+Evangelhos de Deos, que por qualquer titulo, que eu aja o Regno de
+Portugal, eu guarde, e faça guardar aos Concelhos, e todo o povo, e
+Religiosos, e Clerezia de todo o Regno todolos bons costumes, e foros
+escritos, e não escritos, os quaes houveram, e tiveram com meu avô, e
+com meu visavô, e que tire todos os maos costumes, e abozões, que vieram
+por algumas necessidades, ou que pozeram algumas pessoas em tempo do meu
+padre, e de meu irmão, especialmente, que não leixe, nem consinta nenhum
+mau costume, que ha no Regno de se com mudar a Justiça que ha de morte
+de um homem em pena de dinheiro, e que eu faça, que os Juizes, onde quer
+que os houver de poer, sejam justos, e sem cobiça, e amadores de fazer
+justiça, e direito sem medo de nenhumas pessoas, e esto a quanto eu
+puder, e entender segundo me Deos ajudar, e que sejam feitos por eleição
+dos mesmos povos, que elles houverem de reger, e não por afeição, nem
+rogo, nem pera oprimir, e despeitar o povo, que hão de julgar em
+justiça, e em direito, e que este juramento me farão os Juizes quando
+receberem os officios.
+
+«Item, que eu tire Inquirição por mi, ou por outrem se taes Juizes
+cumprem o que juraram, e os que não fizerem o que devem que lhes mande
+dar tal pena, que a elles seja escarmento, e a outros castigo.
+
+«Item, que aquelles, que forçarem quaesquer molheres, ou matarem
+Clerigo, ou Frade, ou qualquer outra pessoa, que eu faça delles taes
+justiças, que a sua pena castigue os outros.
+
+«Item, que defenda, e mantenha em seu estado quanto eu puder as Igrejas,
+e Moesteiros, e Lugares Religiosos fazendo-lhes entregar qualquer couza,
+que lhe foi tomada, e que quaesquer males, e sem razões, que alguns
+sejam em posse de fazer des o tempo de meu irmão até agora que não lhe
+valha alegança de tempo perlongado.
+
+«Item, que eu faça emendar segundo meu poder, com conselho dos Prelados,
+e dos do Regno todolos males, que até qui foram feitos em elle, e
+reformarei paz quanto poder não leixando sem pena taes couzas passar nem
+as consentindo fazer no dito Regno.
+
+«Item, que segundo me Deos ministrar, e eu puder, que bem, e lealmente
+reja, e aministre o dito Regno de Portugal desque em elle for, e faça
+especialmente fazer justiça, dando a cada um segundo seu merecimento não
+asseitando pessoas pobres, nem ricas.
+
+«Item, que reja todo bom estado da terra, e proveito do dito Regno com
+conselho dos Prelados, e povos delle, e ser sempre obediente, e devoto á
+Igreja de Roma, minha madre, e assi como fiel, e Catholico, e como todo
+Principe Christão deve ser, e que guardarei estas couzas sobreditas
+segundo meu poder, e e me Deos ministrar».
+
+E depois que o dito Conde jurou estas cousas, e outras mais a estas
+conformes, todolos que eram prezentes assináram o juramento, e desso
+passaram escrituras pubricas, que os Prelados trouxeram a Portugal.
+
+
+
+
+CAPITULO VI
+
+
+     _Das Bullas e Provizões do Papa, que o Conde trouxe a Portugal pera
+     os do Regno sobre sua governança, e assi outra Bulla que sobre o
+     mesmo caso enviou aos Frades de S. Francisco_
+
+
+Como o Conde fez este juramento, procurou logo de aviar as couzas mais
+necessarias pera a sua vinda, e álem de sua fazenda lhe compria a honra
+de sua pessoa, e serviço, e repairo de sua caza, e familia.
+
+_A tradução destas Bullas andam muito viciadas nas copias desta
+Chronica, e se acham em outros livros, e por esta, e outras cauzas senão
+imprimem neste Capitulo._
+
+
+
+
+CAPITULO VII
+
+
+     _De como o Conde de Bolonha chegou a Portugal, e com elle um
+     delegado do Papa, e das notificações que logo fizeram a El-Rei D.
+     Sancho_
+
+
+Despedidas as Bulas do Papa, e aparelhadas as couzas, que ao Conde para
+seu caminho mais cumpriam, se despedio da Condessa de Bolonha sua
+molher, que havia nome Dona Matildes, a qual fora já outra vez cazada, e
+era da linhagem dos Rex de França, e molher, em que havia singulares
+bondades, e vertudes, e tinham muitas terras, e grande fazenda, e dahi
+com os Prelados, e Cavalleiros Portuguezes, que o foram requerer, se
+veio a este Reino, e com elle enviou mais o Papa por seu Delegado pera
+estas couzas de Portugal Frei Desiderio, pessoa em que havia doutrina, e
+sinaes de bom Religioso, pera que em nome do Papa, e da sua parte
+requeresse, que entregassem ao Conde os Castellos do Regno, nos quaes
+pozesse Alcaides, e as Villas, e terras, em que fizesse Juizes com que o
+Regno se mantivesse em paz, e justiça, e por tal, que nas Fortalezas
+principalmente se não acolhessem os mal feitoras, que nas pessoas, que
+em todo lhe não obedecessem, pozesse sentença de excommunhão, e como
+chegaram ao Estremo de Portugal, o Conde por suas cartas noteficou logo
+sua vinda a todolo Regno, dizendo em seu titulo: «Dom Affonso, filho do
+muito nobre Rei Dom Affonso por graça de Deos, Conde de Bolonha, e
+Procurador, e defensor do Regno de Portugal». E assi noteficou a El Rei
+Dom Sancho seu irmão, como a requerimento do Regno vinha, e não pera ser
+Rei, mas pera lhe reger, e governar o Regno, e se fazer nelle direito, e
+justiça, que se não fazia, e lhe conheceria senhorio, como a seu Rei, e
+Senhor, salvo a cerca daquelles, em cujo poder, e mãos andava, e porque
+tão mal aconselhado, e por cuja cauza tantos males no Regno eram feitos,
+e com esto lhe enviou o Delegado um Breve do Papa.
+
+
+
+
+CAPITULO VIII
+
+
+     _Como El Rei Dom Sancho mal aconselhado se foi com os de sua valia
+     pedir soccorro a Castella, e como veio em sua ajuda o Ifante Dom
+     Affonso de Molina com outros grandes, e gentes de Castella_
+
+
+El-Rei Dom Sancho a este tempo era em Coimbra, e como vio as cartas do
+Papa, e de seu irmão, e soube que elle era entrado no Regno onde
+inteiramente lhe obedeciam, elle de si mesmo foi muito trovado, e o
+fizeram ser muito mais os homens maos, e perversos Conselheiros, que
+consigo trazia, porque receáram executar-se nelles sem escuza as penas,
+que por seus desmerecimentos, e grandes delitos mereciam, e estes lhe
+fizeram que não cresse, nem obedecesse a couza, que o Papa, nem seu
+irmão lhe escrevesse, nem outros por seu bem lhe dicessem, porque o bem,
+nem asecego del-Rei, em cazo que depois o tivesse não asegurava, nem
+descançava aos que o seguiam, pelo qual de seu parecer delles, e como
+desesperado doutro bom conselho, sem receber dano de pessoa alguma, nem
+lhe ser feita desobediencia, nem contradição, se foi logo a Castella com
+fundamento de pedir soccorro contra seu irmão, a El-Rei Dom Fernando,
+deste nome o segundo, que então nelle Regnava, que era seu primo com
+irmão, filhos de duas irmãs da Rainha Dona Biringela, madre del-Rei Dom
+Fernando, e Dona Orraca, madre del-Rei Dom Sancho, ou ao menos pedir
+este soccorro e ajuda ao Ifante Dom Affonso, filho herdeiro do dito Rei
+Dom Fernando, que em Castella e Lião, já tinha grande poder, e muita
+autoridade.
+
+E com este proposito chegou a Toledo andando a era em mil e duzentos
+quarenta e sete annos (1247) antes um anno que Sevilha fosse aos Mouros
+tomada. A este tempo El-Rei Dom Fernando veo a Toledo, tendo tomado
+Cordova, e já com dezejo, e fundamento de ir cercar, e tomar Sevilha, se
+podesse, ao qual El-Rei Dom Sancho de Portugal seu primo, dice logo, que
+a causa de sua ida a elle, era pera lhe fazer saber, o que elle teria
+sabido, que seu irmão o Ifante Dom Affonso Conde de Bolonha, entrára em
+seu Regno de Portugal, e com ajuda e favor dalguns seus naturaes, se
+alçara contra elle, e que o tinham recebido por Senhor, e que porém lhe
+pedia, como a Rei tão poderoso, e que com elle era tão conjunto em
+parentesco, que em tamanha força lhe desse ajuda e favor com que
+inteiramente cobrasse seu Regno, e lançasse delle fóra seu irmão, que
+individamente lho tinha tomado, e que pois não tinha filho que o
+herdasse, que depois de sua morte ficasse Portugal a elle, ou a seu
+filho herdeiro.
+
+Da qual couza prouve a El-Rei Dom Fernando, e pondo-a em obra ordenou
+logo pera vir a Portugal o Ifante Dom Affonso de Molina, seu irmão,
+filhos ambos del-Rei Dom Affonso de Lião, e da Rainha Dona Biringela, e
+com elle Dom Diogo Lopes de Haro, Senhor de Biscaya, e Dom Nuno
+Gonçalves de Lara, e Dom Ruy Gomes de Galiza, e Dom Ramilo Frole, e Dom
+Rodrigo Froyas, bom Cavalleiro, e Dom Fernando Anes de Lima, e outros
+grandes senhores, e com elles muitas gentes de pé, e de cavallo, com que
+entráram em Portugal pela Comarca de Riba de Coa, que a este tempo ainda
+era de Castella, e por elles fazerem sua entrada pela terra da Beira,
+que toda estava á obediencia del-Rei Dom Sancho, não houveram no caminho
+contradição, nem resistencia alguma, e assi chegaram ao lugar de Abiul,
+que é a quatro legoas de Leiria.
+
+E o Conde Dom Affonso de Bolonha tanto que entrou no Regno, tanta
+alegria receberam os Portuguezes com sua vinda, sabendo quem era, e como
+vinha a seu requerimento, que os mais dos Lugares por as proprias
+vontades dos moradores delles se lhe davam, e aquelles em que achava
+alguma contradição logo por execuções que o Delegado sobre elles punha,
+ou por combates, ou forças não tardou em os cobrar todos salvo Coimbra,
+em que estava Martim de Freitas, e Celorico da Beira, em que estava Dom
+Fernão Rodrigues Pacheco, que ambos as tinham por El-Rei Dom Sancho de
+que ao diante direi.
+
+
+
+
+CAPITULO IX
+
+
+     _Como pelas deligencias do Conde de Bolonha El-Rei Dom Sancho se
+     tornou a Castella, e do que se passou no caminho com os Cavalleiros
+     de Trancozo_
+
+
+E sabendo o Conde de Bolonha da entrada del-Rei seu irmão no Regno com o
+Ifante Dom Affonso de Molina, e com os Cavalleiros, e gentes de
+Castella, logo percebeo, e houve pera ter, e trazer comsigo por defenção
+do Regno as mais gentes que pode, e com ellas se veio a Obidos, e avizou
+a Dom João Arcebispo de Braga, e a Dom Domingos, que então era Bispo de
+Coimbra, os quaes lhe disseram que elles pela comissão do Papa, haviam o
+dito Ifante Dom Affonso de Molina com todolos Senhores, e gentes de
+Castella por excomungados, e malditos, e desso tomáram estromentos, e
+por esta cauza El Rei, e o Ifante não passáram de Abiul, e se tornaram
+pera Castella sem no Regno, nem nas gentes, e couzas delle fazerem algum
+mal, nem dano, e principalmente se tornaram, e não proseguiram adiante,
+porque El Rei Dom Sancho pelas dezordens, e males passados, a que nunca
+provera, era de todolos mais do Regno mui dezamado, e mal quisto, e o
+Conde pelo contrairo álem desso era já das mais forças delle de todo
+apoderado, e por esta cauza o Ifante Dom Affonso com outros Senhores,
+que vieram em ajuda del-Rei, vendo o pouco que lhe podiam aproveitar, e
+o muito dano, que se podia seguir, aconselharam ao dito Rei Dom Sancho,
+que ou ficasse em seu Regno, segundo lhe era apontado, ou se fosse com
+elles a Castella.
+
+Este derradeiro houve El-Rei por melhor, sendo pior conselho, e porém
+El-Rei Dom Sancho tinha feitas doações ao Ifante Dom Pedro seu primo de
+muitas Villas, e Castellos principaes de Portugal, em grande dano da
+Coroa do Regno, as quaes por sua injusta concessão não houveram nunca
+efeito, como quer que o dito Ifante depois o procurasse, e requeresse
+aficadamente por intercessões do Papa, que sobre esso escreveo algumas
+vezes ao Conde de Bolonha, que justamente sempre se escuzou.
+
+E acha-se, que em tornando El-Rei pera Castella, achegou ao Lugar de
+Moreira, que é junto da Villa de Trancozo, na qual a esse tempo estava
+Dom Gonçalo Garcia, e Dom Fernão Garcia de Souza, que diceram
+Esgaravunha, que foi bom trovador, e Dom Fernando Lopes, e Dom Diogo
+Lopes, todos quatro irmãos, filhos de Dom Garcia Mendes de Souza, filho
+do Conde Dom Mendo o Souzão, e de Dona Elvira Gonçalves, filha de Dom
+Gonçalo Paes de Toronho, que eram nobres homens, e mui principaes no
+Regno, e Dom Fernão Garcia sabendo da vinda de Castella del Rei por
+conselho de seus irmãos com um só Escudeiro, a que deram sua lança, e
+sendo elle vestido de todalas outras suas armas se foi a Moreira, onde
+estava El-Rei, e o Ifante, e os outros Senhores, e posto ante elles
+tirou o Elmo da cabeça, e com os joelhos em terra beijou a mão a El-Rei,
+e ao Ifante Dom Affonso, e como se levantou, fez reverencia a Dom Diogo,
+e a todolos outros homens honrados, que eram prezentes, salvo a Dom
+Martim Gil de Soverosa, que era o principal homem; porque El-Rei Dom
+Sancho com quebra de seu Estado se regia.
+
+E perguntando Dom Fernão Garcia a El-Rei se o conhecia? Elle dice que
+si, e que era seu natural vassallo, e D. Fernão Garcia lhe tornou
+dizendo: «Senhor meus irmãos, que estão em Trancozo, e por cujo mandado
+venho como vossos vassallos, e naturaes, vos mandam pedir, e requerer,
+por ante o Ifante vosso primo, e estes Senhores que aqui estão, que vos
+vades pera aquella Villa, na qual, e em seu Castello vos receberão como
+a seu Rei, e Senhor, e assi em todolos outros de redor, que são a seu
+cargo, com tanto que não leveis com vosco Martim Gil, que aqui está, nem
+os seus, que destruiram vossa terra, e elle matou, e leixou os que quiz,
+sem querer que dos seus e doutros mal feitores se fizesse alguma
+justiça, ca certamente vós não tinheis de Rei mais que o nome, e a muito
+alta linhagem, e Real sangue de que decendeis, porque no efeito elle era
+Rei, e com este tamanho credito que lhe destes vos teem mui mal servido,
+em especial por seu mao conselho, por cuja cauza vós viestes ao estado
+em que agora estaes. E se elle dicer que não é assi eu por minha
+verdade, e por sua confuzão me combaterei com elle, e lhe porei as mãos,
+e o corpo, ca por esso venho aqui armado, e alli á porta tenho o
+cavallo, e sobresso espero em Deos, que eu o matarei, ou por sua boca
+lhe farei confeçar que mui mal, e como não devia vos teem aconselhado, e
+com grande quebra e mingoa de vosso Estado, e de vossa terra».
+
+Este Martim Gil era Cavalleiro, e de honrada caza, e de grande esforço,
+porque este foi o que com grande e bom nome seu, venceo a lide do Porto.
+E ouvindo estas palavras a Dom Fernão Garcia, ficou muito injuriado, e
+abatido especialmente, porque áquella hora não lhe respondeo como a sua
+honra compria porque sómente lhe dice: «Dom Fernão Garcia dizeis mal, e
+do que dicestes vos não deveis de achar bem, se eu não morro». Polo qual
+Dom Martim Gil, fez logo mostrança a alguns dos seus que alli estavam
+que lhe fossem ter ao caminho, e o matassem, e Dom Fernão Garcia que os
+vio, e entendeo bem a má tenção com que sahiam, antes doutra couza dice
+a El-Rei: «Senhor, vós quereis ir pera Trancozo, como vos tenho
+requerido?» E El-Rei lhe respondeo, que não, e então tornou D. Fernão
+Garcia, e dice ao Ifante D. Affonso: «Senhor, sereis testemunha vós, e
+esses Senhores que aqui estades da oferta, que por meus irmãos, e por mi
+vim fazer a El-Rei».
+
+E com dito esto volveo o rosto contra Dom Diogo Lopes, e a Dom Nuno de
+Lara, e dice-lhes: «Bem vistes Senhores a offerta, que por limpeza, e
+lealdade minha, e de meus irmãos fiz com El-Rei, e assi ouvistes o que
+tambem dice a Dom Martim Gil, que aqui está, e não querendo por seu
+corpo tornar a esso, como por sua honra devia, mandou aquelles seus, que
+daqui partiram, que me vão ter ao caminho pera desacompanhado me
+matarem, porque vos peço, como a nobres, e honrados Cavalleiros, que por
+boa mezura me mandeis poer em salvo em Trancozo». E logo Dom Affonso se
+levantou, e dice: «Martim Gil vós não atentaste no que Dom Fernão Garcia
+vos dice? o que deveres de fazer, ca me parece que vos toca por maneira
+de traição, e não lhe quereis poer as mãos, como deveis, e vos elle
+requer?»
+
+E Dom Martim Gil brevemente dice, que dava pouco por suas palavras vãs,
+pelo qual estes Senhores diceram a El-Rei, que Dom Fernão Garcia, e os
+nobres homens que eram em Trancozo não podiam fazer melhor comprimento,
+porque com elle compriam, como bons vassallos quanto deviam, e que dahi
+por diante qualquer culpa que hi ouvesse, que era del-Rei, e não delles,
+e logo Dom Diogo, e Dom Nuno com esses bons homens que hi eram
+cavalgaram, e foram-se com Dom Fernão Garcia até Trancozo, donde sahiram
+seus irmãos e outra boa, e nobre gente, que hi eram, e lhe tiveram em
+mercê sua vinda, e depois de praticarem sobre as couzas que pendiam, Dom
+Diogo, e Dom Nuno se tornaram pera o Ifante Dom Affonso, que juntos com
+El-Rei Dom Sancho se foram todos pera Castella, e com elles este Dom
+Martim Gil, que era Portuguez, e homem muito honrado, o que com medo do
+Conde Dom Affonso não ouzou de ficar, e se foi tambem a Castella com
+El-Rei Dom Sancho, e lá faleceo, e foi del-Rei D. Affonso Decimo, com
+quem viveo havido por Rico homem, e em grande estima, e por tál está
+posto por testamenteiro, com outros no testamento del-Rei, quando por
+desagardecimentos do Ifante Dom Sancho seu filho, o deserdou de
+Castella, ainda que seu deserdamento não houve efeito.
+
+
+
+
+CAPITULO X
+
+
+     _Como o Conde cercou em Celorico da Beira a Dom Fernão Rodrigues
+     Pacheco, que lhe não quiz obedecer, e como por causa de uma truita
+     se alevantou o cerco_
+
+
+O Conde de Bolonha governador como entrou no Regno segundo atraz já
+dice, logo por força, ou por vontade, ou a sua obediencia todalas
+Cidades, Villas, e Castellos do Regno, em que entraram todalas que
+El-Rei Dom Sancho tinha dado em Portugal ao Ifante Dom Affonso de Molina
+por entrar com elle, e em sua ajuda no Regno, do que o dito Ifante se
+mandou queixar ao Papa, e assi com elle outros Cavalleiros, e Alcaides
+de Portugal, pelo Conde de Bolonha lhes tomar contra suas vontades os
+Castellos que tinham por suas menagens, e destes o Papa se escuzou
+havendo que o Conde pera asecego, e boa governança do Regno fazia o que
+devia, mas sómente escreveo ao Conde rogando-lhe pelos Castellos, que
+por El-Rei Dom Sancho eram dados ao Ifante Dom Affonso de Molina, ao que
+não satisfez pelos grandes inconvenientes que nesto havia, e porque
+soube que eram cartas, e rogos de comprimento.
+
+Neste tempo depois del-Rei D. Sancho ser em Castella, porque o Castello
+de Celorico da Beira, que tinha Dom Fernão Rodrigues Pacheco, e o de
+Coimbra, que tinha Dom Martim de Freitas, ficaram sómente por El-Rei,
+como atrás dice, o Conde depois de sua partida lhes mandou dizer, e
+rogar que lhos quizessem entregar, como os outros tinham já feito em
+todo o Regno, prometendo-lhe por esso além de fazerem o que deviam
+mercê, e bom galardão. E cada um por si lhe respondeo: «Que elles tinham
+feita menagem a El-Rei Dom Sancho, seu Rei e Senhor, e que em quanto
+elle fosse vivo, posto que andasse em Castella, não deviam de entregar
+seus Castellos, se não a elle, de cuja mão os receberam, ou por seu
+especial mandado, e do Papa, nem por outro algum temor, os não haviam de
+entregar, em cazo, que sobresso fossem excommungados, e padecessem
+cercos, e quaesquer outras fadigas, e tormentos».
+
+Pelo qual vendo o Conde sua tão firme determinação, e que pera o que
+dezejava não aproveitavam muito suas repricas brandas, que fez,
+detreminou cerca-los, e poz logo cerco em pessoa sobre Celorico, ca este
+por ser mais junto á frontaria de Castella houve por melhor cobrar-se
+logo, e este mandou combater muitas vezes, mas por sua fortaleza, e por
+a boa gente que o defendia, não se podia cobrar por força, e durou o
+cerco tanto tempo, que por o Castello não ter soccorro, nem lhe poder
+vir provizão de mantimentos de fóra, foram os de dentro postos em tanta
+estreiteza de fome, e doutras necessidades que por não morrerem, tão
+cruas e dezesperadas mortes, como se lhes ofereciam, estavam pera se
+dar, e entregar o Castello, e não sofrer mais apertos de tão perversa
+lealdade.
+
+E estando nesta afronta se diz, que Dom Fernão Rodrigues Pacheco se
+alevantou um dia muito cedo, e andando pelo muro cuidando na preça, em
+que estava, e sobresso posto em desvairados pensamentos sem
+determinadamente saber o que faria, lembrando-se de Deos, lhe pedia
+muito de coração, que por sua misericordia por alguma maneira lhe
+socorresse, por tal, que não cahisse em tamanha mingoa de sua honra,
+como seria dar aquelle Castello se não a El-Rei, que lho dera, e porque
+lhe tinha feita menagem, e que durando nesta maginação, e oração, que
+vio vir contra a ribeira do Mondego, que é ahi junto, uma Aguia, que
+trazia nas unhas uma grande truita, e que voando por sima do Castello
+lhe cahio dentro, ainda mui fresca, com que algum tanto logo se alegrou,
+e que a mesma truita, e com desse melhor pão, que no Castello se pode
+haver, e aparelhar, mandou todo em prezente ao Conde no arraial, que
+tinha cercado, e lhe mandou dizer: «Que bem o poderia ter cercado quanto
+fosse sua mercê, mas que se por fome o esperava tomar, que visse se os
+homens, que daquella vianda eram bem bastecidos, se teriam rezão de
+entregar-lhe contra suas honras o Castello». Da qual couza o Conde, e
+estes a que do prezente deu parte, foram assás maravilhados, e vendo,
+que por longar mais o cerco alli, não aproveitava, e em outras muitas
+partes danaria, alevantou o cerco sobre Celorico, e o foi pôr sobre
+Coimbra.
+
+
+
+
+CAPITULO XI
+
+
+     _Como o Conde foi cercar o Castello de Coimbra, que tinha Martim de
+     Freitas, por El Rei Dom Sancho, e das afrontas que passou no cerco_
+
+
+O Conde como chegou a Coimbra antes de fazer grandes aparelhos pera o
+cerco e combates mandou dizer a Dom Martim de Freitas: «Que lhe
+entregasse a Cidade, e o Castello, como por muitas vezes já lhe mandara
+requerer, e por esso lhe faria muita mercê, porque se o assi não
+fizesse, que o combateria, e o cobraria tudo com sua perda, e dano». E
+Dom Martim de Freitas lhe respondeo: «Que sua mercê poderia comprir sua
+vontade, e fazer o que quizesse, porém que fosse certo, que em quanto
+soubesse que El-Rei Dom Sancho seu Rei, e Senhor, era vivo, que lho não
+entregaria sem seu mandado, ou sabendo, que era morto, e que o não
+ameaçasse com morte, nem perigos, porque tudo padeceria com bom coração
+por inteiramente comprir com sua lealdade». Pelo qual o Conde assentou
+seu cerco sobre o Castello, e ordenou seus combates, com que logo, e
+depois o combateo muitas vezes, em que de uma parte, e da outra houve
+mortos e feridos.
+
+Mas o alcaide, e os que por sua defenção comsigo tinha eram taes, que os
+cometimentos do Conde não aproveitavam pera cobrar o Castello por força,
+da qual cauza anojado o Conde fez juramento a Deos de nunca se alevantar
+de sobre elle até o tomar por força, ou por fome, e assi o fez porque o
+cerco foi tão porlongado, que os de dentro por falecimento dagoa, e de
+provizões, que já não tinham, como desesperados comiam, e bebiam couzas
+mui contrairas, e descostumadas da natureza humana, que não ficáram
+bestas, cães, gatos vivos, nem os couros das alimarias mortas. E sendo o
+Conde desto certificado os mandava afrontar, e requerer cada dia: «Que
+se dessem, e não padecessem sem cauza, e por contumacia tão asperas
+cruezas, que a sua tal façanha era vã, que não podia, nem devia levar ao
+diante».
+
+Ao que Dom Martim de Freitas por sua honra, e fama não queria obedecer,
+e dice, que durando este cerco, padecendo já de dentro grande, e mortal
+necessidade de sede, que porque viram um Cavalleiro do Conde cavalgado
+pelo rio do Mondego passar, e que o cavallo de farto não provou agoa, e
+que os de dentro magoados por sua mingoa, e envejozos da bemaventurança
+da alimaria, fizeram sobresso grandes lamentações, com que alguns
+parentes, e amigos do Alcaide lhe aconselhavam: «Que pois os
+padecimentos incomportaveis que sofriam sem esperança de ajuda, nem
+soccorro estranho eram taes, que já se não podiam comportar, e elle no
+Regno era só o que sostinha tal profia, que por dar a elle, e aos seus
+as vidas, désse o Castello ao Conde».
+
+Dom Martim de Freitas lhes respondeo: «Parentes, e meus amigos, que aqui
+estaes, nunca Deos queira, que obedecendo a esse vosso concelho eu ponha
+tão grande magoa sobre minha limpeza, nem consinta tamanha traição sobre
+minha honra, e lealdade, nas quaes todas encorreria se desse este
+Castello senão a quem por minha menagem mo deu, em quanto elle for vivo,
+e ami não fica por ver, e conhecer craramente as grandes tribulações que
+vós, e eu, e todos aqui padecemos, mas se vós quizerdes trazer a vossas
+memorias, e poer ante estas vossas necessidades outras muito maiores
+fomes, e males, que muitos sendo cercados já padeceram, achareis que por
+manterem suas lealdades depois que todalas couzas lhe faleciam a comerem
+as raizes das viz ervas, se sostiveram, pelo qual deste temor e afronta
+prazerá a Deos por sua piedade, que bom nome, e segurança nossa sedo nos
+livrará, e em algum tempo vos alegrareis contardes a vossos filhos e
+amigos estes males que padeceis, com que não acrecentareis pouco em
+vosso louvor e merecimento, e obrigação de bondade, e lealdade, que a
+outros em semelhantes cazos confrangeo, e essa mesma neste cazo nosso
+nos não desobriga, ca em outra maneira as vidas, que salvamos, durarão
+poucos dias, e a infamia, e deshonra, que por esso recebemos, durarão
+pera sempre, pelo qual vos rogo, que em quanto poderdes não faleçais, e
+me ajudeis, ca Deos nos acorrerá, e este mal prazendo a elle não durará
+muito, e por ventura se algum de vós pera seu serviço, ou pera outra sua
+deleitação tiverem dezejos de molheres dizei-mo, que aqui está minha
+filha, que é boa donzella, e que muito amo a que eu mandarei que em tudo
+vos sirva de boamente, porque com melhor vontade consentirei, e menos me
+doerá, que ella perca a vertude de sua virgindade, que por mingoa de vós
+outros, perder eu minha lealdade, e ser constrangido a fazer tamanha
+traição, como seria dar como não devo este Castello a quem mo não deu».
+
+Com estas palavras, que Dom Martim de Freitas dice, ficaram todos muito
+maravilhados, e louvando muito sua bondade, se esforçaram, e lhe
+prometeram, que ora fosse com rezão, ou sem ella, elles por satisfazer a
+seu dezejo por algum cazo, e afronta, que sobreviesse, o não leixariam,
+antes todos morreriam primeiro com elle.
+
+
+
+
+CAPITULO XII
+
+
+     _Como pela morte del Rei Dom Sancho, Dom Martim de Freitas entregou
+     o Castello de Coimbra, e das deligencias e exames que primeiro fez
+     por limpeza de sua rigorosa lealdade_
+
+
+Estando Dom Martim de Freitas nesta afronta com El-Rei, e havendo já um
+anno e quatro mezes, que El-Rei Dom Sancho fora pera Castella, prouve a
+Deos de o levar deste mundo, e faleceo em Toledo, como adiante direi, e
+sendo de sua morte certificado o Conde seu irmão, tendo ainda o cerco
+sobre Coimbra, como Principe em que havia muita prudencia, e grande
+piedade, mandou logo ajuntar muito pão, e vinho, e carnes, e pescados, e
+outras maneiras de refrescos, e mandou levar tudo ao Castello, enviando
+dizer ao Alcaide: «Que fosse certo, que El Rei Dom Sancho seu irmão era
+já falecido, e que lhe daria tempo, em que por elle em pessoa, ou por
+outrem, podesse haver desso verdadeira certidão, com a qual entregasse o
+Castello».
+
+Dom Martim escolheo certificar-se por si mesmo. E o Conde o segurou da
+hida e estada, e ser livre até tornar ao dito Castello, que então se não
+combateria. Dom Martim de Freitas chegou a Toledo, e como quer que por
+muitos fosse certificado da morte del-Rei Dom Sancho, que no Moimento
+que mostraram o viram sepultar, elle o não quiz crer, mas por mór
+certeza fez tirar a campa que o cobria, e como o vio, e achou que em
+certo era aquelle, se diz, que prezente muitas testemunhas, que trouxe
+por comprir com sua menagem poz as chaves do Castello de Coimbra, que
+levava, no proprio braço direito del-Rei Dom Sancho, e depois de lhe
+fazer por ellas entrega do dito Castello lhas tirou, e trouxe comsigo a
+Portugal, e desso tomou escrituras pubricas, e fez cerrar o Moimento, e
+se tornou a Coimbra, e dentro entrou secretamente no Castello, e ao
+outro dia mandou logo dizer ao Conde que o fosse receber, porque já lho
+podia entregar, e lhe devia obedecer: e que a elle, e não a outro algum
+o entregaria com boa vontade.
+
+O Conde foi logo ao Castello, e o Alcaide abrio logo as portas delle, e
+tomou a molher, e a filha, e as poz fóra dizendo: «Leixemos este
+Castello a cujo é». E com esso se poz de joelhos diante o Conde, e com
+as chaves delle nas mãos alevantadas lhe dice: «Senhor, pois a Deos
+prouve que El-Rei Dom Sancho, vosso irmão falecesse tomai vossas chaves,
+e vosso Castello, e daqui por diante eu vos servirei, e haverei por Rei,
+e Senhor». E logo amostrou ao Conde, e á nobre gente que era com elle as
+escrituras das deligencias, que em Toledo por sua honra, e descargo
+fizera, e acertou-se que um Cavalleiro do Conde, que era prezente dice a
+Dom Martim de Freitas: «Que porque não pedia perdão ao Conde, por quanto
+nojo e desserviço lhe fizera, e por lhe ferir, e matar tanta gente,
+denegando-lhe tanto tempo a entrega e obediencia do Castello, que era
+seu».
+
+E Dom Martim em se querendo escuzar pera não dever de pedir tal perdão,
+acudio mui prestes o Conde, e dice ao fidalgo, que o reprendia: «Que
+semelhante perdão em tal cazo Dom Martim não era obrigado de pedir,
+porque elle não fizera erro, mas tinha feita boa façanha dina de bom
+Cavalleiro, e leal fidalgo». E por ella lhe tornava a dar o dito
+Castello pera elle, e pera todos os que delle decendessem, fazendo
+menagem a elle, e a todos seus herdeiros. E Dom Martim lhe respondeo:
+«Que lho tinha muito em mercê; mas que elle por alguma maneira não
+tomaria o dito Castello, antes lançava maldição a seus filhos, e netos,
+e a todolos que delle descendessem até o quarto grao se por Castello
+fizessem menagem a Rei, nem a outra pessoa de qualquer condição que
+fosse».
+
+E com esto assi concertado o Conde leixou o Castello de Coimbra, como
+devia, e se tornou outra vez a Celorico, onde Dom Fernão Rodrigues
+estava, porque da morte del-Rei Dom Sancho era já bem certificado, e
+assi sabia que o Castello de Coimbra já era entregue, deu logo ao Conde
+o Castello sem mais resistencia, nem cautella. Estes dous foram os
+derradeiros Castellos de Portugal que ao Conde obedeceram.
+
+
+
+
+CAPITULO XIII
+
+
+     _Da morte del-Rei Dom Sancho, e onde jaz, e de algumas couzas que
+     se em seu tempo passaram_
+
+
+El-Rei Dom Sancho depois da segunda vez que tornou a Toledo nunca dahi
+mais se partio onde com sua vida, e costumes passados em grandes
+virtudes, e com sinaes de bom, e Catholico Christão acabou sua vida em
+idade de quarenta annos, na era de mil duzentos quarenta e sete annos
+(1247) que dos quaes Reinou vinte e quatro, a saber vinte e dous em
+Portugal, e dous estando em Castella, e seu corpo foi sepultado na
+Capella dos Rex da Sé de Toledo, que elle mandou fazer á sua propria
+custa, e assi deu grandes ajudas pera o acabamento da dita Sé, que se
+então fazia por El Rei Dom Fernando, que de mesquita, que era a mandou
+refazer em fórma das outras Igrejas, como agora está, porque quando
+El-Rei Dom Sancho se foi pera Castella, levou comsigo muitas joias, e
+grandes riquezas, que ficaram del-Rei Dom Affonso seu padre, e del-Rei
+Dom Sancho seu avô; das quaes algumas não tornaram a Portugal, e todas
+se gastáram em Castella.
+
+Este Rei Dom Sancho no começo de seu Regnado deu á Ordem de San Tiago em
+desvairados tempos, e por apertadas doações, as Villas de Mertola e
+Daljustrel, as quaes Villas tomou aos Mouros Dom Payo Correa, Mestre de
+San Tiago de Castella, e porque eram da conquista de Portugal as tornou
+a El-Rei Dom Sancho, que dellas fez as ditas doações á dita Ordem. E
+como estas Villas se ganharam, na Coronica del-Rei Dom Affonso Conde de
+Bolonha, se dirá mais largo, e El Rei Dom Sancho povorou de fogo morto a
+Cidade da Idanha a velha, sendo de todo destroida dos Mouros, e depois
+que El-Rei Dom Sancho seu avô a leixou á Ordem do Templo, e o dito Rei
+Dom Sancho faleceo sem filho, nem filha legitimos, nem bastardos, que se
+soubesse.
+
+E dahi a um anno, em dia de São Clemente a vinte e tres dias de Novembro
+do anno de mil duzentos e quarenta e oito annos, El-Rei Dom Fernando
+tomou por cerco a Cidade de Sevilha aos Mouros, e dahi a tres annos e
+meio, nella faleceo, e ahi jaz sepultado, e havia treze annos que tambem
+tomára Cordova salteada primeiro, e entrada por certos Christãos
+Almogaveis, e foi socorrida, e mantida por o mesmo Rei Dom Fernando.
+
+E em Regnando este Rei Dom Sancho faleceram de suas vidas por muitos, e
+grandes milagres São Domingos, que faleceo em Bolonha, no anno de mil
+duzentos e vinte sete (1227) e Sancto Antonio, natural da Cidade de
+Lisboa, em Padua, os quaes suas mui sanctas vidas foram em seu tempo
+deste Rei Dom Sancho, todos Canonizados, e referidos ao numero dos
+Sanctos, por o Papa Gregorio IX, o qual Canonizou Sancto Antonio na
+Cidade Despoleto em Italia anno de mil duzentos trinta e um (1231).
+
+DEO GRATIAS
+
+
+
+
+INDEX DAS COUSAS NOTAVEIS
+
+
+A
+
+Affonso II (El Rei D.) de Portugal, em que anno morreo, pag. 19
+
+Affonso (D.) Conde de Bolonha é nomeado pelo Papa Innocencio IV para
+Governador do Reino de Portugal, pela incapacidade de seu irmão D.
+Sancho II, pag. 28. Na Cidade de Pariz na prezença de muitos Prelados e
+Cavalleiros, toma o juramento do Governo do Reino, e de que forma o fez,
+pag. 28. Deixa sua mulher a Condessa Dona Matilde em França, e parte
+para Portugal, e do modo como se intitulava pag. 32. Cerca o Castello de
+Celorico, que governava Fernão Rodrigues Pacheco, e o levanta por cauza
+de um celebre estratagema de que este uzou, pag. 42. Põe cerco ao
+Castello de Coimbra, e da resistencia que lhe fez Martim de Freitas, que
+o governava, até que sabendo da morte del-Rei D. Sancho II lho entregou,
+pag. 42 a 47.
+
+Affonso de Molina (D.) irmão de D. Fernando Rei de Lião, acompanhado de
+muitos Cavalleiros, e Soldados, entram por Portugal á petição del-Rei D.
+Sancho II para lançar fóra delle a seu irmão o Conde de Bolonha, pag.
+34. Volta com os que o acompanhavam para Castella temerozo das censuras
+da Igreja, pag. 36.
+
+Aljustrel. Foi tomada aos Mouros por D. Payo Correa, e dada por El-Rei
+D. Sancho II á Ordem de San-Tiago, pag. 48.
+
+Alvaro Pires de Castro, (D.) filho de D. Pedro Fernandes de Castro o
+Castelão, foi cazado com D. Mecia Lopes, que depois cazou com El-Rei Dom
+Sancho II, pag. 21.
+
+Antonio, (Santo) em que anno foi Canonizado por Gregorio IX, pag. 49.
+
+
+B
+
+Beringella (D.) mulher del-Rei D. Affonso de Lião. tia del-Rei D. Sancho
+II, de Portugal, o aconselha muitas vezes a que caze, por ser muito
+conveniente ao seu Reino, e elle o não executa, pag. 20.
+
+
+C
+
+Celorico. É cercado o seu Castello por D. Affonso Conde de Bolonha, e
+levanta o sitio por um estratagema de que uzou D. Fernão Rodrigues
+Pacheco, que o governava, pag. 42.
+
+
+D
+
+Desiderio (Fr.) é delegado do Papa Innocencio IV, para que entregue os
+Castellos, e Fortalezas de Portugal á obediencia de D. Affonso Conde de
+Bolonha, pag. 32.
+
+Domingos, (S.) donde, e quando falleceo, pag. 49.
+
+
+F
+
+Fernando (D.) Rei de Lião, em que dia, e anno conquistou Sevilha, pag.
+49. Faleceo nesta Cidade ibi.
+
+Fernão Garcia de Souza, filho de D. Garcia Mendes de Souza, e neto do
+Conde D. Mendo o Souzão, offerece a El-Rei D. Sancho II, quando voltava
+para Castella sem esperança de governar em Portugal, que se recolhe-se a
+Trancozo, e da pratica que fez a El-Rei em Moreira contra Martim Gil,
+pag. 36 e 37.
+
+Fernão Rodrigues Pacheco, governando Celorico, e sendo sitiado por D.
+Affonso Conde de Bolonha levanta o sitio por cauza de um celebre
+estratagema de que uzou, pag. 42.
+
+
+H
+
+Honorio III expede uma Bulla a Sancho II de Portugal, em que lhe adverte
+queira emendar os absurdos que se cometem no seu Reino, e o excomunga se
+não obedecer, sendo executor destas censuras o Arcebispo de Braga, pag.
+22. Segunda vez o notifica com palavras de maior severidade, e rigor,
+até que El-Rei obedece, pag. 23.
+
+
+I
+
+Idanha a Velha foi povoada por Sancho II. pag. 49.
+
+Innocencio IV convoca Concilio em Lião, e nelle á petição dos Prelados e
+Conselheiros de Portugal nomea por Governador do Reino a D. Affonso
+Conde de Bolonha pela incapacidade de seu irmão D. Sancho II, pag. 25 e
+26.
+
+João (D.) Arcebispo de Braga com D. Tiburço Bispo de Coimbra, e outros
+Cavalleiros Portuguezes, vão ao Concilio de Lião onde reprezentam a
+Innocencio IV, que lhe nomeie Governador do Reino pela incapacidade de
+D. Sancho II, pag. 27.
+
+
+L
+
+Lopo (D.) senhor de Biscaia, foi pai de D. Mecia Lopes mulher de D.
+Sancho II, de Portugal, pag. 21.
+
+Luis (S.), rei de França primo del-Rei D. Sancho II, de Portugal
+assistio no Concilio de Lião, que convocou Innocencio IV, pag. 26. Foi
+conquistar a Terra Santa, levando comsigo sua espoza a Rainha Dona
+Margarida, ibi. Conquista a Cidade de Damiata, ibi. Morre no sitio da
+Cidade de Tunes, e seu filho D. João e é Canonizado pelo Papa Bonifacio
+VIII, pag. 27.
+
+
+M
+
+Martim de Freitas Governando o Castello de Coimbra, e sendo cercado por
+D. Affonso Conde de Bolonha animosamente o defende, pag. 43 a 45. Parte
+a Toledo para se certificar da morte del-Rei Dom Sancho II e achando ser
+certa lhe entregou as chaves do Castello de Coimbra, e depois voltando a
+ella o entrega a D. Affonso irmão do dito Rei defunto, pag. 46 e 47.
+
+Martim Gil, cavalleiro honrado teve tenção de matar a D. Fernão Garcia
+de Souza, pelo que disse da sua pessoa a D. Sancho II em Moreira, pag.
+38.
+
+Mecia Lopes (D.) filha de D. Lopo Senhor de Biscaia, viuva de D. Alvaro
+Pires de Castro caza com D. Sancho II, pag. 21. É separada violentamente
+del Rei, e levada ao Castello de Ourem por estar nullamente cazada com
+elle, pag. 25.
+
+Mertola foi conquistada dos Mouros por D. Payo Correa, e dada á Ordem de
+San-Tiago por Sancho II, pag. 48.
+
+
+O
+
+Orraca (D.) mãi del-Rei Dom Sancho II de Portugal, foi irmã de D.
+Beringela Rainha de Lião, pag. 20.
+
+
+R
+
+Reymão Viegas de Porto Carreiro, em companhia de D. Martim Gil de
+Soveroza, e de outros Cavalleiros levaram para o Castello de Ourem a D.
+Mecia, contra a vontade del-Rei D. Sancho II, pag. 25.
+
+
+S
+
+Sancho II, (D.) de Portugal em que idade foi levantado Rei, pag. 19.
+Porque lhe chamáram Capello não se sabe certamente, mas infere-se, ibi.
+Pela sua enercia padeceo o Reino repetidas perdas no tempo, que o
+governou, pag. 20. Caza com D. Mecia Lopes, filha de D. Lopo Senhor de
+Biscaya, ibi. É admoestado pelos Prelados, e povos do Reino a que se
+aparte de D. Mecia, e o não executa, ibi. O Papa Honorio III, o exorta a
+que emende os absurdos de que é author, aliás que o excomungará, pag.
+22. É advertido por Gregorio IX a que largue a D. Mecia por estar
+nullamente cazado com ella, pag. 23. Tendo noticia de que seu irmão D.
+Affonso entrara no Reino para o governar parte a Castella para pedir
+soccorro a seu primo D. Fernando, pera que o lançasse fóra, e lho
+concede, pag. 33 e 34. Donde morreo, em que idade, e onde está
+enterrado, pag. 48. Deu á Ordem de San-Tiago as Villas de Mertola, e
+Aljustrel, que conquistára D. Payo Correa, pag. 48.
+
+Sevilha. Em que dia e anno foi conquistada por El-Rei D. Fernando de
+Lião, pag. 49. Nella morreo, e está sepultado o mesmo Rei ibi.
+
+
+T
+
+Tiburço (D.) bispo de Coimbra com D. João Arcebispo de Braga, e outros
+Cavalleiros Portuguezes vão ao Concilio de Lião, onde representam a
+Innocencio IV a necessidade que tem de que lhes nomeie Governador do
+Reino por ser incapaz D. Sancho II, pag. 25 e 26.
+
+FIM
+
+
+
+
+INDICE DOS CAPITULOS
+
+
+I--Como o Ifante D. Sancho Capelo, foi alevantado por Rei, e das
+condições fracas que teve, e como cazou, e não como a sua honra e estado
+Real compria e se devia      19
+
+II--Do que o Papa a requerimento dos Prelados, e povo de Portugal
+escreveo, e requereo a El-Rei Dom Sancho por sua Bulla      22
+
+III--Como El-Rei Dom Sancho por amoestações do Papa se não quiz apartar
+de Dona Mecia Lopes sua molher, e como lhe foi tomada      24
+
+IV--Do Concilio que o Papa Innocencio IV fez em Lião de França, onde os
+Prelados, e os Senhores de Portugal, se foram querelar del-Rei Dom
+Sancho, e lhe pediram novo Regedor para o Regno, que por mingoa da
+justiça se perdia, e lhe outorgou o Ifante Dom Affonso Conde de Bolonha,
+irmão do dito Rei Dom Sancho      25
+
+V--Como o Conde de Bolonha, depois de asseitar a governança de Portugal
+fez sobre esso juramento com algumas condições declaradas      28
+
+VI--Das Bullas e Provizões do Papa, que o Conde trouxe a Portugal pera
+os do Regno sobre sua governança, e assi outra Bulla que sobre o mesmo
+caso enviou aos Frades de S. Francisco      31
+
+VII--De como o Conde de Bolonha chegou a Portugal, e com elle um
+delegado do Papa, e das notificações que logo fizeram a El-Rei D. Sancho
+      31
+
+VIII--Como El-Rei Dom Sancho mal aconselhado se foi com os de sua valia
+pedir soccorro a Castella, e como veio em sua ajuda o Ifante Dom Affonso
+de Molina com outros grandes, e gentes de Castella      33
+
+IX---Como pelas deligencias do Conde de Bolonha El-Rei D. Sancho se
+tornou a Castella, e do que se passou no caminho com os cavalleiros de
+Trancozo      35
+
+X--Como o Conde cercou em Celorico da Beira a Dom Fernão Rodrigues
+Pacheco, que lhe não quiz obedecer, e como por causa de uma truita se
+alevantou o cerco      40
+
+XI--Como o Conde foi cercar o Castello de Coimbra, que tinha Martim de
+Freitas, por El-Rei D. Sancho, e das afrontas que passou no cerco      42
+
+XII--Como pela morte del Rei Dom Sancho, Dom Martim de Freitas entregou
+o Castello de Coimbra, e das deligencias e exames que primeiro fez por
+limpeza de sua rigoroza lealdade      45
+
+XIII--Da morte del-Rei Dom Sancho, e onde jaz, e de algumas couzas que
+se em seu tempo passaram      48
+
+
+
+
+OBRAS PUBLICADAS
+
+
+I--Historia do Cerco de Diu, por _Lope de Sousa Coutinho_, 1 volume
+(esgotada)      400
+
+II--Historia do Cerco de Mazagão, por _Agostinho Gavy de Mendonça_, 1
+volume (esgotada)      400
+
+III--Ethiopia Oriental, por _Fr. João dos Santos_, 2 grossos volumes
+(esgotada)      1$500
+
+IV--O Infante D. Pedro, chronica inédita por _Gaspar Dias de Landim_, 3
+volumes      700
+
+V--Chronica d'El-Rei D. Pedro I, (o Cru ou Justiceiro) por _Fernão
+Lopes_, 1 volume      400
+
+VI--Chronica d'El-Rei D. Fernando, por _Fernão Lopes_, 3 volumes      1$200
+
+VII--Chronica d'El-Rei D. João I, por _Fernão Lopes_, 7 volumes      2$800
+
+VIII--Chronica d'El-Rei D. João I, _por Gomes Eannes d'Azurara_, vol. I,
+II e III (VIII, IX e X).      1$200
+
+IX--Dois Capitães da India, por _Luciano Cordeiro_, 1 volume      400
+
+X--Arte da Caça de Altenaria, por _Diogo Fernandes Ferreira_, 2 volumes
+      800
+
+XI--Apologos Dialogaes, por _D. Francisco Manuel de Mello_, 3 volumes
+      1$200
+
+XII--Chronica d'El-Rei D. Duarte, por _Ruy de Pina_, 1 volume      400
+
+XIII--Chronica d'El-Rei D. Affonse V, por _Ruy de Pina_, 3 volumes    1$200
+
+XIV--Chronica d'El-Rei D. João II, por _Garcia de Resende_, 3 volumes
+      1$500
+
+XV--Vida de D. Paulo de Lima Pereira, por _Diogo do Couto_, 1 volume    500
+
+XVI--Chronica d'El-Rei D. Sebastião, por _Fr. Bernardo da Cruz_, 2
+volumes.      1$000
+
+XVII--Jornada de Africa, por _Jeronymo de Mendoça_, 2 volumes      800
+
+XVIII--Historia Tragico-Maritima, por _Bernardo Gomes de Brito_, vol. I
+a X      3$800
+
+XIX--Jornada de Antonio d'Albuquerque Coelho, por _João Tavares de Vellez
+Guerreiro_, 1 volume      600
+
+XX--Chronica d'El-Rei D. Affonso Henriques, por _Duarte Galvão_, 1
+volume      600
+
+XXI--Chronica D'el-Rei D. Sancho I, por _Ruy de Pina_, 1 volume      400
+
+XXII--Chronica d'El-Rei D. Affonso II e de El-Rei D. Sancho II, por Ruy
+de Pina, 1 volume      400
+
+
+EM PUBLICAÇÃO
+
+Historia Tragico-Maritima, _por Bernardo Gomes de Brito_, vol. XI.
+
+
+
+
+Lista de erros corrigidos
+
+
+Aqui encontram-se listados todos os erros encontrados e corrigidos:
+
+
+  +----------+---------------------+----------------------+
+  |          |      Original       |      Correcção       |
+  +----------+---------------------+----------------------+
+  |#pág.   15| _Theogia_           | _Theologia_          |
+  |#pág.   16| cencura             | censura              |
+  |#pág.   16| ontros              | outros               |
+  |#pág.   23| Apostoilcam         | Apostolicam          |
+  |#pág.   23| parttcularmente     | particularmente      |
+  |#pág.   32| sm que              | em que               |
+  |#pág.   50| Convernador         | Governador           |
+  |#pág.   50| Coudessa            | Condessa             |
+  |#pág.   51| Saucho              | Sancho               |
+  |#pág.   51| Affonos             | Affonso              |
+  |#pág.   51| doPapa              | do Papa              |
+  |#pág.   52| palaras             | palavras             |
+  |#pág.   52| Saneho              | Sancho               |
+  +----------+---------------------+----------------------+
+
+
+
+
+
+End of Project Gutenberg's Chronica de El-Rei D. Sancho II, by Rui de Pina
+
+*** END OF THIS PROJECT GUTENBERG EBOOK CHRONICA DE EL-REI D. SANCHO II ***
+
+***** This file should be named 27311-8.txt or 27311-8.zip *****
+This and all associated files of various formats will be found in:
+        http://www.gutenberg.org/2/7/3/1/27311/
+
+Produced by Rita Farinha and the Online Distributed
+Proofreading Team at http://www.pgdp.net (This file was
+produced from images generously made available by National
+Library of Portugal (Biblioteca Nacional de Portugal).)
+
+
+Updated editions will replace the previous one--the old editions
+will be renamed.
+
+Creating the works from public domain print editions means that no
+one owns a United States copyright in these works, so the Foundation
+(and you!) can copy and distribute it in the United States without
+permission and without paying copyright royalties.  Special rules,
+set forth in the General Terms of Use part of this license, apply to
+copying and distributing Project Gutenberg-tm electronic works to
+protect the PROJECT GUTENBERG-tm concept and trademark.  Project
+Gutenberg is a registered trademark, and may not be used if you
+charge for the eBooks, unless you receive specific permission.  If you
+do not charge anything for copies of this eBook, complying with the
+rules is very easy.  You may use this eBook for nearly any purpose
+such as creation of derivative works, reports, performances and
+research.  They may be modified and printed and given away--you may do
+practically ANYTHING with public domain eBooks.  Redistribution is
+subject to the trademark license, especially commercial
+redistribution.
+
+
+
+*** START: FULL LICENSE ***
+
+THE FULL PROJECT GUTENBERG LICENSE
+PLEASE READ THIS BEFORE YOU DISTRIBUTE OR USE THIS WORK
+
+To protect the Project Gutenberg-tm mission of promoting the free
+distribution of electronic works, by using or distributing this work
+(or any other work associated in any way with the phrase "Project
+Gutenberg"), you agree to comply with all the terms of the Full Project
+Gutenberg-tm License (available with this file or online at
+http://gutenberg.org/license).
+
+
+Section 1.  General Terms of Use and Redistributing Project Gutenberg-tm
+electronic works
+
+1.A.  By reading or using any part of this Project Gutenberg-tm
+electronic work, you indicate that you have read, understand, agree to
+and accept all the terms of this license and intellectual property
+(trademark/copyright) agreement.  If you do not agree to abide by all
+the terms of this agreement, you must cease using and return or destroy
+all copies of Project Gutenberg-tm electronic works in your possession.
+If you paid a fee for obtaining a copy of or access to a Project
+Gutenberg-tm electronic work and you do not agree to be bound by the
+terms of this agreement, you may obtain a refund from the person or
+entity to whom you paid the fee as set forth in paragraph 1.E.8.
+
+1.B.  "Project Gutenberg" is a registered trademark.  It may only be
+used on or associated in any way with an electronic work by people who
+agree to be bound by the terms of this agreement.  There are a few
+things that you can do with most Project Gutenberg-tm electronic works
+even without complying with the full terms of this agreement.  See
+paragraph 1.C below.  There are a lot of things you can do with Project
+Gutenberg-tm electronic works if you follow the terms of this agreement
+and help preserve free future access to Project Gutenberg-tm electronic
+works.  See paragraph 1.E below.
+
+1.C.  The Project Gutenberg Literary Archive Foundation ("the Foundation"
+or PGLAF), owns a compilation copyright in the collection of Project
+Gutenberg-tm electronic works.  Nearly all the individual works in the
+collection are in the public domain in the United States.  If an
+individual work is in the public domain in the United States and you are
+located in the United States, we do not claim a right to prevent you from
+copying, distributing, performing, displaying or creating derivative
+works based on the work as long as all references to Project Gutenberg
+are removed.  Of course, we hope that you will support the Project
+Gutenberg-tm mission of promoting free access to electronic works by
+freely sharing Project Gutenberg-tm works in compliance with the terms of
+this agreement for keeping the Project Gutenberg-tm name associated with
+the work.  You can easily comply with the terms of this agreement by
+keeping this work in the same format with its attached full Project
+Gutenberg-tm License when you share it without charge with others.
+
+1.D.  The copyright laws of the place where you are located also govern
+what you can do with this work.  Copyright laws in most countries are in
+a constant state of change.  If you are outside the United States, check
+the laws of your country in addition to the terms of this agreement
+before downloading, copying, displaying, performing, distributing or
+creating derivative works based on this work or any other Project
+Gutenberg-tm work.  The Foundation makes no representations concerning
+the copyright status of any work in any country outside the United
+States.
+
+1.E.  Unless you have removed all references to Project Gutenberg:
+
+1.E.1.  The following sentence, with active links to, or other immediate
+access to, the full Project Gutenberg-tm License must appear prominently
+whenever any copy of a Project Gutenberg-tm work (any work on which the
+phrase "Project Gutenberg" appears, or with which the phrase "Project
+Gutenberg" is associated) is accessed, displayed, performed, viewed,
+copied or distributed:
+
+This eBook is for the use of anyone anywhere at no cost and with
+almost no restrictions whatsoever.  You may copy it, give it away or
+re-use it under the terms of the Project Gutenberg License included
+with this eBook or online at www.gutenberg.org
+
+1.E.2.  If an individual Project Gutenberg-tm electronic work is derived
+from the public domain (does not contain a notice indicating that it is
+posted with permission of the copyright holder), the work can be copied
+and distributed to anyone in the United States without paying any fees
+or charges.  If you are redistributing or providing access to a work
+with the phrase "Project Gutenberg" associated with or appearing on the
+work, you must comply either with the requirements of paragraphs 1.E.1
+through 1.E.7 or obtain permission for the use of the work and the
+Project Gutenberg-tm trademark as set forth in paragraphs 1.E.8 or
+1.E.9.
+
+1.E.3.  If an individual Project Gutenberg-tm electronic work is posted
+with the permission of the copyright holder, your use and distribution
+must comply with both paragraphs 1.E.1 through 1.E.7 and any additional
+terms imposed by the copyright holder.  Additional terms will be linked
+to the Project Gutenberg-tm License for all works posted with the
+permission of the copyright holder found at the beginning of this work.
+
+1.E.4.  Do not unlink or detach or remove the full Project Gutenberg-tm
+License terms from this work, or any files containing a part of this
+work or any other work associated with Project Gutenberg-tm.
+
+1.E.5.  Do not copy, display, perform, distribute or redistribute this
+electronic work, or any part of this electronic work, without
+prominently displaying the sentence set forth in paragraph 1.E.1 with
+active links or immediate access to the full terms of the Project
+Gutenberg-tm License.
+
+1.E.6.  You may convert to and distribute this work in any binary,
+compressed, marked up, nonproprietary or proprietary form, including any
+word processing or hypertext form.  However, if you provide access to or
+distribute copies of a Project Gutenberg-tm work in a format other than
+"Plain Vanilla ASCII" or other format used in the official version
+posted on the official Project Gutenberg-tm web site (www.gutenberg.org),
+you must, at no additional cost, fee or expense to the user, provide a
+copy, a means of exporting a copy, or a means of obtaining a copy upon
+request, of the work in its original "Plain Vanilla ASCII" or other
+form.  Any alternate format must include the full Project Gutenberg-tm
+License as specified in paragraph 1.E.1.
+
+1.E.7.  Do not charge a fee for access to, viewing, displaying,
+performing, copying or distributing any Project Gutenberg-tm works
+unless you comply with paragraph 1.E.8 or 1.E.9.
+
+1.E.8.  You may charge a reasonable fee for copies of or providing
+access to or distributing Project Gutenberg-tm electronic works provided
+that
+
+- You pay a royalty fee of 20% of the gross profits you derive from
+     the use of Project Gutenberg-tm works calculated using the method
+     you already use to calculate your applicable taxes.  The fee is
+     owed to the owner of the Project Gutenberg-tm trademark, but he
+     has agreed to donate royalties under this paragraph to the
+     Project Gutenberg Literary Archive Foundation.  Royalty payments
+     must be paid within 60 days following each date on which you
+     prepare (or are legally required to prepare) your periodic tax
+     returns.  Royalty payments should be clearly marked as such and
+     sent to the Project Gutenberg Literary Archive Foundation at the
+     address specified in Section 4, "Information about donations to
+     the Project Gutenberg Literary Archive Foundation."
+
+- You provide a full refund of any money paid by a user who notifies
+     you in writing (or by e-mail) within 30 days of receipt that s/he
+     does not agree to the terms of the full Project Gutenberg-tm
+     License.  You must require such a user to return or
+     destroy all copies of the works possessed in a physical medium
+     and discontinue all use of and all access to other copies of
+     Project Gutenberg-tm works.
+
+- You provide, in accordance with paragraph 1.F.3, a full refund of any
+     money paid for a work or a replacement copy, if a defect in the
+     electronic work is discovered and reported to you within 90 days
+     of receipt of the work.
+
+- You comply with all other terms of this agreement for free
+     distribution of Project Gutenberg-tm works.
+
+1.E.9.  If you wish to charge a fee or distribute a Project Gutenberg-tm
+electronic work or group of works on different terms than are set
+forth in this agreement, you must obtain permission in writing from
+both the Project Gutenberg Literary Archive Foundation and Michael
+Hart, the owner of the Project Gutenberg-tm trademark.  Contact the
+Foundation as set forth in Section 3 below.
+
+1.F.
+
+1.F.1.  Project Gutenberg volunteers and employees expend considerable
+effort to identify, do copyright research on, transcribe and proofread
+public domain works in creating the Project Gutenberg-tm
+collection.  Despite these efforts, Project Gutenberg-tm electronic
+works, and the medium on which they may be stored, may contain
+"Defects," such as, but not limited to, incomplete, inaccurate or
+corrupt data, transcription errors, a copyright or other intellectual
+property infringement, a defective or damaged disk or other medium, a
+computer virus, or computer codes that damage or cannot be read by
+your equipment.
+
+1.F.2.  LIMITED WARRANTY, DISCLAIMER OF DAMAGES - Except for the "Right
+of Replacement or Refund" described in paragraph 1.F.3, the Project
+Gutenberg Literary Archive Foundation, the owner of the Project
+Gutenberg-tm trademark, and any other party distributing a Project
+Gutenberg-tm electronic work under this agreement, disclaim all
+liability to you for damages, costs and expenses, including legal
+fees.  YOU AGREE THAT YOU HAVE NO REMEDIES FOR NEGLIGENCE, STRICT
+LIABILITY, BREACH OF WARRANTY OR BREACH OF CONTRACT EXCEPT THOSE
+PROVIDED IN PARAGRAPH F3.  YOU AGREE THAT THE FOUNDATION, THE
+TRADEMARK OWNER, AND ANY DISTRIBUTOR UNDER THIS AGREEMENT WILL NOT BE
+LIABLE TO YOU FOR ACTUAL, DIRECT, INDIRECT, CONSEQUENTIAL, PUNITIVE OR
+INCIDENTAL DAMAGES EVEN IF YOU GIVE NOTICE OF THE POSSIBILITY OF SUCH
+DAMAGE.
+
+1.F.3.  LIMITED RIGHT OF REPLACEMENT OR REFUND - If you discover a
+defect in this electronic work within 90 days of receiving it, you can
+receive a refund of the money (if any) you paid for it by sending a
+written explanation to the person you received the work from.  If you
+received the work on a physical medium, you must return the medium with
+your written explanation.  The person or entity that provided you with
+the defective work may elect to provide a replacement copy in lieu of a
+refund.  If you received the work electronically, the person or entity
+providing it to you may choose to give you a second opportunity to
+receive the work electronically in lieu of a refund.  If the second copy
+is also defective, you may demand a refund in writing without further
+opportunities to fix the problem.
+
+1.F.4.  Except for the limited right of replacement or refund set forth
+in paragraph 1.F.3, this work is provided to you 'AS-IS' WITH NO OTHER
+WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
+WARRANTIES OF MERCHANTIBILITY OR FITNESS FOR ANY PURPOSE.
+
+1.F.5.  Some states do not allow disclaimers of certain implied
+warranties or the exclusion or limitation of certain types of damages.
+If any disclaimer or limitation set forth in this agreement violates the
+law of the state applicable to this agreement, the agreement shall be
+interpreted to make the maximum disclaimer or limitation permitted by
+the applicable state law.  The invalidity or unenforceability of any
+provision of this agreement shall not void the remaining provisions.
+
+1.F.6.  INDEMNITY - You agree to indemnify and hold the Foundation, the
+trademark owner, any agent or employee of the Foundation, anyone
+providing copies of Project Gutenberg-tm electronic works in accordance
+with this agreement, and any volunteers associated with the production,
+promotion and distribution of Project Gutenberg-tm electronic works,
+harmless from all liability, costs and expenses, including legal fees,
+that arise directly or indirectly from any of the following which you do
+or cause to occur: (a) distribution of this or any Project Gutenberg-tm
+work, (b) alteration, modification, or additions or deletions to any
+Project Gutenberg-tm work, and (c) any Defect you cause.
+
+
+Section  2.  Information about the Mission of Project Gutenberg-tm
+
+Project Gutenberg-tm is synonymous with the free distribution of
+electronic works in formats readable by the widest variety of computers
+including obsolete, old, middle-aged and new computers.  It exists
+because of the efforts of hundreds of volunteers and donations from
+people in all walks of life.
+
+Volunteers and financial support to provide volunteers with the
+assistance they need, is critical to reaching Project Gutenberg-tm's
+goals and ensuring that the Project Gutenberg-tm collection will
+remain freely available for generations to come.  In 2001, the Project
+Gutenberg Literary Archive Foundation was created to provide a secure
+and permanent future for Project Gutenberg-tm and future generations.
+To learn more about the Project Gutenberg Literary Archive Foundation
+and how your efforts and donations can help, see Sections 3 and 4
+and the Foundation web page at http://www.pglaf.org.
+
+
+Section 3.  Information about the Project Gutenberg Literary Archive
+Foundation
+
+The Project Gutenberg Literary Archive Foundation is a non profit
+501(c)(3) educational corporation organized under the laws of the
+state of Mississippi and granted tax exempt status by the Internal
+Revenue Service.  The Foundation's EIN or federal tax identification
+number is 64-6221541.  Its 501(c)(3) letter is posted at
+http://pglaf.org/fundraising.  Contributions to the Project Gutenberg
+Literary Archive Foundation are tax deductible to the full extent
+permitted by U.S. federal laws and your state's laws.
+
+The Foundation's principal office is located at 4557 Melan Dr. S.
+Fairbanks, AK, 99712., but its volunteers and employees are scattered
+throughout numerous locations.  Its business office is located at
+809 North 1500 West, Salt Lake City, UT 84116, (801) 596-1887, email
+business@pglaf.org.  Email contact links and up to date contact
+information can be found at the Foundation's web site and official
+page at http://pglaf.org
+
+For additional contact information:
+     Dr. Gregory B. Newby
+     Chief Executive and Director
+     gbnewby@pglaf.org
+
+
+Section 4.  Information about Donations to the Project Gutenberg
+Literary Archive Foundation
+
+Project Gutenberg-tm depends upon and cannot survive without wide
+spread public support and donations to carry out its mission of
+increasing the number of public domain and licensed works that can be
+freely distributed in machine readable form accessible by the widest
+array of equipment including outdated equipment.  Many small donations
+($1 to $5,000) are particularly important to maintaining tax exempt
+status with the IRS.
+
+The Foundation is committed to complying with the laws regulating
+charities and charitable donations in all 50 states of the United
+States.  Compliance requirements are not uniform and it takes a
+considerable effort, much paperwork and many fees to meet and keep up
+with these requirements.  We do not solicit donations in locations
+where we have not received written confirmation of compliance.  To
+SEND DONATIONS or determine the status of compliance for any
+particular state visit http://pglaf.org
+
+While we cannot and do not solicit contributions from states where we
+have not met the solicitation requirements, we know of no prohibition
+against accepting unsolicited donations from donors in such states who
+approach us with offers to donate.
+
+International donations are gratefully accepted, but we cannot make
+any statements concerning tax treatment of donations received from
+outside the United States.  U.S. laws alone swamp our small staff.
+
+Please check the Project Gutenberg Web pages for current donation
+methods and addresses.  Donations are accepted in a number of other
+ways including checks, online payments and credit card donations.
+To donate, please visit: http://pglaf.org/donate
+
+
+Section 5.  General Information About Project Gutenberg-tm electronic
+works.
+
+Professor Michael S. Hart is the originator of the Project Gutenberg-tm
+concept of a library of electronic works that could be freely shared
+with anyone.  For thirty years, he produced and distributed Project
+Gutenberg-tm eBooks with only a loose network of volunteer support.
+
+
+Project Gutenberg-tm eBooks are often created from several printed
+editions, all of which are confirmed as Public Domain in the U.S.
+unless a copyright notice is included.  Thus, we do not necessarily
+keep eBooks in compliance with any particular paper edition.
+
+
+Most people start at our Web site which has the main PG search facility:
+
+     http://www.gutenberg.org
+
+This Web site includes information about Project Gutenberg-tm,
+including how to make donations to the Project Gutenberg Literary
+Archive Foundation, how to help produce our new eBooks, and how to
+subscribe to our email newsletter to hear about new eBooks.
