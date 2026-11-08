@@ -1,13 +1,14 @@
-'''
-	This file is feature complete.
-	The class outputs a Random Walk using the markov chain.
-	Its optimization and functionality can likely can be improved.
-	Its syntatic variable names can likely be improved.
-'''
+"""
+This file is feature complete.
+The class outputs a Random Walk using the markov chain.
+Its optimization and functionality can likely can be improved.
+Its syntatic variable names can likely be improved.
+"""
 
 from random import randrange
 
 from .markov import MarkovChain
+
 
 class RandomWalk(MarkovChain):
 	def __init__(self, corpus, order):
@@ -31,21 +32,21 @@ class RandomWalk(MarkovChain):
 	def getStart(self):
 		types = []
 		for key in self.dict:
-			if key[0] !='' and key[0][0].isupper():
+			if key[0] != "" and key[0][0].isupper():
 				types.append(key)
 		return types
 
 	def getStop(self):
 		types = []
 		for key in self.dict:
-			if key[len(key)-1].endswith('.'):
+			if key[len(key) - 1].endswith("."):
 				types.append(key)
 		return types
 
 	# # # # # #
 
-	def filterDict(self, sample, intersect = True):
-		if intersect: # keep only these items in dictionary
+	def filterDict(self, sample, intersect=True):
+		if intersect:  # keep only these items in dictionary
 			# clear the temporary dict
 			self.subTokens = 0
 			self.subTypes = 0
@@ -55,7 +56,7 @@ class RandomWalk(MarkovChain):
 				self.subTokens += self.dict[phrase]
 				self.subTypes += 1
 				self.vocab[phrase] = self.dict[phrase]
-		else: # remove items from dictionary
+		else:  # remove items from dictionary
 			# create a copy of the whole dict
 			self.vocab = self.dict.copy()
 			self.subTokens = self.tokens
@@ -98,14 +99,15 @@ class RandomWalk(MarkovChain):
 
 	def randomWordByProb(self):
 		counter = 0
-		random = randrange(self.subTokens+1) / self.subTokens
+		random = randrange(self.subTokens + 1) / self.subTokens
 		# returns a range 0 < n ≤ 1
 		for key in self.vocab:
 			counter += self.vocab[key] / self.subTokens
 			if counter >= random:
 				return key
-		else:
-			raise ValueError(f"\ncounter: {counter}  |  random: {random}\nSUMMED COUNTER DIDN'T MEET RANDOM")
+		raise ValueError(
+			f"\ncounter: {counter}  |  random: {random}\nSUMMED COUNTER DIDN'T MEET RANDOM"
+		)
 
 	def randomWalk(self):
 		self.filterDict(self.starters)
@@ -119,21 +121,21 @@ class RandomWalk(MarkovChain):
 			self.sentance.append(self.subPhrase[len(self.subPhrase) - 1])
 			self.filterPhrase()
 			# print(self.vocab)
-		self.sentance = ' '.join(self.sentance)
+		self.sentance = " ".join(self.sentance)
 
 	# # # # # #
 
 	def getDistribution(self):
 		# WARNING: this function is displayed in permille, not percent!!!
 		# That means that 1000‰ = 1. Again, 1‰ ≠ 1%!!!
-		string = ''
+		string = ""
 		for key in self.dict:
 			value = self.dict[key] / self.tokens * 1000
-			string += f'{key}: {value}‰\n'
+			string += f"{key}: {value}‰\n"
 		return string
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 	fishy = "One fish two fish red fish blue fish."
 	Engine = RandomWalk(fishy, 3)
 	print(Engine.distribution)

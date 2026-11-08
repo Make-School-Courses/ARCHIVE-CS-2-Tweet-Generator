@@ -1,27 +1,27 @@
 #!python
 
-class Node(object):
 
+class Node:
 	def __init__(self, data):
 		"""
-			Initialize this node with the given data.
+		Initialize this node with the given data.
 		"""
 		self.data = data
 		self.next = None
 
 	def __repr__(self):
 		"""
-			Return a string representation of this node.
+		Return a string representation of this node.
 		"""
-		return 'Node({!r})'.format(self.data)
+		return f"Node({self.data!r})"
 
-class LinkedList(object):
 
+class LinkedList:
 	def __init__(self, items=None):
 		"""
-			Initialize this linked list and append the given items, if any.
+		Initialize this linked list and append the given items, if any.
 		"""
-		self.size = 0 # Keeps track of node size
+		self.size = 0  # Keeps track of node size
 		self.head = None  # First node
 		self.tail = None  # Last node
 		# Append given items
@@ -31,23 +31,23 @@ class LinkedList(object):
 
 	def __str__(self):
 		"""
-			Return a formatted string representation of this linked list.
+		Return a formatted string representation of this linked list.
 		"""
-		items = ['({!r})'.format(item) for item in self.items()]
-		return '[{}]'.format(' -> '.join(items))
+		items = [f"({item!r})" for item in self.items()]
+		return "[{}]".format(" -> ".join(items))
 
 	def __repr__(self):
 		"""
-			Return a string representation of this linked list.
+		Return a string representation of this linked list.
 		"""
-		return 'LinkedList({!r})'.format(self.items())
+		return f"LinkedList({self.items()!r})"
 
 	def items(self):
 		"""
-			Return a list (dynamic array) of all items in this linked list.
+		Return a list (dynamic array) of all items in this linked list.
 
-			Best and worst case running time: O(n) for n items in the list (length)
-			because we always need to loop through all n nodes to get each item.
+		Best and worst case running time: O(n) for n items in the list (length)
+		because we always need to loop through all n nodes to get each item.
 		"""
 		items = []  # O(1) time to create empty list
 		# Start at head node
@@ -62,19 +62,19 @@ class LinkedList(object):
 
 	def is_empty(self):
 		"""
-			Return a boolean indicating whether this linked list is empty.
+		Return a boolean indicating whether this linked list is empty.
 
-			Running time: O(1)
-			There are no loops; it just has to compute each action once
+		Running time: O(1)
+		There are no loops; it just has to compute each action once
 		"""
 		return self.head is None
 
 	def length(self):
 		"""
-			Return the length of this linked list by traversing its nodes.
+		Return the length of this linked list by traversing its nodes.
 
-			Running time: O(1)
-			I used a parameter, so all I need to do is access it.
+		Running time: O(1)
+		I used a parameter, so all I need to do is access it.
 		"""
 		# Access and return node size parameter.
 		# Couldn't call it length because its used here!
@@ -82,10 +82,10 @@ class LinkedList(object):
 
 	def append(self, data):
 		"""
-			Insert the given data at the tail of this linked list.
+		Insert the given data at the tail of this linked list.
 
-			Running time: O(1)
-			There are no loops; it just has to compute each action once
+		Running time: O(1)
+		There are no loops; it just has to compute each action once
 		"""
 		# Add one to node size
 		self.size += 1
@@ -102,10 +102,10 @@ class LinkedList(object):
 
 	def prepend(self, data):
 		"""
-			Insert the given data at the head of this linked list.
+		Insert the given data at the head of this linked list.
 
-			Running time: O(1)
-			There are no loops; it just has to compute each action once
+		Running time: O(1)
+		There are no loops; it just has to compute each action once
 		"""
 		# Add one to length
 		self.size += 1
@@ -122,15 +122,15 @@ class LinkedList(object):
 
 	def find(self, quality):
 		"""
-			Return data from this linked list satisfying the given quality.
+		Return data from this linked list satisfying the given quality.
 
-			Best case running time: O(1)
-			If the find function immediately finds the first node as valid...
-			...then it only uses the while loop once.
-			---
-			Worst case running time: O(n)
-			If the find function never finds valid data...
-			...then it has to loop through all (n) nodes in the linked list.
+		Best case running time: O(1)
+		If the find function immediately finds the first node as valid...
+		...then it only uses the while loop once.
+		---
+		Worst case running time: O(n)
+		If the find function never finds valid data...
+		...then it has to loop through all (n) nodes in the linked list.
 		"""
 		# Loop through all nodes to find one node's data where quality(data) is True
 		get_node = self.head
@@ -142,22 +142,20 @@ class LinkedList(object):
 			else:
 				get_node = get_node.next
 		# Otherwise, nothing has been found.
-		else:
-			return None
-
+		return None
 
 	def delete(self, data):
 		"""
-			Delete the given item from this linked list, or raise ValueError.
+		Delete the given item from this linked list, or raise ValueError.
 
-			Best case running time: O(1)
-			If the loop is exited on the first try (eg. head is result)...
-			...then it only has each computation in the loop once
-			---
-			Worst case running time: O(n)
-			If the loop is totally complete
+		Best case running time: O(1)
+		If the loop is exited on the first try (eg. head is result)...
+		...then it only has each computation in the loop once
+		---
+		Worst case running time: O(n)
+		If the loop is totally complete
 		"""
-		print('\nSTARTING DELETE FUNCTION')
+		print("\nSTARTING DELETE FUNCTION")
 		print(f"here's the input data: {data}\n")
 
 		# prv_node and get_node keeps track of two consecutive nodes.
@@ -193,37 +191,39 @@ class LinkedList(object):
 				get_node = get_node.next
 
 		if found:
-			print('entry found! reducing size.\n')
+			print("entry found! reducing size.\n")
 			self.size -= 1
 		else:
-			raise ValueError(f'Item not found: {data}')
+			raise ValueError(f"Item not found: {data}")
+
 
 def test_linked_list():
 	ll = LinkedList()
-	print('list: {}'.format(ll))
+	print(f"list: {ll}")
 
-	print('\nTesting append:')
-	for item in ['A', 'B', 'C']:
-		print('append({!r})'.format(item))
+	print("\nTesting append:")
+	for item in ["A", "B", "C"]:
+		print(f"append({item!r})")
 		ll.append(item)
-		print('list: {}'.format(ll))
+		print(f"list: {ll}")
 
-	print('head: {}'.format(ll.head))
-	print('tail: {}'.format(ll.tail))
-	print('length: {}'.format(ll.length()))
+	print(f"head: {ll.head}")
+	print(f"tail: {ll.tail}")
+	print(f"length: {ll.length()}")
 
 	# Enable this after implementing delete method
 	delete_implemented = False
 	if delete_implemented:
-		print('\nTesting delete:')
-		for item in ['B', 'C', 'A']:
-			print('delete({!r})'.format(item))
+		print("\nTesting delete:")
+		for item in ["B", "C", "A"]:
+			print(f"delete({item!r})")
 			ll.delete(item)
-			print('list: {}'.format(ll))
+			print(f"list: {ll}")
 
-		print('head: {}'.format(ll.head))
-		print('tail: {}'.format(ll.tail))
-		print('length: {}'.format(ll.length()))
+		print(f"head: {ll.head}")
+		print(f"tail: {ll.tail}")
+		print(f"length: {ll.length()}")
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
 	test_linked_list()

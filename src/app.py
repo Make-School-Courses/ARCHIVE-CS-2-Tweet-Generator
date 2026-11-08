@@ -1,35 +1,39 @@
 # send our python in a bottle to the open seas of the web 🌊 (use flask)
-from flask import Flask
 from pathlib import Path
 
+from flask import Flask
+
 from .twitter import tweet
+
 app = Flask(__name__)
 
 # import other important files
 from .cleaner import cleanText, readCorpus
 from .random_walk import RandomWalk
 
-DATA_DIR = Path(__file__).resolve().parent / 'data' / 'corpora'
+DATA_DIR = Path(__file__).resolve().parent / "data" / "corpora"
+
 
 # generate a sentance from our corpus at nth order
 def generate(corpora, order):
-	source = ''
+	source = ""
 	for work in corpora:
 		text = readCorpus(work)
 		text = cleanText(text)
 		source += text
-		source += ' '
+		source += " "
 	Engine = RandomWalk(source, order)
 	print(Engine.sentance)
 	return Engine.sentance
 
-@app.route('/')
+
+@app.route("/")
 def deploy():
 	fishy = "One fish two fish, red fish blue fish"
-	source = (DATA_DIR / 'frankenstein_450.txt', DATA_DIR / 'sherlock_300.txt')
+	source = (DATA_DIR / "frankenstein_450.txt", DATA_DIR / "sherlock_300.txt")
 	sentance = generate(source, 3)
 	tweet(sentance)
-	html = f'''
+	html = f"""
 		<div style="height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center">
 			<h1 style="text-align:center; width: 50%; margin:0 auto">{sentance}</h1>
 			<hr />
@@ -40,9 +44,10 @@ def deploy():
 					</a>
 				</em>
 			</p>
-		</div>'''
+		</div>"""
 	return html
 
-if __name__ == '__main__':
-	source = (DATA_DIR / 'frankenstein_450.txt', DATA_DIR / 'sherlock_300.txt')
+
+if __name__ == "__main__":
+	source = (DATA_DIR / "frankenstein_450.txt", DATA_DIR / "sherlock_300.txt")
 	generate(source, 3)
