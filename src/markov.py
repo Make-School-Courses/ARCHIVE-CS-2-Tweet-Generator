@@ -3,22 +3,24 @@ This file is feature complete.
 The class outputs a Markov Chain of nth order, with inputs of corpus and order.
 """
 
+from typing import Dict, List, Tuple
+
 
 class MarkovChain:
-	def __init__(self, corpus, order):
+	def __init__(self, corpus: str, order: int) -> None:
 		# import arguments
-		self.corpus = corpus
-		self.order = order
+		self.corpus: str = corpus
+		self.order: int = order
 		# initialize 'empty' variables
-		self.word = ""
-		self.phrase = []
-		self.dict = {}
-		self.types = 0
-		self.tokens = 0
+		self.word: str = ""
+		self.phrase: List[str] = []
+		self.dict: Dict[Tuple[str, ...], int] = {}
+		self.types: int = 0
+		self.tokens: int = 0
 		# call saveDict
 		self.saveDict()
 
-	def saveWord(self):
+	def saveWord(self) -> None:
 		"""
 		Saves a complete stored word into the phrase, then resets the stored word.
 		The results are saved in self.word
@@ -34,7 +36,7 @@ class MarkovChain:
 			self.savePhrase()
 		self.word = ""
 
-	def savePhrase(self):
+	def savePhrase(self) -> None:
 		"""
 		Saves a complete stored phrase into the dictionary, then resets the stored phrase.
 		The results are saved in self.phrase
@@ -53,7 +55,7 @@ class MarkovChain:
 		self.tokens += 1
 		del self.phrase[0]
 
-	def saveDict(self):
+	def saveDict(self) -> None:
 		"""
 		Creates a markov chain by looping through each letter in the corpus.
 		The results are saved in self.dict

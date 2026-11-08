@@ -6,34 +6,35 @@ Its syntatic variable names can likely be improved.
 """
 
 from random import randrange
+from typing import Dict, Iterable, List, Tuple
 
 from .markov import MarkovChain
 
 
 class RandomWalk(MarkovChain):
-	def __init__(self, corpus, order):
+	def __init__(self, corpus: str, order: int) -> None:
 		# import Markov Chain ⛓
 		MarkovChain.__init__(self, corpus, order)
 		# initialize 'empty' variables
-		self.sentance = []
-		self.vocab = {}
-		self.subTypes = 0
-		self.subTokens = 0
-		self.subPhrase = ()
+		self.sentance: str = ""
+		self.vocab: Dict[Tuple[str, ...], int] = {}
+		self.subTypes: int = 0
+		self.subTokens: int = 0
+		self.subPhrase: Tuple[str, ...] = ()
 		# call stoppers and starters
-		self.stoppers = self.getStop()
-		self.starters = self.getStart()
+		self.stoppers: List[Tuple[str, ...]] = self.getStop()
+		self.starters: List[Tuple[str, ...]] = self.getStart()
 		if not self.starters:
 			raise ValueError("corpus must contain at least one word")
 		if not self.stoppers:
 			raise ValueError("corpus must contain sentence-ending punctuation")
-		self.distribution = self.getDistribution()
+		self.distribution: str = self.getDistribution()
 		# finally call randomWalk()
 		self.randomWalk()
 
 	# # # # # #
 
-	def getStart(self):
+	def getStart(self) -> List[Tuple[str, ...]]:
 		types = []
 		for key in self.dict:
 			if key[0] != "" and key[0][0].isupper():
@@ -42,7 +43,7 @@ class RandomWalk(MarkovChain):
 			types = [key for key in self.dict if key[0] != ""]
 		return types
 
-	def getStop(self):
+	def getStop(self) -> List[Tuple[str, ...]]:
 		types = []
 		for key in self.dict:
 			if key[len(key) - 1].endswith((".", "!", "?")):
@@ -51,7 +52,11 @@ class RandomWalk(MarkovChain):
 
 	# # # # # #
 
-	def filterDict(self, sample, intersect=True):
+	def filterDict(
+		self,
+		sample: Iterable[Tuple[str, ...]],
+		intersect: bool = True,
+	) -> None:
 		if intersect:  # keep only these items in dictionary
 			# clear the temporary dict
 			self.subTokens = 0
@@ -73,7 +78,7 @@ class RandomWalk(MarkovChain):
 				self.subTypes -= 1
 				del self.vocab[phrase]
 
-	def filterPhrase(self):
+	def filterPhrase(self) -> None:
 		self.vocab = self.dict.copy()
 		self.subTokens = self.tokens
 		self.subTypes = self.types
@@ -103,7 +108,7 @@ class RandomWalk(MarkovChain):
 	# 	else:
 	# 		raise ValueError(f"\ncounter: {counter}  |  random: {random}\nSUMMED COUNTER DIDN'T MEET RANDOM")
 
-	def randomWordByProb(self):
+	def randomWordByProb(self) -> Tuple[str, ...]:
 		if self.subTokens <= 0:
 			raise ValueError("cannot select a word from an empty distribution")
 
@@ -114,23 +119,24 @@ class RandomWalk(MarkovChain):
 				return key
 		raise RuntimeError("word counts do not match the distribution total")
 
-	def randomWalk(self):
+	def randomWalk(self) -> None:
 		self.filterDict(self.starters)
 		# print(f'vocab: {self.vocab}')
 		self.subPhrase = self.randomWordByProb()
+		sentence = []
 		for word in self.subPhrase:
-			self.sentance.append(word)
+			sentence.append(word)
 		self.filterPhrase()
 		while self.subPhrase not in self.stoppers:
 			self.subPhrase = self.randomWordByProb()
-			self.sentance.append(self.subPhrase[len(self.subPhrase) - 1])
+			sentence.append(self.subPhrase[len(self.subPhrase) - 1])
 			self.filterPhrase()
 			# print(self.vocab)
-		self.sentance = " ".join(self.sentance)
+		self.sentance = " ".join(sentence)
 
 	# # # # # #
 
-	def getDistribution(self):
+	def getDistribution(self) -> str:
 		# WARNING: this function is displayed in permille, not percent!!!
 		# That means that 1000‰ = 1. Again, 1‰ ≠ 1%!!!
 		string = ""

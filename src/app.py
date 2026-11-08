@@ -1,5 +1,6 @@
 # send our python in a bottle to the open seas of the web 🌊 (use flask)
 from pathlib import Path
+from typing import Iterable
 
 from flask import Flask
 
@@ -7,12 +8,12 @@ from .cleaner import cleanText, readCorpus
 from .random_walk import RandomWalk
 from .twitter import tweet
 
-app = Flask(__name__)
-DATA_DIR = Path(__file__).resolve().parent / "data" / "corpora"
+app: Flask = Flask(__name__)
+DATA_DIR: Path = Path(__file__).resolve().parent / "data" / "corpora"
 
 
 # generate a sentance from our corpus at nth order
-def generate(corpora, order):
+def generate(corpora: Iterable[Path], order: int) -> str:
 	source = ""
 	for work in corpora:
 		text = readCorpus(work)
@@ -25,7 +26,7 @@ def generate(corpora, order):
 
 
 @app.route("/")
-def deploy():
+def deploy() -> str:
 	source = (DATA_DIR / "frankenstein_450.txt", DATA_DIR / "sherlock_300.txt")
 	sentance = generate(source, 3)
 	tweet(sentance)
