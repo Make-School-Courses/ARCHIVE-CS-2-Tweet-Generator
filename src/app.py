@@ -4,7 +4,7 @@ from typing import Iterable
 
 from flask import Flask
 
-from .cleaner import cleanText, readCorpus
+from .cleaner import clean_text, read_corpus
 from .random_walk import RandomWalk
 from .twitter import tweet
 
@@ -16,13 +16,13 @@ DATA_DIR: Path = Path(__file__).resolve().parent / "data" / "corpora"
 def generate(corpora: Iterable[Path], order: int) -> str:
 	source = ""
 	for work in corpora:
-		text = readCorpus(work)
-		text = cleanText(text)
+		text = read_corpus(work)
+		text = clean_text(text)
 		source += text
 		source += " "
-	Engine = RandomWalk(source, order)
-	print(Engine.sentance)
-	return Engine.sentance
+	engine = RandomWalk(source, order)
+	print(engine.sentance)
+	return engine.sentance
 
 
 @app.route("/")

@@ -30,9 +30,9 @@ class Tuplegram(list):
 		self.tokens += count
 		for item in self:
 			if item[0] == word:
-				newItem = (item[0], item[1] + count)
+				new_item = (item[0], item[1] + count)
 				self.remove(item)
-				self.append(newItem)
+				self.append(new_item)
 				break
 		else:
 			self.types += 1
