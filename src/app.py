@@ -3,7 +3,7 @@
 from pathlib import Path
 from typing import Iterable
 
-from flask import Flask
+from flask import Flask, abort, render_template_string, request
 
 from .cleaner import clean_text, read_corpus
 from .random_walk import RandomWalk
@@ -45,8 +45,21 @@ def deploy() -> str:
 		DATA_DIR / "sherlock_300.txt",
 	)
 	sentance = generate(source, 3)
+	return render_page(sentance)
+
+
+@app.route("/tweet", methods=["POST"])
+def post_tweet() -> str:
+	sentance = request.form.get("status")
+	if not sentance:
+		abort(400)
 	tweet(sentance)
-	html = f"""
+	return render_page(sentance, tweeted=True)
+
+
+def render_page(sentance: str, tweeted: bool = False) -> str:
+	return render_template_string(
+		"""
 		<div
 			style="height:100%;
 			display:flex;
@@ -59,20 +72,29 @@ def deploy() -> str:
 				width:50%;
 				margin:0 auto"
 			>
-				{sentance}
+				{{ sentance }}
 			</h1>
 			<hr />
 
-			<p style="text-align:center">
-				<em>
-					<a href="https://twitter.com/frankensteinen1">
-						this message was also tweeted! check it out!
-					</a>
-				</em>
-			</p>
+			{% if tweeted %}
+				<p style="text-align:center">
+					<em>
+						<a href="https://twitter.com/frankensteinen1">
+							This message was tweeted! Check it out!
+						</a>
+					</em>
+				</p>
+			{% else %}
+				<form action="/tweet" method="post">
+					<input type="hidden" name="status" value="{{ sentance }}">
+					<button type="submit">Tweet This!</button>
+				</form>
+			{% endif %}
 		</div>
-"""
-	return html
+		""",
+		sentance=sentance,
+		tweeted=tweeted,
+	)
 
 
 if __name__ == "__main__":

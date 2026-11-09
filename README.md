@@ -7,6 +7,8 @@ Run locally with `python -m flask --app src.app run`; run tests with `python -m 
 Python 3.7 or newer is required.
 Run lint with `ruff check .`.
 
+The homepage generates a tweet draft. Click **Tweet This!** to post it.
+
 ## Website
 https://tweet-generator-nak.herokuapp.com/
 
