@@ -22,15 +22,17 @@ def dictionary_main() -> str:
 def publication_random() -> str:
 	"""
 	Fetch a random Project Gutenberg book
-	and stringify the response bytes.
+	and return decoded text with line breaks
+	normalized to spaces.
 	"""
 	book = round((random.random() * 49544) + 1)
 	link = f"http://www.gutenberg.org/cache/epub/{book}/pg{book}.txt"
 	with urllib.request.urlopen(link) as response:
-		text = response.read()
+		text = response.read().decode("utf-8")
 	print("200 SUCCESS")
-	text = str(text)
-	text = text.replace("\\r\\n", "")
+	text = text.replace("\r\n", " ")
+	text = text.replace("\n", " ")
+	text = text.replace("\r", " ")
 	return text
 
 
