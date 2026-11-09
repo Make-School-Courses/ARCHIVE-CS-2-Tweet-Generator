@@ -48,11 +48,7 @@ def user_number(feed: object) -> int:
 	print(feed)
 	while True:
 		try:
-			number = int(input("enter integer:\n>> "))
-			assert isinstance(number, int)
-			assert number is not None
-			assert number != ""
-			return number
+			return int(input("enter integer:\n>> "))
 		except ValueError:
 			print("INVALID INPUT.\nplease try again.\n")
 
@@ -68,11 +64,7 @@ def listify_data(input_data: object) -> List[str]:
 	Split `str(input_data)` on word characters
 	and apostrophes.
 	"""
-	input_data = str(input_data)
-	if type(input_data) is str:
-		input_data = re.findall(r"[\w']+", input_data)
-	assert type(input_data) is list
-	return input_data
+	return re.findall(r"[\w']+", str(input_data))
 
 
 def undupli_list(input_list: List[str]) -> List[str]:
@@ -80,11 +72,7 @@ def undupli_list(input_list: List[str]) -> List[str]:
 	Return unique items from `input_list`,
 	preserving their original order.
 	"""
-	output_list = []
-	for word in input_list:
-		if word not in output_list:
-			output_list += [word]
-	return output_list
+	return list(dict.fromkeys(input_list))
 
 
 def randify_list(input_list: List[str], iterations: int) -> List[str]:
@@ -95,44 +83,38 @@ def randify_list(input_list: List[str], iterations: int) -> List[str]:
 	is zero, all remaining items are returned.
 	"""
 	output_list = []
-	while len(input_list) > 0 and (len(output_list) < iterations or iterations == 0):
-		digit_rand = random.randint(0, len(input_list) - 1)
-		input_rand = input_list.pop(digit_rand)
-		output_list += [input_rand]
+	while input_list and (iterations == 0 or len(output_list) < iterations):
+		index = random.randint(0, len(input_list) - 1)
+		output_list.append(input_list.pop(index))
 	return output_list
 
 
 def textify_list(input_list: Iterable[str]) -> str:
 	"""Join `input_list` with single spaces."""
-	output_text = ""
-	for input_item in input_list:
-		if output_text != "":
-			output_text += " "
-		output_text += input_item
-	input_list = output_text
-	return input_list
+	return " ".join(input_list)
 
 
-def textify_dict(input_dict) -> str:
+def textify_dict(input_dict: Dict[str, int]) -> str:
 	"""
 	Format positive counts as lines, sorted
 	from lowest to highest frequency.
 	"""
-	output_text = ""
-	for w in sorted(input_dict, key=input_dict.get, reverse=False):
-		if input_dict[w] > 0:
-			output_text += str(input_dict[w]) + " " + str(w) + "\n"
-	return output_text
+	sorted_items = sorted(
+		input_dict.items(),
+		key=lambda item: item[1],
+	)
+	output_lines = []
+	for word, count in sorted_items:
+		if count > 0:
+			output_lines.append(f"{count} {word}\n")
+	return "".join(output_lines)
 
 
 def lowerfy_list(input_list: List[str]) -> List[str]:
 	"""
 	Return a lowercase copy of `input_list`.
 	"""
-	output_list = []
-	for text in input_list:
-		output_list += [text.lower()]
-	return output_list
+	return [text.lower() for text in input_list]
 
 
 def reverse_text(old_word: str) -> str:
@@ -140,12 +122,7 @@ def reverse_text(old_word: str) -> str:
 	Return `old_word` with its characters
 	in reverse order.
 	"""
-	new_word = ""
-	i = 1
-	for _ in old_word:
-		new_word += old_word[len(old_word) - i]
-		i += 1
-	return new_word
+	return old_word[::-1]
 
 
 # Word-generation functions
@@ -157,12 +134,10 @@ def rearrange(iterations: int, input_data: Optional[object] = None) -> str:
 	"""
 	if input_data is None:
 		input_data = dictionary_main()
-	data = input_data
-	data = listify_data(data)
-	data = lowerfy_list(data)
-	data = randify_list(data, iterations)
-	data = textify_list(data)
-	return data
+	words = listify_data(input_data)
+	words = lowerfy_list(words)
+	words = randify_list(words, iterations)
+	return textify_list(words)
 
 
 # Anagrams
@@ -178,16 +153,12 @@ def anagrams(
 	"""
 	if input_data is None:
 		input_data = dictionary_main()
-	data = input_data
-	data = listify_data(data)
-	data = lowerfy_list(data)
-	new_data = []
-	i_word = input_word
-	for v_word in data:
-		if verify_anagram(i_word, v_word):
-			new_data += [v_word]
-	new_data = textify_list(new_data)
-	return new_data
+	words = lowerfy_list(listify_data(input_data))
+	matching_words = []
+	for word in words:
+		if verify_anagram(input_word, word):
+			matching_words.append(word)
+	return textify_list(matching_words)
 
 
 def verify_anagram(input_word: str, verify_word: str) -> bool:
@@ -195,11 +166,7 @@ def verify_anagram(input_word: str, verify_word: str) -> bool:
 	Check if `input_word` and `verify_word`
 	contain the same characters.
 	"""
-	input_list = list(input_word)
-	verify_list = list(verify_word)
-	input_list.sort()
-	verify_list.sort()
-	return input_list == verify_list
+	return sorted(input_word) == sorted(verify_word)
 
 
 # Palindromes
@@ -212,16 +179,12 @@ def palindromes(input_data: Optional[object] = None) -> str:
 	"""
 	if input_data is None:
 		input_data = dictionary_main()
-	data = input_data
-	data = listify_data(data)
-	data = lowerfy_list(data)
-	new_data = []
-	for word in data:
+	words = lowerfy_list(listify_data(input_data))
+	matches = []
+	for word in words:
 		if verify_palindrome(word):
-			new_data += [word]
-	new_data = undupli_list(new_data)
-	new_data = textify_list(new_data)
-	return new_data
+			matches.append(word)
+	return textify_list(undupli_list(matches))
 
 
 def verify_palindrome(input_word: str) -> bool:
@@ -229,12 +192,7 @@ def verify_palindrome(input_word: str) -> bool:
 	Check if `input_word` reads the same
 	forwards and backwards.
 	"""
-	i = 1
-	while i <= len(input_word) / 2:
-		if input_word[i - 1] != input_word[-i]:
-			return False
-		i += 1
-	return True
+	return input_word == input_word[::-1]
 
 
 # Histograms
@@ -247,14 +205,9 @@ def histogram(input_data: Optional[object] = None) -> Dict[str, int]:
 	"""
 	if input_data is None:
 		input_data = dictionary_main()
-	data = listify_data(input_data)
-	data = lowerfy_list(data)
 	hist = {}
-	for word in data:
-		if word in hist:
-			hist[word] += 1
-		else:
-			hist[word] = 1
+	for word in lowerfy_list(listify_data(input_data)):
+		hist[word] = hist.get(word, 0) + 1
 	return hist
 
 
@@ -262,20 +215,11 @@ def histogram_arrays(
 	input_data: Optional[object] = None,
 ) -> List[List[Union[str, int]]]:
 	"""Return mutable `[word, count]` pairs."""
-	if input_data is None:
-		input_data = dictionary_main()
-	data = listify_data(input_data)
-	data = lowerfy_list(data)
-	hist = []
-
-	for word in data:
-		for item in hist:
-			if word == item[0]:
-				item[1] += 1
-				break
-		else:
-			hist.append([word, 1])
-	return hist
+	hist = histogram(input_data)
+	rows = []
+	for word, count in hist.items():
+		rows.append([word, count])
+	return rows
 
 
 def display_dict(input_data: Optional[object] = None) -> str:
@@ -283,11 +227,8 @@ def display_dict(input_data: Optional[object] = None) -> str:
 	Format counts from `input_data` as lines,
 	sorted by ascending frequency.
 	"""
-	if input_data is None:
-		input_data = dictionary_main()
-	hist = histogram(input_data)
-	output = textify_dict(hist)
-	return output
+	counts = histogram(input_data)
+	return textify_dict(counts)
 
 
 def display_weight(input_data: Optional[object] = None) -> Optional[str]:
@@ -295,11 +236,9 @@ def display_weight(input_data: Optional[object] = None) -> Optional[str]:
 	Randomly select a token from
 	`input_data`, weighted by frequency.
 	"""
-	if input_data is None:
-		input_data = dictionary_main()
-	hist = histogram(input_data)
-	hist = calculate_weight(hist)
-	return random_choice(hist)
+	counts = histogram(input_data)
+	weights = calculate_weight(counts)
+	return random_choice(weights)
 
 
 # Weighted selection
@@ -310,13 +249,11 @@ def calculate_weight(input_dict: Dict[str, int]) -> Dict[str, float]:
 	Convert counts in `input_dict` to
 	proportions of the total.
 	"""
-	weight_dict = {}
-	dict_total = 0
-	for word in input_dict:
-		dict_total += input_dict[word]
-	for word in input_dict:
-		weight_dict[word] = input_dict[word] / dict_total
-	return weight_dict
+	dict_total = sum(input_dict.values())
+	weights = {}
+	for word, count in input_dict.items():
+		weights[word] = count / dict_total
+	return weights
 
 
 def random_choice(weight_dict: Dict[str, float]) -> Optional[str]:
@@ -324,13 +261,13 @@ def random_choice(weight_dict: Dict[str, float]) -> Optional[str]:
 	Choose and print a token from
 	`weight_dict` by its weight.
 	"""
-	cumulative = 0
 	rand_select = random.random()
-	for word in weight_dict:
-		if cumulative <= rand_select < weight_dict[word] + cumulative:
+	cumulative = 0.0
+	for word, weight in weight_dict.items():
+		if cumulative <= rand_select < weight + cumulative:
 			print("SELECTED: " + word)
 			return word
-		cumulative += weight_dict[word]
+		cumulative += weight
 	print(rand_select)
 
 
@@ -338,12 +275,16 @@ def random_choice(weight_dict: Dict[str, float]) -> Optional[str]:
 
 
 @app.route("/")
-def hello_world() -> Optional[str]:
+def random_gutenberg_word() -> str:
 	"""
-	Return a random token weighted by
-	its frequency in a Project Gutenberg book.
+	Return a random token weighted by its
+	frequency in a random Project Gutenberg book.
 	"""
-	return display_weight(publication_random())
+	random_pub = publication_random()
+	token = display_weight(random_pub)
+	if not token:
+		raise ValueError("No token was selected.")
+	return token
 
 
 if __name__ == "__main__":
