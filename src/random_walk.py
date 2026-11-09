@@ -6,7 +6,7 @@ Its syntatic variable names can likely be improved.
 """
 
 from random import randrange
-from typing import Dict, Iterable, List, Tuple
+from typing import Dict, Iterable, List, Set, Tuple
 
 from .markov import MarkovChain
 
@@ -23,11 +23,14 @@ class RandomWalk(MarkovChain):
 		self.sub_phrase: Tuple[str, ...] = ()
 		# call stoppers and starters
 		self.stoppers: List[Tuple[str, ...]] = self.get_stop()
-		self.starters: List[Tuple[str, ...]] = self.get_start()
-		if not self.starters:
-			raise ValueError("corpus must contain at least one word")
 		if not self.stoppers:
 			raise ValueError("corpus must contain sentence-ending punctuation")
+		self.viable: Set[Tuple[str, ...]] = self.get_viable()
+		self.starters: List[Tuple[str, ...]] = [
+			phrase for phrase in self.get_start() if phrase in self.viable
+		]
+		if not self.starters:
+			raise ValueError("corpus must contain a sentence-ending path")
 		self.distribution: str = self.get_distribution()
 		# finally call random_walk()
 		self.random_walk()
@@ -49,6 +52,24 @@ class RandomWalk(MarkovChain):
 			if key[len(key) - 1].endswith((".", "!", "?")):
 				types.append(key)
 		return types
+
+	def get_viable(self) -> Set[Tuple[str, ...]]:
+		prefixes = {}
+		predecessors = {phrase: [] for phrase in self.dict}
+		for phrase in self.dict:
+			prefixes.setdefault(phrase[:-1], []).append(phrase)
+		for phrase in self.dict:
+			for successor in prefixes.get(phrase[1:], []):
+				predecessors[successor].append(phrase)
+
+		viable = set(self.stoppers)
+		pending = list(viable)
+		while pending:
+			for phrase in predecessors[pending.pop()]:
+				if phrase not in viable:
+					viable.add(phrase)
+					pending.append(phrase)
+		return viable
 
 	# # # # # #
 
@@ -84,6 +105,11 @@ class RandomWalk(MarkovChain):
 		self.sub_types = self.types
 		if self.order > 0:
 			for key in self.dict:
+				if key not in self.viable:
+					self.sub_tokens -= self.vocab[key]
+					self.sub_types -= 1
+					del self.vocab[key]
+					continue
 				index = self.order - 1
 				# print('\n----------')
 				# print(f'phs: {self.sub_phrase}')
