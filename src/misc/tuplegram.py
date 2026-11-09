@@ -26,13 +26,10 @@ class Tuplegram(list):
 		"""
 		Increase frequency count of given word by given count amount.
 		"""
-		# TODO: Increase word frequency by count
 		self.tokens += count
-		for item in self:
+		for index, item in enumerate(self):
 			if item[0] == word:
-				newItem = (item[0], item[1] + count)
-				self.remove(item)
-				self.append(newItem)
+				self[index] = (word, item[1] + count)
 				break
 		else:
 			self.types += 1

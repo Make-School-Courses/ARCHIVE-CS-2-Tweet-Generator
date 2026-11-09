@@ -89,70 +89,70 @@ class HashTable:
 			counter += bucket.size
 		return counter
 
-	def contains(self, myKey):
+	def contains(self, my_key):
 		"""
-		Return True if this hash table contains myKey, or False.
+		Return True if this hash table contains `my_key`, or False.
 
 		Running time: O(l = n÷b) | b = buckets & n = total num of entries
 		The number of items we have is evenly divided among each bucket.
 		This means that we just have to traverse one bucket's worth of data, or l.
 		"""
-		# Find bucket where myKey belongs
-		index = self._bucket_index(myKey)
+		# Find bucket where `my_key` belongs
+		index = self._bucket_index(my_key)
 		bucket = self.buckets[index]
 		# Check if key-value entry exists in bucket
-		return any(key == myKey for key, _ in bucket.items())
+		return any(key == my_key for key, _ in bucket.items())
 
-	def get(self, myKey):
+	def get(self, my_key):
 		"""
-		Return the value associated with the myKey, or raise KeyError.
+		Return the value associated with `my_key`, or raise KeyError.
 
 		Running time: O(l = n÷b) | b = buckets & n = total num of entries
 		The number of items we have is evenly divided among each bucket.
 		This means that we just have to traverse one bucket's worth of data, or l.
 		"""
-		# Find bucket where myKey belongs
-		index = self._bucket_index(myKey)
+		# Find bucket where `my_key` belongs
+		index = self._bucket_index(my_key)
 		bucket = self.buckets[index]
 		# Check if key-value entry exists in bucket
 		for key, value in bucket.items():
-			# If found, return value associated with myKey
-			if key == myKey:
+			# If found, return the value associated with `my_key`
+			if key == my_key:
 				return value
 		# Otherwise, raise error to tell user get failed
-		raise KeyError(f"Key not found: {myKey}")
+		raise KeyError(f"Key not found: {my_key}")
 
-	def set(self, myKey, myValue):
+	def set(self, my_key, my_value):
 		"""
-		Insert or update myKey with its associated value.
+		Insert or update `my_key` and its associated value.
 
 		Running time: O(l = n÷b) | b = buckets & n = total num of entries
 		It has to run contains(), which has the highest Order in this function
 		"""
-		# Find bucket where myKey belongs
-		index = self._bucket_index(myKey)
+		# Find bucket where `my_key` belongs
+		index = self._bucket_index(my_key)
 		bucket = self.buckets[index]
 		# Delete key-value entry if it exists in bucket
-		if self.contains(myKey):
-			self.delete(myKey)
+		if self.contains(my_key):
+			self.delete(my_key)
 		# Create a new key-value pair
-		bucket.prepend((myKey, myValue))
+		bucket.prepend((my_key, my_value))
 
-	def delete(self, myKey):
+	def delete(self, my_key):
 		"""
-		Delete myKey from this hash table, or raise KeyError.
+		Delete `my_key` from this hash table, or raise KeyError.
 
 		Running time: O(l = n÷b) | b = buckets & n = total num of entries
 		This function inherits the linked list's delete function, Order of O(n).
 		However, this is reduced to l because of how the buckets split up each linked list.
 		"""
-		# Find bucket where myKey belongs
-		index = self._bucket_index(myKey)
+		# Find bucket where `my_key` belongs
+		index = self._bucket_index(my_key)
 		bucket = self.buckets[index]
 
 		# Create quality to pass into find()
 		def quality(data):
-			return data[0] == myKey
+			return data[0] == my_key
 
 		result = bucket.find(quality)
 		# Check if key-value entry exists in bucket, and delete it
@@ -160,7 +160,7 @@ class HashTable:
 			bucket.delete(result)
 		# Otherwise, raise error to tell user delete failed
 		else:
-			raise KeyError(f"Key not found: {myKey}")
+			raise KeyError(f"Key not found: {my_key}")
 
 
 def test_hash_table():

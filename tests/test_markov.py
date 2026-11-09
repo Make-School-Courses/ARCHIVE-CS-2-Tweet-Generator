@@ -1,0 +1,23 @@
+import unittest
+
+from src.markov import MarkovChain
+
+
+class MarkovChainTest(unittest.TestCase):
+	def test_rejects_nonpositive_order(self):
+		for order in (0, -1):
+			with self.subTest(order=order), self.assertRaisesRegex(
+				ValueError,
+				"at least 1",
+			):
+				MarkovChain("one two", order)
+
+	def test_accepts_positive_order(self):
+		chain = MarkovChain("one two", 1)
+
+		self.assertEqual(chain.order, 1)
+		self.assertTrue(chain.dict)
+
+
+if __name__ == "__main__":
+	unittest.main()

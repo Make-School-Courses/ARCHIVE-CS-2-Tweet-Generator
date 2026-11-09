@@ -24,5 +24,6 @@ url = "https://api.twitter.com/1.1/statuses/update.json"
 
 def tweet(status: str) -> str:
 	print("tweet tweet!")
-	resp = session.post(url, {"status": status})
+	resp = session.post(url, {"status": status}, timeout=10)
+	resp.raise_for_status()
 	return resp.text

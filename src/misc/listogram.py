@@ -26,7 +26,6 @@ class Listogram(list):
 		"""
 		Increase frequency count of given word by given count amount.
 		"""
-		# TODO: Increase word frequency by count
 		self.tokens += count
 		for array in self:
 			if array[0] == word:

@@ -8,6 +8,8 @@ from typing import Dict, List, Tuple
 
 class MarkovChain:
 	def __init__(self, corpus: str, order: int) -> None:
+		if order < 1:
+			raise ValueError("order must be at least 1")
 		# import arguments
 		self.corpus: str = corpus
 		self.order: int = order
@@ -17,10 +19,10 @@ class MarkovChain:
 		self.dict: Dict[Tuple[str, ...], int] = {}
 		self.types: int = 0
 		self.tokens: int = 0
-		# call saveDict
-		self.saveDict()
+		# call save_dict
+		self.save_dict()
 
-	def saveWord(self) -> None:
+	def save_word(self) -> None:
 		"""
 		Saves a complete stored word into the phrase, then resets the stored word.
 		The results are saved in self.word
@@ -33,10 +35,10 @@ class MarkovChain:
 		if len(self.phrase) < self.order:
 			self.phrase += [self.word]
 		if len(self.phrase) == self.order:
-			self.savePhrase()
+			self.save_phrase()
 		self.word = ""
 
-	def savePhrase(self) -> None:
+	def save_phrase(self) -> None:
 		"""
 		Saves a complete stored phrase into the dictionary, then resets the stored phrase.
 		The results are saved in self.phrase
@@ -55,7 +57,7 @@ class MarkovChain:
 		self.tokens += 1
 		del self.phrase[0]
 
-	def saveDict(self) -> None:
+	def save_dict(self) -> None:
 		"""
 		Creates a markov chain by looping through each letter in the corpus.
 		The results are saved in self.dict
@@ -68,15 +70,15 @@ class MarkovChain:
 		self.dict = {}
 		for grapheme in self.corpus:
 			if grapheme == " ":  # this can be improved greatly
-				self.saveWord()
+				self.save_word()
 			else:
 				self.word += grapheme
-		self.saveWord()
+		self.save_word()
 
 
 if __name__ == "__main__":
 	fishy = "One fish two fish, red fish blue fish"
-	Model = MarkovChain(fishy, 1)
-	print(f"DICTIONARY:\n{Model.dict}\n")
-	print(f"UNIQUE TYPES: {Model.types}\n")
-	print(f"TOTAL TOKENS: {Model.tokens}\n")
+	model = MarkovChain(fishy, 1)
+	print(f"DICTIONARY:\n{model.dict}\n")
+	print(f"UNIQUE TYPES: {model.types}\n")
+	print(f"TOTAL TOKENS: {model.tokens}\n")
