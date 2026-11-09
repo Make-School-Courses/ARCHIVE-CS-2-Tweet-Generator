@@ -4,7 +4,7 @@ from io import BytesIO, StringIO
 from unittest import TestCase
 from unittest.mock import patch
 
-from src.defactor.word_games import publication_random
+from src.defactor.word_games import calculate_weight, publication_random
 
 
 class PublicationRandomTest(TestCase):
@@ -24,6 +24,14 @@ class PublicationRandomTest(TestCase):
 		self.assertEqual(text, "café second third fourth")
 		self.assertNotIn("b'", text)
 		self.assertEqual(output.getvalue(), "200 SUCCESS\n")
+
+	def test_calculate_weight_rejects_nonpositive_total(self):
+		for counts in ({}, {"a": 0}, {"a": -1}):
+			with self.subTest(counts=counts), self.assertRaisesRegex(
+				ValueError,
+				"positive total",
+			):
+				calculate_weight(counts)
 
 
 if __name__ == "__main__":

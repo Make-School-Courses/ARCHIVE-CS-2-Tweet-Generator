@@ -8,6 +8,8 @@ from typing import Dict, List, Tuple
 
 class MarkovChain:
 	def __init__(self, corpus: str, order: int) -> None:
+		if order < 1:
+			raise ValueError("order must be at least 1")
 		# import arguments
 		self.corpus: str = corpus
 		self.order: int = order

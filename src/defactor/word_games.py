@@ -250,8 +250,11 @@ def calculate_weight(input_dict: Dict[str, int]) -> Dict[str, float]:
 	"""
 	Convert counts in `input_dict` to
 	proportions of the total.
+	Raise `ValueError` if the total isn't positive.
 	"""
 	dict_total = sum(input_dict.values())
+	if dict_total <= 0:
+		raise ValueError("input_dict must have a positive total count")
 	weights = {}
 	for word, count in input_dict.items():
 		weights[word] = count / dict_total
