@@ -1,36 +1,33 @@
-"""
-This file is feature complete.
-The class outputs a Markov Chain of nth order, with inputs of corpus and order.
-"""
-
 from typing import Dict, List, Tuple
 
 
 class MarkovChain:
+	"""Build an nth-order Markov chain from a corpus."""
+
 	def __init__(self, corpus: str, order: int) -> None:
 		if order < 1:
-			raise ValueError("order must be at least 1")
-		# import arguments
+			raise ValueError("Order must be at least 1.")
+		# Import arguments.
 		self.corpus: str = corpus
 		self.order: int = order
-		# initialize 'empty' variables
+		# Initialize empty variables.
 		self.word: str = ""
 		self.phrase: List[str] = []
 		self.dict: Dict[Tuple[str, ...], int] = {}
 		self.types: int = 0
 		self.tokens: int = 0
-		# call save_dict
+		# Build the Markov chain.
 		self.save_dict()
 
 	def save_word(self) -> None:
 		"""
-		Saves a complete stored word into the phrase, then resets the stored word.
-		The results are saved in self.word
+		Saves a complete word into the phrase, then resets the word.
+		Results are saved in self.word.
 		---
 		When a word is being formed:
-		> its stored in a string in self.word
+		> It is stored in self.word.
 		When a word is complete:
-		> its put into the self.phrase array, then reset.
+		> It is added to self.phrase, then reset.
 		"""
 		if len(self.phrase) < self.order:
 			self.phrase += [self.word]
@@ -40,13 +37,13 @@ class MarkovChain:
 
 	def save_phrase(self) -> None:
 		"""
-		Saves a complete stored phrase into the dictionary, then resets the stored phrase.
-		The results are saved in self.phrase
+		Saves a complete phrase into the dictionary, then resets it.
+		Results are saved in self.phrase.
 		---
 		When a phrase is being formed:
-		> its stored in an array in self.phrase
+		> It is stored in self.phrase.
 		When a phrase is complete:
-		> its put into the self.dict dictionary, then reset.
+		> It is added to self.dict, then reset.
 		"""
 		phrase = tuple(self.phrase)
 		if phrase in self.dict:
@@ -59,17 +56,17 @@ class MarkovChain:
 
 	def save_dict(self) -> None:
 		"""
-		Creates a markov chain by looping through each letter in the corpus.
-		The results are saved in self.dict
+		Creates a Markov chain by looping through each letter in the corpus.
+		The results are saved in self.dict.
 		---
 		When a dictionary is being formed:
-		> its stored in a histogram in self.dict
+		> It is stored as a histogram in self.dict.
 		When a dictionary is complete:
-		> its put into the self.dict dictionary.
+		> It is added to self.dict.
 		"""
 		self.dict = {}
 		for grapheme in self.corpus:
-			if grapheme == " ":  # this can be improved greatly
+			if grapheme == " ":  # This can be improved greatly.
 				self.save_word()
 			else:
 				self.word += grapheme

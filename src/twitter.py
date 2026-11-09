@@ -6,10 +6,18 @@ from requests_oauthlib import OAuth1Session
 
 dotenv.load_dotenv(".env")
 
-consumer_key: Optional[str] = os.environ.get("TWITTER_CONSUMER_KEY")
-consumer_secret: Optional[str] = os.environ.get("TWITTER_CONSUMER_SECRET")
-access_token: Optional[str] = os.environ.get("TWITTER_ACCESS_TOKEN")
-access_token_secret: Optional[str] = os.environ.get("TWITTER_ACCESS_TOKEN_SECRET")
+consumer_key: Optional[str] = os.environ.get(
+	"TWITTER_CONSUMER_KEY"
+)
+consumer_secret: Optional[str] = os.environ.get(
+	"TWITTER_CONSUMER_SECRET"
+)
+access_token: Optional[str] = os.environ.get(
+	"TWITTER_ACCESS_TOKEN"
+)
+access_token_secret: Optional[str] = os.environ.get(
+	"TWITTER_ACCESS_TOKEN_SECRET"
+)
 
 session: OAuth1Session = OAuth1Session(
 	consumer_key,
