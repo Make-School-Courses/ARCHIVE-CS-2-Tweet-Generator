@@ -1,15 +1,15 @@
 import unittest
 from unittest.mock import Mock, patch
 
-from src import twitter
+from src import bluesky
 
 
 class TweetTest(unittest.TestCase):
 	@patch.dict(
-		"src.twitter.os.environ",
+		"src.bluesky.os.environ",
 		{"BLUESKY_APP_PASSWORD": "app-password"},
 	)
-	@patch("src.twitter.requests.post")
+	@patch("src.bluesky.requests.post")
 	def test_tweet_creates_session_and_posts_to_bluesky(self, post):
 		session_response = Mock()
 		session_response.json.return_value = {
@@ -20,20 +20,20 @@ class TweetTest(unittest.TestCase):
 		post_response.text = "posted"
 		post.side_effect = [session_response, post_response]
 
-		result = twitter.tweet("hello")
+		result = bluesky.tweet("hello")
 
 		self.assertEqual(result, "posted")
 		self.assertEqual(post.call_count, 2)
 		session_call, record_call = post.call_args_list
 		self.assertEqual(
 			session_call.args,
-			(f"{twitter.api_url}/com.atproto.server.createSession",),
+			(f"{bluesky.api_url}/com.atproto.server.createSession",),
 		)
 		self.assertEqual(
 			session_call.kwargs,
 			{
 				"json": {
-					"identifier": twitter.BLUESKY_HANDLE,
+					"identifier": bluesky.BLUESKY_HANDLE,
 					"password": "app-password",
 				},
 				"timeout": 10,
@@ -41,7 +41,7 @@ class TweetTest(unittest.TestCase):
 		)
 		self.assertEqual(
 			record_call.args,
-			(f"{twitter.api_url}/com.atproto.repo.createRecord"),
+			(f"{bluesky.api_url}/com.atproto.repo.createRecord",),
 		)
 		self.assertEqual(
 			record_call.kwargs["json"]["repo"],
@@ -58,11 +58,11 @@ class TweetTest(unittest.TestCase):
 		session_response.raise_for_status.assert_called_once_with()
 		post_response.raise_for_status.assert_called_once_with()
 
-	@patch.dict("src.twitter.os.environ", {}, clear=True)
-	@patch("src.twitter.requests.post")
+	@patch.dict("src.bluesky.os.environ", {}, clear=True)
+	@patch("src.bluesky.requests.post")
 	def test_tweet_requires_bluesky_credentials(self, post):
 		with self.assertRaisesRegex(RuntimeError, "BLUESKY_APP_PASSWORD"):
-			twitter.tweet("hello")
+			bluesky.tweet("hello")
 
 		post.assert_not_called()
 

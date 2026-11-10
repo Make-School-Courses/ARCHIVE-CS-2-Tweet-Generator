@@ -5,9 +5,9 @@ from typing import Iterable
 
 from flask import Flask, abort, render_template_string, request
 
+from .bluesky import tweet
 from .cleaner import clean_text, read_corpus
 from .random_walk import RandomWalk
-from .twitter import tweet
 
 # Send our Python in a bottle to the open seas of the web (use Flask).
 app: Flask = Flask(__name__)
