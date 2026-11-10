@@ -4,8 +4,6 @@
 import re
 from pathlib import Path
 
-DATA_DIR: Path = Path(__file__).resolve().parent / "data" / "corpora"
-
 
 def read_corpus(source: Path) -> str:
 	"""Read text from a corpus file."""
@@ -19,10 +17,3 @@ def clean_text(text: str) -> str:
 	text = re.sub(r"[^a-zA-Z'\-,.!?&]", " ", text)
 	words = text.split()
 	return " ".join(words)
-
-
-if __name__ == "__main__":
-	source = DATA_DIR / "frankenstein_450.txt"
-	text = read_corpus(source)
-	text = clean_text(text)
-	print(text)

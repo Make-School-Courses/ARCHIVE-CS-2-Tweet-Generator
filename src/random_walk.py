@@ -149,10 +149,3 @@ class RandomWalk(MarkovChain):
 			value = self.dict[key] / self.tokens * 1000
 			string += f"{key}: {value}‰\n"
 		return string
-
-
-if __name__ == "__main__":
-	fishy = "One fish two fish red fish blue fish."
-	engine = RandomWalk(fishy, 3)
-	print(engine.distribution)
-	print(engine.sentance)

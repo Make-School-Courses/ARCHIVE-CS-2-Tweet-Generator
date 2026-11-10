@@ -25,6 +25,15 @@ class AppTest(unittest.TestCase):
 		tweet.assert_not_called()
 
 	@patch("src.app.tweet")
+	def test_homepage_generates_from_bundled_corpora(self, tweet):
+		response = self.client.get("/")
+
+		self.assertEqual(response.status_code, 200)
+		self.assertIn(b"<h1", response.data)
+		self.assertIn(b"Tweet This!", response.data)
+		tweet.assert_not_called()
+
+	@patch("src.app.tweet")
 	def test_tweet_button_posts_sentence_and_hides_button(self, tweet):
 		response = self.client.post(
 			"/tweet",

@@ -71,11 +71,3 @@ class MarkovChain:
 			else:
 				self.word += grapheme
 		self.save_word()
-
-
-if __name__ == "__main__":
-	fishy = "One fish two fish, red fish blue fish"
-	model = MarkovChain(fishy, 1)
-	print(f"DICTIONARY:\n{model.dict}\n")
-	print(f"UNIQUE TYPES: {model.types}\n")
-	print(f"TOTAL TOKENS: {model.tokens}\n")

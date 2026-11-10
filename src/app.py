@@ -95,11 +95,3 @@ def render_page(sentance: str, tweeted: bool = False) -> str:
 		sentance=sentance,
 		tweeted=tweeted,
 	)
-
-
-if __name__ == "__main__":
-	source = (
-		DATA_DIR / "frankenstein_450.txt",
-		DATA_DIR / "sherlock_300.txt",
-	)
-	generate(source, 3)
