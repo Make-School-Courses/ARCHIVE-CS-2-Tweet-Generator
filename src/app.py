@@ -3,14 +3,14 @@
 from collections.abc import Iterable
 from pathlib import Path
 
-from flask import Flask, abort, render_template_string, request
+from flask import Flask, Response, jsonify, render_template, request
 
 from .bluesky import tweet
 from .cleaner import clean_text, read_corpus
 from .random_walk import RandomWalk
 
 # Send our Python in a bottle to the open seas of the web (use Flask).
-app: Flask = Flask(__name__, static_folder=None)
+app: Flask = Flask(__name__, static_folder="static")
 DATA_DIR: Path = Path(__file__).resolve().parent / "data" / "corpora"
 
 
@@ -34,80 +34,38 @@ def generate(corpora: Iterable[Path], order: int) -> str:
 
 @app.route("/tweet-generator")
 def deploy() -> str:
-	"""
-	Render a generated sentence for the home page.
+	"""Render the tweet generator homepage."""
+	return render_page(
+		phrase=request.args.get("phrase"),
+		tweet_id=request.args.get("tweet_id"),
+	)
 
-	This route combines a few built-in source texts, generates a new sentence,
-	and returns the HTML page that presents it to the user.
-	"""
+
+@app.route("/tweet-generator/generate", methods=["POST"])
+def generate_and_post() -> Response:
+	"""Generates a phrase, posts it to Bluesky, and returns data."""
+	# Use this corpora as the booksource.
 	source = (
 		DATA_DIR / "frankenstein_450.txt",
 		DATA_DIR / "sherlock_300.txt",
 	)
-	sentance = generate(source, 3)
-	return render_page(sentance)
 
-
-@app.route("/tweet-generator/post-tweet", methods=["POST"])
-def post_tweet() -> str:
-	"""
-	Post the submitted tweet to Bluesky and show the result page.
-
-	The submitted text is required and is rejected with a 400 response when
-	missing. On success, the tweet is posted and the result page is rendered
-	with a confirmation banner.
-	"""
-	sentance = request.form.get("status")
-	if not sentance:
-		abort(400)
-	tweet(sentance)
-	return render_page(sentance, tweeted=True)
+	# Generate the phrase and tweet.
+	phrase = generate(source, 3)
+	tweet_id = tweet(phrase)
+	return jsonify({
+		"phrase": phrase,
+		"tweet_id": tweet_id,
+	})
 
 
 def render_page(
-	sentance: str,
-	tweeted: bool = False,
-	post_url: str = "/tweet-generator/post-tweet",
+	phrase: str | None = None,
+	tweet_id: str | None = None,
 ) -> str:
-	"""
-	Return the HTML page used to display a generated tweet.
-
-	The page shows the sentence and either a tweet submission form or a
-	confirmation that the tweet was already posted to Bluesky.
-	"""
-	return render_template_string(
-		"""
-		<div
-			style="height:100%;
-			display:flex;
-			flex-direction:column;
-			align-items:center;
-			justify-content:center"
-		>
-			<h1
-				style="text-align:center;
-				width:50%;
-				margin:0 auto"
-			>
-				{{ sentance }}
-			</h1>
-			<hr />
-
-			{% if tweeted %}
-				<p style="text-align:center">
-					<em>
-						This tweet was posted to Bluesky!
-					</em>
-				</p>
-			{% else %}
-				<form action="{{ post_url }}" method="post">
-					<input type="hidden" name="status" value="{{ sentance }}">
-					<button type="submit">Tweet This!</button>
-				</form>
-			{% endif %}
-		</div>
-		""",
-		sentance=sentance,
-		tweeted=tweeted,
-		post_url=post_url,
+	"""Render the page with a button for generating and posting a phrase."""
+	return render_template(
+		"index.jinja",
+		phrase=phrase,
+		tweet_id=tweet_id,
 	)

@@ -12,7 +12,7 @@ BLUESKY_HANDLE = "frankensteinengine.bsky.social"
 
 
 def tweet(status: str) -> str:
-	"""Post a tweet as a Bluesky post and return the API response."""
+	"""Post a Bluesky post and return its AT URI."""
 	# The handle identifies the account; authenticate with its app password.
 	app_password = os.environ.get("BLUESKY_APP_PASSWORD")
 
@@ -48,4 +48,4 @@ def tweet(status: str) -> str:
 	)
 
 	response.raise_for_status()
-	return response.text
+	return response.json()["uri"]

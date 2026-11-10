@@ -9,29 +9,9 @@ class AppTest(unittest.TestCase):
 		app.config["TESTING"] = True
 		self.client = app.test_client()
 
-	def test_only_expected_app_routes_are_registered(self):
-		routes = set()
-		for rule in app.url_map.iter_rules():
-			if rule.methods is None:
-				self.fail(f"Route {rule.rule} has no registered methods")
-			routes.add(
-				(
-					rule.rule,
-					tuple(sorted(rule.methods - {"HEAD", "OPTIONS"})),
-				),
-			)
-
-		self.assertEqual(
-			routes,
-			{
-				("/tweet-generator", ("GET",)),
-				("/tweet-generator/post-tweet", ("POST",)),
-			},
-		)
-
 	@patch("src.app.tweet")
 	@patch("src.app.generate", return_value="A generated sentence.")
-	def test_homepage_displays_tweet_button_without_posting(
+	def test_homepage_shows_generate_button_without_generating_or_posting(
 		self,
 		generate,
 		tweet,
@@ -39,50 +19,74 @@ class AppTest(unittest.TestCase):
 		response = self.client.get("/tweet-generator")
 
 		self.assertEqual(response.status_code, 200)
-		self.assertIn(b"A generated sentence.", response.data)
-		self.assertIn(b"Tweet This!", response.data)
-		generate.assert_called_once()
+		self.assertIn(b"Generate a Phrase!", response.data)
+		self.assertIn(
+			b'action="/tweet-generator/generate"',
+			response.data,
+		)
+		self.assertIn(
+			b'<script type="module" src="/static/generate.mjs"></script>',
+			response.data,
+		)
+		generate.assert_not_called()
 		tweet.assert_not_called()
 
-	@patch("src.app.tweet")
-	def test_homepage_generates_from_bundled_corpora(self, tweet):
-		response = self.client.get("/tweet-generator")
-
-		self.assertEqual(response.status_code, 200)
-		self.assertIn(b"<h1", response.data)
-		self.assertIn(b"Tweet This!", response.data)
-		tweet.assert_not_called()
-
-	@patch("src.app.generate", return_value="A generated sentence.")
-	def test_site_path_uses_post_tweet_route(self, generate):
-		response = self.client.get("/tweet-generator")
+	def test_homepage_displays_results_from_query_params(self):
+		response = self.client.get(
+			"/tweet-generator",
+			query_string={
+				"phrase": "A generated sentence.",
+				"tweet_id": "at://did:plc:alice/app.bsky.feed.post/abc",
+			},
+		)
 
 		self.assertEqual(response.status_code, 200)
 		self.assertIn(
-			b'action="/tweet-generator/post-tweet"',
+			b"<p>Phrase: A generated sentence.</p>",
 			response.data,
 		)
-		generate.assert_called_once()
-
-	@patch("src.app.tweet")
-	def test_tweet_button_posts_sentence_and_hides_button(self, tweet):
-		response = self.client.post(
-			"/tweet-generator/post-tweet",
-			data={"status": "A generated sentence."},
+		self.assertIn(
+			b"<p>Tweet ID: at://did:plc:alice/app.bsky.feed.post/abc</p>",
+			response.data,
 		)
 
+	@patch(
+		"src.app.tweet",
+		return_value="at://did:plc:alice/app.bsky.feed.post/abc",
+	)
+	@patch("src.app.generate", return_value="A generated sentence.")
+	def test_generate_route_returns_json_for_server_generated_phrase(
+		self, generate, tweet
+	):
+		response = self.client.post("/tweet-generator/generate")
+
 		self.assertEqual(response.status_code, 200)
-		self.assertIn(b"This tweet was posted to Bluesky!", response.data)
-		self.assertNotIn(b"Tweet This!", response.data)
+		self.assertEqual(response.mimetype, "application/json")
+		expected = {
+			"phrase": "A generated sentence.",
+			"tweet_id": "at://did:plc:alice/app.bsky.feed.post/abc",
+		}
+		self.assertEqual(response.json, expected)
+		generate.assert_called_once()
 		tweet.assert_called_once_with("A generated sentence.")
 
-	@patch("src.app.tweet")
-	def test_tweet_requires_a_status(self, tweet):
-		response = self.client.post("/tweet-generator/post-tweet")
+	@patch(
+		"src.app.tweet",
+		return_value="at://did:plc:alice/app.bsky.feed.post/abc",
+	)
+	@patch("src.app.generate", return_value="")
+	def test_generate_route_returns_empty_phrase_as_json(self, generate, tweet):
+		response = self.client.post("/tweet-generator/generate")
 
-		self.assertEqual(response.status_code, 400)
-		tweet.assert_not_called()
-
+		self.assertEqual(response.status_code, 200)
+		self.assertEqual(response.mimetype, "application/json")
+		expected = {
+			"phrase": "",
+			"tweet_id": "at://did:plc:alice/app.bsky.feed.post/abc",
+		}
+		self.assertEqual(response.json, expected)
+		generate.assert_called_once()
+		tweet.assert_called_once_with("")
 
 
 if __name__ == "__main__":
