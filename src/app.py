@@ -1,7 +1,7 @@
 """Serve Markov-generated sentences and post them to Bluesky."""
 
+from collections.abc import Iterable
 from pathlib import Path
-from typing import Iterable
 
 from flask import Flask, abort, render_template_string, request
 

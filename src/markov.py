@@ -1,6 +1,3 @@
-from typing import Dict, List, Tuple
-
-
 class MarkovChain:
 	"""Build an nth-order Markov chain from a corpus."""
 
@@ -12,8 +9,8 @@ class MarkovChain:
 		self.order: int = order
 		# Initialize empty variables.
 		self.word: str = ""
-		self.phrase: List[str] = []
-		self.dict: Dict[Tuple[str, ...], int] = {}
+		self.phrase: list[str] = []
+		self.dict: dict[tuple[str, ...], int] = {}
 		self.types: int = 0
 		self.tokens: int = 0
 		# Build the Markov chain.

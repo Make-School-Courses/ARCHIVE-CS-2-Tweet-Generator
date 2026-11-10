@@ -5,7 +5,7 @@ For example, dracula_850 has 850 characters, thus making it a difficult for this
 The default is sherlock_300.
 
 Run locally with `python -m flask --app src.app run`; run tests with `python -m unittest discover -s tests`.
-Python 3.7 or newer is required.
+Python 3.10 or newer is required.
 Run lint with `ruff check .`.
 
 The homepage generates a tweet draft.

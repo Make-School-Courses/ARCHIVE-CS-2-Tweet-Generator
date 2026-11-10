@@ -18,9 +18,7 @@ def tweet(status: str) -> str:
 
 	# Raise an error when credentials have not been configured.
 	if not app_password:
-		raise RuntimeError(
-			"Set $BLUESKY_APP_PASSWORD to post to Bluesky."
-		)
+		raise RuntimeError("Set $BLUESKY_APP_PASSWORD to post to Bluesky.")
 
 	# Create a session to obtain the account DID and access token.
 	session = requests.post(
