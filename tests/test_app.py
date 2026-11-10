@@ -41,7 +41,7 @@ class AppTest(unittest.TestCase):
 		)
 
 		self.assertEqual(response.status_code, 200)
-		self.assertIn(b"This message was tweeted!", response.data)
+		self.assertIn(b"This tweet was posted to Bluesky!", response.data)
 		self.assertNotIn(b"Tweet This!", response.data)
 		tweet.assert_called_once_with("A generated sentence.")
 

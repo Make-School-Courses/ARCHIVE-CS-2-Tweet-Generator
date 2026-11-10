@@ -1,4 +1,4 @@
-"""Serve Markov-generated sentences and post them to Twitter."""
+"""Serve Markov-generated sentences and post them to Bluesky."""
 
 from pathlib import Path
 from typing import Iterable
@@ -50,6 +50,13 @@ def deploy() -> str:
 
 @app.route("/tweet", methods=["POST"])
 def post_tweet() -> str:
+	"""
+	Post the submitted tweet to Bluesky and show the result page.
+
+	The submitted text is required and is rejected with a 400 response when
+	missing. On success, the tweet is posted and the result page is rendered
+	with a confirmation banner.
+	"""
 	sentance = request.form.get("status")
 	if not sentance:
 		abort(400)
@@ -58,6 +65,12 @@ def post_tweet() -> str:
 
 
 def render_page(sentance: str, tweeted: bool = False) -> str:
+	"""
+	Return the HTML page used to display a generated tweet.
+
+	The page shows the sentence and either a tweet submission form or a
+	confirmation that the tweet was already posted to Bluesky.
+	"""
 	return render_template_string(
 		"""
 		<div
@@ -79,9 +92,7 @@ def render_page(sentance: str, tweeted: bool = False) -> str:
 			{% if tweeted %}
 				<p style="text-align:center">
 					<em>
-						<a href="https://twitter.com/frankensteinen1">
-							This message was tweeted! Check it out!
-						</a>
+						This tweet was posted to Bluesky!
 					</em>
 				</p>
 			{% else %}

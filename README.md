@@ -7,10 +7,11 @@ Run locally with `python -m flask --app src.app run`; run tests with `python -m 
 Python 3.7 or newer is required.
 Run lint with `ruff check .`.
 
-The homepage generates a tweet draft. Click **Tweet This!** to post it.
+The homepage generates a tweet draft. Click **Tweet This!** to post it to
+Bluesky.
 
 ## Website
 https://tweet-generator-nak.herokuapp.com/
 
-## Twitter Account
-https://twitter.com/frankensteinen1
+## Bluesky Account
+https://bsky.app/profile/frankensteinengine.bsky.social
