@@ -10,7 +10,7 @@ from .cleaner import clean_text, read_corpus
 from .random_walk import RandomWalk
 
 # Send our Python in a bottle to the open seas of the web (use Flask).
-app: Flask = Flask(__name__)
+app: Flask = Flask(__name__, static_folder=None)
 DATA_DIR: Path = Path(__file__).resolve().parent / "data" / "corpora"
 
 
@@ -32,7 +32,7 @@ def generate(corpora: Iterable[Path], order: int) -> str:
 	return engine.sentance
 
 
-@app.route("/")
+@app.route("/tweet-generator")
 def deploy() -> str:
 	"""
 	Render a generated sentence for the home page.
@@ -48,7 +48,7 @@ def deploy() -> str:
 	return render_page(sentance)
 
 
-@app.route("/tweet", methods=["POST"])
+@app.route("/tweet-generator/post-tweet", methods=["POST"])
 def post_tweet() -> str:
 	"""
 	Post the submitted tweet to Bluesky and show the result page.
@@ -64,7 +64,11 @@ def post_tweet() -> str:
 	return render_page(sentance, tweeted=True)
 
 
-def render_page(sentance: str, tweeted: bool = False) -> str:
+def render_page(
+	sentance: str,
+	tweeted: bool = False,
+	post_url: str = "/tweet-generator/post-tweet",
+) -> str:
 	"""
 	Return the HTML page used to display a generated tweet.
 
@@ -96,7 +100,7 @@ def render_page(sentance: str, tweeted: bool = False) -> str:
 					</em>
 				</p>
 			{% else %}
-				<form action="/tweet" method="post">
+				<form action="{{ post_url }}" method="post">
 					<input type="hidden" name="status" value="{{ sentance }}">
 					<button type="submit">Tweet This!</button>
 				</form>
@@ -105,4 +109,5 @@ def render_page(sentance: str, tweeted: bool = False) -> str:
 		""",
 		sentance=sentance,
 		tweeted=tweeted,
+		post_url=post_url,
 	)

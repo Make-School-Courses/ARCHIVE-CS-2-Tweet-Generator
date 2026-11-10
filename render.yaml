@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: tweet-generator
+    runtime: python
+    branch: main
+
+    autoDeploy: true
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn src.app:app
+    healthCheckPath: /tweet-generator
+    envVars:
+      - key: BLUESKY_APP_PASSWORD
+        sync: false
