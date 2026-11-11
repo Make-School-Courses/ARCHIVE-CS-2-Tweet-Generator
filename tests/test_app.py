@@ -1,5 +1,6 @@
 import unittest
 from unittest.mock import Mock, patch
+from urllib.parse import urlsplit
 
 from werkzeug.exceptions import BadRequest
 
@@ -109,6 +110,35 @@ class AppTest(unittest.TestCase):
 		)
 		generate.assert_called_once()
 		tweet.assert_called_once_with(phrase)
+
+	def test_routes_with_trailing_slashes_redirect_to_canonical_routes(self):
+		homepage_response = self.client.get(
+			"/tweet-generator/",
+			query_string={"phrase": "generated"},
+		)
+		self.assertEqual(homepage_response.status_code, 308)
+		homepage_location = urlsplit(
+			homepage_response.headers["Location"],
+		)
+		self.assertEqual(homepage_location.path, "/tweet-generator")
+		self.assertEqual(homepage_location.query, "phrase=generated")
+
+		with (
+			patch("src.app.generate", return_value="A generated sentence."),
+			patch(
+				"src.app.tweet",
+				return_value="at://did:plc:alice/app.bsky.feed.post/abc",
+			),
+		):
+			generate_response = self.client.post(
+				"/tweet-generator/generate/",
+			)
+
+		self.assertEqual(generate_response.status_code, 308)
+		self.assertEqual(
+			urlsplit(generate_response.headers["Location"]).path,
+			"/tweet-generator/generate",
+		)
 
 	def test_phrase_compression_round_trips_unicode(self):
 		phrase = "A whisper from beyond... caf\u00e9 \U0001f47b"

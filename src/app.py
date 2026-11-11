@@ -8,7 +8,16 @@ from collections.abc import Iterable
 from pathlib import Path
 from urllib.parse import quote
 
-from flask import Flask, Response, abort, jsonify, render_template, request
+from flask import (
+	Flask,
+	Response,
+	abort,
+	jsonify,
+	redirect,
+	render_template,
+	request,
+)
+from werkzeug.wrappers import Response as WerkzeugResponse
 
 from .bluesky import BlueskyProfile, get_profile, tweet
 from .cleaner import clean_text, read_corpus
@@ -92,6 +101,14 @@ def generate(corpora: Iterable[Path], order: int) -> str:
 	return engine.sentance
 
 
+def redirect_to_canonical_route() -> WerkzeugResponse:
+	"""Redirect a trailing-slash route while preserving its query string."""
+	destination = request.path[:-1]
+	if request.query_string:
+		destination += f"?{request.query_string.decode('latin-1')}"
+	return redirect(destination, code=308)
+
+
 @app.route("/tweet-generator")
 def deploy() -> str:
 	"""Render the tweet generator homepage."""
@@ -114,6 +131,12 @@ def deploy() -> str:
 	)
 
 
+@app.route("/tweet-generator/")
+def redirect_homepage() -> WerkzeugResponse:
+	"""Redirect the trailing-slash homepage route."""
+	return redirect_to_canonical_route()
+
+
 @app.route("/tweet-generator/generate", methods=["POST"])
 def generate_and_post() -> Response:
 	"""Generates a phrase, posts it to Bluesky, and returns data."""
@@ -131,6 +154,12 @@ def generate_and_post() -> Response:
 		"compressed_phrase": compress_phrase(phrase),
 		"tweet_id": tweet_id,
 	})
+
+
+@app.route("/tweet-generator/generate/", methods=["POST"])
+def redirect_generate() -> WerkzeugResponse:
+	"""Redirect the trailing-slash generation route."""
+	return redirect_to_canonical_route()
 
 
 def render_page(
