@@ -21,10 +21,10 @@ class AppTest(unittest.TestCase):
 		self.assertEqual(response.status_code, 200)
 		self.assertIn(b"<h1>Tweet Generator</h1>", response.data)
 		self.assertIn(
-			b"Generate a phrase inspired by Frankenstein and Sherlock Holmes,",
+			b"Using Markov Chains, this site generates a phrase",
 			response.data,
 		)
-		self.assertIn(b"then post it to Bluesky.", response.data)
+		self.assertIn(b'including "Frankenstein".', response.data)
 		self.assertIn(b"Generate a Phrase!", response.data)
 		self.assertIn(
 			b'href="https://bsky.app/profile/frankensteinengine.bsky.social"',
@@ -62,6 +62,7 @@ class AppTest(unittest.TestCase):
 			b"<p>Phrase: A generated sentence.</p>",
 			response.data,
 		)
+		self.assertIn(b'<section id="generated-result">', response.data)
 		self.assertIn(
 			b"<p>Tweet ID: at://did:plc:alice/app.bsky.feed.post/abc</p>",
 			response.data,
