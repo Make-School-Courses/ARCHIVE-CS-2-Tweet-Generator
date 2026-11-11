@@ -3,13 +3,44 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='theme.css') }}"
+		>
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='layout.css') }}"
+		>
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='components.css') }}"
+		>
 	</head>
 
 	<body>
 		<main>
+			<header>
+				<p class="eyebrow">There's a whisper from beyond...</p>
+
+				<h1>Tweet Generator</h1>
+				<p class="description">
+					This site generates a random phrase from <em>Frankenstein</em> using Markov chains, then posts it to Bluesky.
+				</p>
+			</header>
+
 			{% include "form.jinja" %}
 			{% include "response.jinja" %}
+
+			<footer>
+				<nav aria-label="Related links">
+					<a href="https://bsky.app/profile/frankensteinengine.bsky.social">
+						Bluesky account
+					</a>
+					<a href="https://github.com/noltron000/tweet-generator">
+						GitHub repository
+					</a>
+				</nav>
+			</footer>
 		</main>
 		<script
 			type="module"

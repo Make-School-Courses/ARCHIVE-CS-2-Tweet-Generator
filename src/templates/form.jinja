@@ -1,9 +1,13 @@
 <form
 	id="generate-form"
+	class="surface"
 	action="/tweet-generator/generate"
 	method="post"
 >
 	<button type="submit">
-		Generate a Phrase!
+		<span id="generate-label">Generate a Phrase!</span>
+		<span id="loading-status" role="status" aria-live="polite" hidden>
+			Generating tweet...
+		</span>
 	</button>
 </form>

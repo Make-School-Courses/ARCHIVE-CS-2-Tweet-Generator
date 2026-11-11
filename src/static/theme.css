@@ -1,0 +1,30 @@
+:root {
+	color-scheme: dark;
+	font: 16px Georgia, "Times New Roman", serif;
+
+	--page: #100f10;
+	--surface-start: #211d1d;
+	--surface-end: #171516;
+	--border: #403332;
+	--accent: #7e302f;
+	--accent-hover: #963c38;
+	--text: #e8dfd0;
+	--heading: #f0e5d1;
+	--muted: #b6aa9c;
+	--link: #c5a58b;
+	--focus: #d5a477;
+
+	color: var(--text);
+	background: var(--page);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	margin: 0;
+	background: var(--page);
+	color: var(--text);
+}

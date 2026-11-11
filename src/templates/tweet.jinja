@@ -1,0 +1,35 @@
+<a
+	class="surface post-card"
+	href="{{ post_url }}"
+	target="_blank"
+	rel="noopener noreferrer"
+	aria-label="View this post on Bluesky"
+>
+	<header>
+		<img
+			class="avatar"
+			src="{{ profile.avatar_url }}"
+			alt=""
+		>
+		<div class="identity">
+			<strong>
+				{{ profile.display_name }}
+				{% if profile.is_bot %}
+				<span class="bot" aria-label="Bot account" title="Bot account">🤖</span>
+				{% endif %}
+			</strong>
+			<span>@{{ profile.handle }}</span>
+		</div>
+	</header>
+	<blockquote class="text">
+		<p lang="en">{{ phrase }}</p>
+	</blockquote>
+	<div class="footer">
+		<img
+			class="bluesky-logo"
+			src="{{ url_for('static', filename='bluesky-logo.svg') }}"
+			alt=""
+		>
+		<span>View on Bluesky</span>
+	</div>
+</a>
