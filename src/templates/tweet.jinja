@@ -1,4 +1,10 @@
-<article class="surface post-card" aria-label="Generated Bluesky post">
+<a
+	class="surface post-card"
+	href="{{ post_url }}"
+	target="_blank"
+	rel="noopener noreferrer"
+	aria-label="View this post on Bluesky"
+>
 	<header>
 		<img
 			class="avatar"
@@ -19,21 +25,11 @@
 		<p lang="en">{{ phrase }}</p>
 	</blockquote>
 	<div class="footer">
-		{% if post_url %}
-		<a href="{{ post_url }}" target="_blank" rel="noopener noreferrer">
-			<svg
-				class="bluesky-logo"
-				viewBox="0 0 600 530"
-				aria-hidden="true"
-				focusable="false"
-			>
-				<path
-					fill="currentColor"
-					d="m130.1 36.1c69.5 52.1 144.3 157.7 169.9 214.5 25.6-56.8 100.4-162.4 169.9-214.5C520.1-1.5 600-30.5 600 61.2c0 18.3-10.5 153.7-16.7 175.8-21.7 77.3-100.8 97-171.1 84.9 123 21 154.2 90.5 86.6 160-128.3 132-184.4-33.1-198.8-75.4-2.6-7.8-3.8-11.4-5.3-11.4s-2.7 3.6-5.3 11.4c-14.4 42.3-70.5 207.4-198.8 75.4-67.6-69.5-36.4-139 86.6-160-70.3 12.1-149.4-7.6-171.1-84.9C10.5 214.9 0 79.5 0 61.2 0-30.5 79.9-1.5 130.1 36.1Z"
-				/>
-			</svg>
-			<span>View on Bluesky</span>
-		</a>
-		{% endif %}
+		<img
+			class="bluesky-logo"
+			src="{{ url_for('static', filename='bluesky-logo.svg') }}"
+			alt=""
+		>
+		<span>View on Bluesky</span>
 	</div>
-</article>
+</a>

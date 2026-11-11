@@ -156,8 +156,21 @@ class AppTest(unittest.TestCase):
 			b'href="https://bsky.app/profile/did:plc:alice/post/abc"',
 			response.data,
 		)
+		self.assertIn(b'aria-label="View this post on Bluesky"', response.data)
 		self.assertIn(b'class="bluesky-logo"', response.data)
-		self.assertIn(b"View on Bluesky", response.data)
+		self.assertIn(
+			b'src="/tweet-generator/static/bluesky-logo.svg"',
+			response.data,
+		)
+		self.assertIn(b"<span>View on Bluesky</span>", response.data)
+		components_response = self.client.get(
+			"/tweet-generator/static/components.css",
+		)
+		components = components_response.data
+		components_response.close()
+		self.assertIn(b"user-select: none", components)
+		self.assertIn(b".post-card:hover", components)
+		self.assertIn(b".post-card:focus-visible", components)
 		self.assertNotIn(b"A dispatch from beyond", response.data)
 		self.assertNotIn(b"embed.bsky.app", response.data)
 		self.assertNotIn(
@@ -191,9 +204,6 @@ class AppTest(unittest.TestCase):
 		)
 		self.assertIn(b'class="surface post-card"', response.data)
 
-	def test_bluesky_post_url_rejects_malformed_uri(self):
-		self.assertIsNone(bluesky_post_url("javascript:alert(1)"))
-
 	def test_homepage_rejects_invalid_compressed_phrase(self):
 		response = self.client.get(
 			"/tweet-generator",
@@ -202,18 +212,35 @@ class AppTest(unittest.TestCase):
 
 		self.assertEqual(response.status_code, 400)
 
+	def test_bluesky_post_url_rejects_malformed_uri(self):
+		self.assertIsNone(bluesky_post_url("javascript:alert(1)"))
+
+	def test_bluesky_post_url_includes_actual_post_record_key(self):
+		self.assertEqual(
+			bluesky_post_url(
+				"at://did:plc:ork7vyqfg2a4t4hk5iyp7lxr/"
+				"app.bsky.feed.post/3mzyysy7i762c"
+			),
+			"https://bsky.app/profile/"
+			"did:plc:ork7vyqfg2a4t4hk5iyp7lxr/post/3mzyysy7i762c",
+		)
+
 	def test_static_assets_are_served_under_app_path(self):
-		for stylesheet, expected in (
+		for asset, expected in (
 			("theme.css", b"--page: #100f10"),
 			("layout.css", b"width: min(calc(100% - 2rem), 60rem)"),
 			("components.css", b".surface"),
+			("bluesky-logo.svg", b"<svg"),
 		):
-			with self.subTest(stylesheet=stylesheet):
+			with self.subTest(asset=asset):
 				response = self.client.get(
-					f"/tweet-generator/static/{stylesheet}",
+					f"/tweet-generator/static/{asset}",
 				)
 				self.assertEqual(response.status_code, 200)
-				self.assertEqual(response.mimetype, "text/css")
+				expected_mimetype = (
+					"image/svg+xml" if asset.endswith(".svg") else "text/css"
+				)
+				self.assertEqual(response.mimetype, expected_mimetype)
 				self.assertIn(expected, response.data)
 				response.close()
 

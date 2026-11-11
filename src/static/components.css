@@ -35,7 +35,6 @@
 }
 
 #generate-form button:focus-visible,
-.post-card a:focus-visible,
 footer a:focus-visible {
 	outline: 3px solid var(--focus);
 	outline-offset: 3px;
@@ -43,6 +42,32 @@ footer a:focus-visible {
 
 #generated-result[hidden] {
 	display: none;
+}
+
+.post-card {
+	display: block;
+	color: inherit;
+	cursor: pointer;
+	text-decoration: none;
+	user-select: none;
+	transition:
+		transform 160ms ease,
+		border-color 160ms ease,
+		box-shadow 160ms ease;
+}
+
+.post-card:hover,
+.post-card:focus-visible {
+	border-top-color: var(--accent-hover);
+	box-shadow:
+		0 1.25rem 3.5rem #0008,
+		0 0 2.5rem #963c3855;
+	transform: translateY(-3px);
+}
+
+.post-card:focus-visible {
+	outline: 3px solid var(--focus);
+	outline-offset: 4px;
 }
 
 .post-card header {
@@ -103,30 +128,20 @@ footer a:focus-visible {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	justify-content: space-between;
 	gap: 0.75rem;
-	padding-top: 1rem;
-	border-top: 1px solid var(--border);
 	color: var(--muted);
 	font: 0.8rem system-ui, sans-serif;
 }
 
-.post-card .footer a {
-	display: inline-flex;
-	align-items: center;
-	gap: 0.45rem;
-	color: var(--link);
-	text-decoration: none;
+.post-card .footer::before {
+	content: "";
+	flex: 1;
+	border-top: 1px solid var(--border);
 }
 
 .post-card .bluesky-logo {
 	width: 1.15rem;
 	height: 1rem;
-}
-
-.post-card .footer a:hover {
-	color: var(--heading);
-	text-decoration: underline;
 }
 
 @media (max-width: 480px) {

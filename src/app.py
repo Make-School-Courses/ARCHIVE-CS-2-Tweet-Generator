@@ -100,15 +100,17 @@ def deploy() -> str:
 	if compressed_phrase is not None:
 		phrase = decompress_phrase(compressed_phrase)
 	tweet_id = request.args.get("tweet_id")
+	post_url = bluesky_post_url(tweet_id)
 	profile = (
 		get_profile()
-		if tweet_id is not None and phrase is not None
+		if post_url is not None and phrase is not None
 		else None
 	)
 	return render_page(
 		phrase=phrase,
 		tweet_id=tweet_id,
 		profile=profile,
+		post_url=post_url,
 	)
 
 
@@ -135,12 +137,13 @@ def render_page(
 	phrase: str | None = None,
 	tweet_id: str | None = None,
 	profile: BlueskyProfile | None = None,
+	post_url: str | None = None,
 ) -> str:
 	"""Render the page with a button for generating and posting a phrase."""
 	return render_template(
 		"index.jinja",
 		phrase=phrase,
 		tweet_id=tweet_id,
-		post_url=bluesky_post_url(tweet_id),
 		profile=profile,
+		post_url=post_url,
 	)
