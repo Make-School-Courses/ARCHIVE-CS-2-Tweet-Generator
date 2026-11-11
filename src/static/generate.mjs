@@ -1,6 +1,12 @@
 const onSubmit = async (event) => {
 	event.preventDefault()
 	const form = event.currentTarget
+	const button = form.querySelector('button[type="submit"]')
+	const loadingStatus = form.querySelector("#loading-status")
+
+	button.disabled = true
+	form.setAttribute("aria-busy", "true")
+	loadingStatus.hidden = false
 
 	const response = await fetch(
 		form.action,

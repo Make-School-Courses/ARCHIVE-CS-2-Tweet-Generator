@@ -28,6 +28,9 @@ class AppTest(unittest.TestCase):
 			b'src="/tweet-generator/static/generate.mjs"',
 			response.data,
 		)
+		self.assertIn(b'id="loading-status"', response.data)
+		self.assertIn(b'aria-live="polite"', response.data)
+		self.assertIn(b"Generating tweet...", response.data)
 		generate.assert_not_called()
 		tweet.assert_not_called()
 
