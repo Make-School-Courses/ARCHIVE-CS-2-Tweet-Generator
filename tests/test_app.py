@@ -25,7 +25,7 @@ class AppTest(unittest.TestCase):
 			response.data,
 		)
 		self.assertIn(
-			b'<script type="module" src="/static/generate.mjs"></script>',
+			b'src="/tweet-generator/static/generate.mjs"',
 			response.data,
 		)
 		generate.assert_not_called()
@@ -49,6 +49,13 @@ class AppTest(unittest.TestCase):
 			b"<p>Tweet ID: at://did:plc:alice/app.bsky.feed.post/abc</p>",
 			response.data,
 		)
+
+	def test_static_assets_are_served_under_app_path(self):
+		response = self.client.get("/tweet-generator/static/style.css")
+
+		self.assertEqual(response.status_code, 200)
+		self.assertEqual(response.mimetype, "text/css")
+		response.close()
 
 	@patch(
 		"src.app.tweet",

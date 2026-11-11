@@ -10,7 +10,11 @@ from .cleaner import clean_text, read_corpus
 from .random_walk import RandomWalk
 
 # Send our Python in a bottle to the open seas of the web (use Flask).
-app: Flask = Flask(__name__, static_folder="static")
+app: Flask = Flask(
+	__name__,
+	static_folder="static",
+	static_url_path="/tweet-generator/static",
+)
 DATA_DIR: Path = Path(__file__).resolve().parent / "data" / "corpora"
 
 
