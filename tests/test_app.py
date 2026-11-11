@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import patch
 
-from src.app import app
+from src.app import app, compress_phrase
 
 
 class AppTest(unittest.TestCase):
@@ -50,6 +50,29 @@ class AppTest(unittest.TestCase):
 			response.data,
 		)
 
+	def test_homepage_decompresses_phrase_from_query_params(self):
+		phrase = "A generated sentence that is long enough to compress. " * 4
+		compressed_phrase = compress_phrase(phrase)
+		self.assertLess(len(compressed_phrase), len(phrase))
+		response = self.client.get(
+			"/tweet-generator",
+			query_string={
+				"compressed_phrase": compressed_phrase,
+				"tweet_id": "at://did:plc:alice/app.bsky.feed.post/abc",
+			},
+		)
+
+		self.assertEqual(response.status_code, 200)
+		self.assertIn(f"<p>Phrase: {phrase}</p>".encode(), response.data)
+
+	def test_homepage_rejects_invalid_compressed_phrase(self):
+		response = self.client.get(
+			"/tweet-generator",
+			query_string={"compressed_phrase": "not-valid-deflate"},
+		)
+
+		self.assertEqual(response.status_code, 400)
+
 	def test_static_assets_are_served_under_app_path(self):
 		response = self.client.get("/tweet-generator/static/style.css")
 
@@ -71,6 +94,7 @@ class AppTest(unittest.TestCase):
 		self.assertEqual(response.mimetype, "application/json")
 		expected = {
 			"phrase": "A generated sentence.",
+			"compressed_phrase": compress_phrase("A generated sentence."),
 			"tweet_id": "at://did:plc:alice/app.bsky.feed.post/abc",
 		}
 		self.assertEqual(response.json, expected)
@@ -89,6 +113,7 @@ class AppTest(unittest.TestCase):
 		self.assertEqual(response.mimetype, "application/json")
 		expected = {
 			"phrase": "",
+			"compressed_phrase": compress_phrase(""),
 			"tweet_id": "at://did:plc:alice/app.bsky.feed.post/abc",
 		}
 		self.assertEqual(response.json, expected)

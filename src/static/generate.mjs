@@ -13,7 +13,7 @@ const onSubmit = async (event) => {
 	)
 
 	const params = new URLSearchParams({
-		phrase: data.phrase,
+		compressed_phrase: data.compressed_phrase,
 		tweet_id: data.tweet_id,
 	})
 
