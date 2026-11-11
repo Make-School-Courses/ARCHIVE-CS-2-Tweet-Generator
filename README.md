@@ -15,8 +15,8 @@ https://projects.nebuloid.dev/tweet-generator
 ### Routes
 | Method | Route                                 | Purpose                                                |
 | ------ | ------------------------------------- | ------------------------------------------------------ |
-| `GET`  | [/](tweet-generator-homepage)         | The user interface for the tweet generator.            |
-| `POST` | [/generate](tweet-generator-function) | Generates a phrase and posts to Bluesky. Returns JSON. |
+| `GET`  | [/][tweet-generator-homepage]         | The user interface for the tweet generator.            |
+| `POST` | [/generate][tweet-generator-function] | Generates a phrase and posts to Bluesky. Returns JSON. |
 
 ## Deployment
 The **Flask** app runs on **Render** using the included `render.yaml` Blueprint.
