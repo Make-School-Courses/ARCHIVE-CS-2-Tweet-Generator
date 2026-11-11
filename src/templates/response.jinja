@@ -1,19 +1,6 @@
 <section id="generated-result">
-	{% if tweet_id is not none %}
-	<blockquote
-		class="bluesky-embed"
-		data-bluesky-uri="{{ tweet_id }}"
-		data-bluesky-embed-color-mode="system"
-	>
-		<p lang="en">{{ phrase }}</p>
-	</blockquote>
-
-	<script
-		async
-		src="https://embed.bsky.app/static/embed.js"
-		charset="utf-8"
-	></script>
-
+	{% if tweet_id is not none and phrase is not none %}
+	{% include "tweet.jinja" %}
 	{% elif phrase is not none %}
 	<p>Phrase: {{ phrase }}</p>
 	{% endif %}

@@ -6,10 +6,11 @@ import re
 import zlib
 from collections.abc import Iterable
 from pathlib import Path
+from urllib.parse import quote
 
 from flask import Flask, Response, abort, jsonify, render_template, request
 
-from .bluesky import tweet
+from .bluesky import BlueskyProfile, get_profile, tweet
 from .cleaner import clean_text, read_corpus
 from .random_walk import RandomWalk
 
@@ -56,6 +57,23 @@ def decompress_phrase(value: str) -> str:
 		abort(400, description="Invalid compressed phrase.")
 
 
+def bluesky_post_url(uri: str | None) -> str | None:
+	"""Convert a Bluesky post AT URI to its public web URL."""
+	if uri is None:
+		return None
+	match = re.fullmatch(
+		r"at://([^/?#]+)/app\.bsky\.feed\.post/([^/?#]+)",
+		uri,
+	)
+	if match is None:
+		return None
+	repo, record_key = match.groups()
+	return (
+		f"https://bsky.app/profile/{quote(repo, safe=':')}"
+		f"/post/{quote(record_key, safe='')}"
+	)
+
+
 def generate(corpora: Iterable[Path], order: int) -> str:
 	"""
 	Generate a sentence from one or more source corpora.
@@ -81,9 +99,16 @@ def deploy() -> str:
 	phrase = request.args.get("phrase")
 	if compressed_phrase is not None:
 		phrase = decompress_phrase(compressed_phrase)
+	tweet_id = request.args.get("tweet_id")
+	profile = (
+		get_profile()
+		if tweet_id is not None and phrase is not None
+		else None
+	)
 	return render_page(
 		phrase=phrase,
-		tweet_id=request.args.get("tweet_id"),
+		tweet_id=tweet_id,
+		profile=profile,
 	)
 
 
@@ -109,10 +134,13 @@ def generate_and_post() -> Response:
 def render_page(
 	phrase: str | None = None,
 	tweet_id: str | None = None,
+	profile: BlueskyProfile | None = None,
 ) -> str:
 	"""Render the page with a button for generating and posting a phrase."""
 	return render_template(
 		"index.jinja",
 		phrase=phrase,
 		tweet_id=tweet_id,
+		post_url=bluesky_post_url(tweet_id),
+		profile=profile,
 	)
