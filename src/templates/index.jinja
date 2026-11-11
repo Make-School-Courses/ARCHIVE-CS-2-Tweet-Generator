@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="/static/style.css">
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 	</head>
 
 	<body>
@@ -11,6 +11,9 @@
 			{% include "form.jinja" %}
 			{% include "response.jinja" %}
 		</main>
-		<script type="module" src="/static/generate.mjs"></script>
+		<script
+			type="module"
+			src="{{ url_for('static', filename='generate.mjs') }}"
+		></script>
 	</body>
 </html>

@@ -19,12 +19,9 @@ https://projects.nebuloid.dev/tweet-generator
 | `POST` | [/generate](tweet-generator-function) | Generates a phrase and posts to Bluesky. Returns JSON. |
 
 ## Deployment
-The Flask app runs on Render using the included `render.yaml` Blueprint.
-1. Create a Render Blueprint from this repository.
-	The Blueprint tracks `main`, enables automatic deploys, and configures a health check.
-2. Set `BLUESKY_APP_PASSWORD` to a Bluesky app password in Render.
-	Do not commit  the password to the repository.
-3. Deploy the service and verify it at the Render URL, adding `/tweet-generator`  to the URL to load the app.
+The **Flask** app runs on **Render** using the included `render.yaml` Blueprint.
+A **Cloudflare Worker** proxies only `projects.nebuloid.dev/tweet-generator` and its descendants to **Render**; the rest of the site keeps its existing origin.
+The repository uses **GitHub Actions** to deploy the `main` branch automatically.
 
 ## Bluesky Account
 https://bsky.app/profile/frankensteinengine.bsky.social

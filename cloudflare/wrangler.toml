@@ -1,0 +1,8 @@
+name = "tweet-generator-proxy"
+main = "worker.mjs"
+compatibility_date = "2026-11-10"
+workers_dev = false
+
+[[routes]]
+pattern = "projects.nebuloid.dev/tweet-generator*"
+zone_name = "nebuloid.dev"
