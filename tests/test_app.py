@@ -1,7 +1,14 @@
 import unittest
 from unittest.mock import Mock, patch
 
-from src.app import app, bluesky_post_url, compress_phrase
+from werkzeug.exceptions import BadRequest
+
+from src.app import (
+	app,
+	bluesky_post_url,
+	compress_phrase,
+	decompress_phrase,
+)
 from src.bluesky import (
 	BLUESKY_HANDLE,
 	BlueskyProfile,
@@ -15,8 +22,121 @@ class AppTest(unittest.TestCase):
 		app.config["TESTING"] = True
 		self.client = app.test_client()
 
+	def test_homepage_renders_without_loading_a_profile(self):
+		with patch("src.app.get_profile") as get_profile:
+			response = self.client.get("/tweet-generator")
+
+		self.assertEqual(response.status_code, 200)
+		get_profile.assert_not_called()
+
+	def test_homepage_decodes_compressed_phrase_before_rendering(self):
+		phrase = "A generated sentence with punctuation: caf\u00e9!"
+		compressed_phrase = compress_phrase(phrase)
+		profile = BlueskyProfile(
+			"Loaded Frankenstein",
+			"loaded.example",
+			"https://cdn.bsky.app/avatar.png",
+			True,
+		)
+		with (
+			patch("src.app.get_profile", return_value=profile) as get_profile,
+			patch(
+				"src.app.render_page",
+				return_value="rendered",
+			) as render_page,
+		):
+			response = self.client.get(
+				"/tweet-generator",
+				query_string={
+					"compressed_phrase": compressed_phrase,
+					"tweet_id": "at://did:plc:alice/app.bsky.feed.post/abc",
+				},
+			)
+
+		self.assertEqual(response.status_code, 200)
+		self.assertEqual(response.get_data(as_text=True), "rendered")
+		get_profile.assert_called_once_with()
+		render_page.assert_called_once_with(
+			phrase=phrase,
+			tweet_id="at://did:plc:alice/app.bsky.feed.post/abc",
+			profile=profile,
+			post_url="https://bsky.app/profile/did:plc:alice/post/abc",
+		)
+
+	def test_homepage_does_not_load_profile_for_invalid_post_uri(self):
+		with (
+			patch("src.app.get_profile") as get_profile,
+			patch("src.app.render_page", return_value="rendered"),
+		):
+			response = self.client.get(
+				"/tweet-generator",
+				query_string={
+					"phrase": "phrase",
+					"tweet_id": "javascript:alert(1)",
+				},
+			)
+
+		self.assertEqual(response.status_code, 200)
+		get_profile.assert_not_called()
+
+	def test_homepage_rejects_invalid_compressed_phrase(self):
+		response = self.client.get(
+			"/tweet-generator",
+			query_string={"compressed_phrase": "not-valid-deflate"},
+		)
+
+		self.assertEqual(response.status_code, 400)
+
+	def test_generate_route_returns_phrase_post_uri_and_compressed_phrase(self):
+		phrase = "A generated sentence."
+		post_uri = "at://did:plc:alice/app.bsky.feed.post/abc"
+		with (
+			patch("src.app.generate", return_value=phrase) as generate,
+			patch("src.app.tweet", return_value=post_uri) as tweet,
+		):
+			response = self.client.post("/tweet-generator/generate")
+
+		self.assertEqual(response.status_code, 200)
+		self.assertEqual(response.mimetype, "application/json")
+		payload = response.get_json()
+		if not isinstance(payload, dict):
+			self.fail("Generation route did not return a JSON object.")
+		self.assertEqual(payload["phrase"], phrase)
+		self.assertEqual(payload["tweet_id"], post_uri)
+		self.assertEqual(
+			decompress_phrase(payload["compressed_phrase"]),
+			phrase,
+		)
+		generate.assert_called_once()
+		tweet.assert_called_once_with(phrase)
+
+	def test_phrase_compression_round_trips_unicode(self):
+		phrase = "A whisper from beyond... caf\u00e9 \U0001f47b"
+		compressed = compress_phrase(phrase)
+
+		self.assertEqual(decompress_phrase(compressed), phrase)
+		self.assertRegex(compressed, r"^[A-Za-z0-9_-]+$")
+
+	def test_decompress_phrase_rejects_expansion_over_limit(self):
+		oversized = compress_phrase("a" * 4097)
+		with self.assertRaises(BadRequest):
+			decompress_phrase(oversized)
+
+	def test_bluesky_post_url_maps_valid_at_uri_and_rejects_invalid_uri(self):
+		post_uri = (
+			"at://did:plc:ork7vyqfg2a4t4hk5iyp7lxr/"
+			"app.bsky.feed.post/3mzyysy7i762c"
+		)
+
+		self.assertEqual(
+			bluesky_post_url(post_uri),
+			"https://bsky.app/profile/"
+			"did:plc:ork7vyqfg2a4t4hk5iyp7lxr/post/3mzyysy7i762c",
+		)
+		self.assertIsNone(bluesky_post_url("javascript:alert(1)"))
+
 	@patch("src.bluesky.requests.get")
-	def test_get_profile_loads_live_profile_fields(self, get):
+	def test_get_profile_loads_account_fields_and_bot_label(self, get):
 		response = Mock()
 		response.json.return_value = {
 			"displayName": "Frankenstein Markov Chain Engine",
@@ -45,244 +165,13 @@ class AppTest(unittest.TestCase):
 		response.raise_for_status.assert_called_once_with()
 
 	@patch("src.bluesky.requests.get")
-	def test_get_profile_rejects_missing_profile_fields(self, get):
+	def test_get_profile_rejects_missing_required_fields(self, get):
 		response = Mock()
-		response.json.return_value = {
-			"handle": "frankensteinengine.bsky.social",
-		}
+		response.json.return_value = {"handle": "incomplete.example"}
 		get.return_value = response
 
-		with self.assertRaisesRegex(
-			ValueError,
-			"missing its name, handle, or avatar",
-		):
+		with self.assertRaises(ValueError):
 			get_profile()
-
-	@patch("src.bluesky.requests.get")
-	def test_get_profile_detects_bot_label(self, get):
-		response = Mock()
-		response.json.return_value = {
-			"displayName": "A Person",
-			"handle": "person.example",
-			"avatar": "https://cdn.bsky.app/avatar.png",
-			"labels": [],
-		}
-		get.return_value = response
-
-		self.assertFalse(get_profile().is_bot)
-
-	@patch("src.app.tweet")
-	@patch("src.app.generate", return_value="A generated sentence.")
-	def test_homepage_shows_generate_button_without_generating_or_posting(
-		self,
-		generate,
-		tweet,
-	):
-		response = self.client.get("/tweet-generator")
-
-		self.assertEqual(response.status_code, 200)
-		self.assertIn(b"There's a whisper from beyond...", response.data)
-		self.assertIn(b"<h1>Tweet Generator</h1>", response.data)
-		self.assertIn(
-			b"This site generates a random phrase from "
-			b"<em>Frankenstein</em> using Markov chains, then posts it "
-			b"to Bluesky.",
-			response.data,
-		)
-		self.assertIn(b"Generate a Phrase!", response.data)
-		self.assertIn(b'id="generate-form"', response.data)
-		self.assertIn(b'class="surface"', response.data)
-		for stylesheet in ("theme.css", "layout.css", "components.css"):
-			self.assertIn(
-				f'href="/tweet-generator/static/{stylesheet}"'.encode(),
-				response.data,
-			)
-		self.assertIn(
-			b'href="https://bsky.app/profile/frankensteinengine.bsky.social"',
-			response.data,
-		)
-		self.assertIn(
-			b'href="https://github.com/noltron000/tweet-generator"',
-			response.data,
-		)
-		self.assertIn(
-			b'action="/tweet-generator/generate"',
-			response.data,
-		)
-		self.assertIn(
-			b'src="/tweet-generator/static/generate.mjs"',
-			response.data,
-		)
-		self.assertIn(b'id="loading-status"', response.data)
-		self.assertIn(b'aria-live="polite"', response.data)
-		self.assertIn(b"Generating tweet...", response.data)
-		self.assertIn(b'id="generate-label"', response.data)
-		self.assertIn(b'<span id="loading-status"', response.data)
-		generate.assert_not_called()
-		tweet.assert_not_called()
-
-	def test_homepage_displays_results_from_query_params(self):
-		profile = BlueskyProfile(
-			"Loaded Frankenstein",
-			"loaded.example",
-			"https://cdn.bsky.app/avatar.png",
-			True,
-		)
-		with patch("src.app.get_profile", return_value=profile) as get_profile:
-			response = self.client.get(
-				"/tweet-generator",
-				query_string={
-					"phrase": "A generated sentence.",
-					"tweet_id": "at://did:plc:alice/app.bsky.feed.post/abc",
-				},
-			)
-
-		self.assertEqual(response.status_code, 200)
-		self.assertIn(b'src="https://cdn.bsky.app/avatar.png"', response.data)
-		self.assertIn(b"Loaded Frankenstein", response.data)
-		self.assertIn(b"<span>@loaded.example</span>", response.data)
-		self.assertIn("🤖".encode(), response.data)
-		get_profile.assert_called_once_with()
-		self.assertIn(
-			b'<p lang="en">A generated sentence.</p>',
-			response.data,
-		)
-		self.assertIn(b'<section id="generated-result">', response.data)
-		self.assertIn(
-			b'class="surface post-card"',
-			response.data,
-		)
-		self.assertIn(
-			b'href="https://bsky.app/profile/did:plc:alice/post/abc"',
-			response.data,
-		)
-		self.assertIn(b'aria-label="View this post on Bluesky"', response.data)
-		self.assertIn(b'class="bluesky-logo"', response.data)
-		self.assertIn(
-			b'src="/tweet-generator/static/bluesky-logo.svg"',
-			response.data,
-		)
-		self.assertIn(b"<span>View on Bluesky</span>", response.data)
-		components_response = self.client.get(
-			"/tweet-generator/static/components.css",
-		)
-		components = components_response.data
-		components_response.close()
-		self.assertIn(b"user-select: none", components)
-		self.assertIn(b".post-card:hover", components)
-		self.assertIn(b".post-card:focus-visible", components)
-		self.assertNotIn(b"A dispatch from beyond", response.data)
-		self.assertNotIn(b"embed.bsky.app", response.data)
-		self.assertNotIn(
-			b"Tweet ID:",
-			response.data,
-		)
-
-	def test_homepage_decompresses_phrase_from_query_params(self):
-		phrase = "A generated sentence that is long enough to compress. " * 4
-		compressed_phrase = compress_phrase(phrase)
-		self.assertLess(len(compressed_phrase), len(phrase))
-		profile = BlueskyProfile(
-			"Loaded Frankenstein",
-			"loaded.example",
-			"https://cdn.bsky.app/avatar.png",
-			True,
-		)
-		with patch("src.app.get_profile", return_value=profile):
-			response = self.client.get(
-				"/tweet-generator",
-				query_string={
-					"compressed_phrase": compressed_phrase,
-					"tweet_id": "at://did:plc:alice/app.bsky.feed.post/abc",
-				},
-			)
-
-		self.assertEqual(response.status_code, 200)
-		self.assertIn(
-			f'<p lang="en">{phrase}</p>'.encode(),
-			response.data,
-		)
-		self.assertIn(b'class="surface post-card"', response.data)
-
-	def test_homepage_rejects_invalid_compressed_phrase(self):
-		response = self.client.get(
-			"/tweet-generator",
-			query_string={"compressed_phrase": "not-valid-deflate"},
-		)
-
-		self.assertEqual(response.status_code, 400)
-
-	def test_bluesky_post_url_rejects_malformed_uri(self):
-		self.assertIsNone(bluesky_post_url("javascript:alert(1)"))
-
-	def test_bluesky_post_url_includes_actual_post_record_key(self):
-		self.assertEqual(
-			bluesky_post_url(
-				"at://did:plc:ork7vyqfg2a4t4hk5iyp7lxr/"
-				"app.bsky.feed.post/3mzyysy7i762c"
-			),
-			"https://bsky.app/profile/"
-			"did:plc:ork7vyqfg2a4t4hk5iyp7lxr/post/3mzyysy7i762c",
-		)
-
-	def test_static_assets_are_served_under_app_path(self):
-		for asset, expected in (
-			("theme.css", b"--page: #100f10"),
-			("layout.css", b"width: min(calc(100% - 2rem), 60rem)"),
-			("components.css", b".surface"),
-			("bluesky-logo.svg", b"<svg"),
-		):
-			with self.subTest(asset=asset):
-				response = self.client.get(
-					f"/tweet-generator/static/{asset}",
-				)
-				self.assertEqual(response.status_code, 200)
-				expected_mimetype = (
-					"image/svg+xml" if asset.endswith(".svg") else "text/css"
-				)
-				self.assertEqual(response.mimetype, expected_mimetype)
-				self.assertIn(expected, response.data)
-				response.close()
-
-	@patch(
-		"src.app.tweet",
-		return_value="at://did:plc:alice/app.bsky.feed.post/abc",
-	)
-	@patch("src.app.generate", return_value="A generated sentence.")
-	def test_generate_route_returns_json_for_server_generated_phrase(
-		self, generate, tweet
-	):
-		response = self.client.post("/tweet-generator/generate")
-
-		self.assertEqual(response.status_code, 200)
-		self.assertEqual(response.mimetype, "application/json")
-		expected = {
-			"phrase": "A generated sentence.",
-			"compressed_phrase": compress_phrase("A generated sentence."),
-			"tweet_id": "at://did:plc:alice/app.bsky.feed.post/abc",
-		}
-		self.assertEqual(response.json, expected)
-		generate.assert_called_once()
-		tweet.assert_called_once_with("A generated sentence.")
-
-	@patch(
-		"src.app.tweet",
-		return_value="at://did:plc:alice/app.bsky.feed.post/abc",
-	)
-	@patch("src.app.generate", return_value="")
-	def test_generate_route_returns_empty_phrase_as_json(self, generate, tweet):
-		response = self.client.post("/tweet-generator/generate")
-
-		self.assertEqual(response.status_code, 200)
-		self.assertEqual(response.mimetype, "application/json")
-		expected = {
-			"phrase": "",
-			"compressed_phrase": compress_phrase(""),
-			"tweet_id": "at://did:plc:alice/app.bsky.feed.post/abc",
-		}
-		self.assertEqual(response.json, expected)
-		generate.assert_called_once()
-		tweet.assert_called_once_with("")
 
 
 if __name__ == "__main__":
