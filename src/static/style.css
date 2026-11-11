@@ -5,3 +5,8 @@ main {
 	align-items: center;
 	justify-content: center;
 }
+
+.bluesky-embed {
+	width: min(90vw, 800px) !important;
+	max-width: 800px !important;
+}

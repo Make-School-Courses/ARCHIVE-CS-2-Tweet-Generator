@@ -59,12 +59,24 @@ class AppTest(unittest.TestCase):
 
 		self.assertEqual(response.status_code, 200)
 		self.assertIn(
-			b"<p>Phrase: A generated sentence.</p>",
+			b'<p lang="en">A generated sentence.</p>',
 			response.data,
 		)
 		self.assertIn(b'<section id="generated-result">', response.data)
 		self.assertIn(
-			b"<p>Tweet ID: at://did:plc:alice/app.bsky.feed.post/abc</p>",
+			b'class="bluesky-embed"',
+			response.data,
+		)
+		self.assertIn(
+			b'data-bluesky-uri="at://did:plc:alice/app.bsky.feed.post/abc"',
+			response.data,
+		)
+		self.assertIn(
+			b'src="https://embed.bsky.app/static/embed.js"',
+			response.data,
+		)
+		self.assertNotIn(
+			b"Tweet ID:",
 			response.data,
 		)
 
@@ -81,7 +93,11 @@ class AppTest(unittest.TestCase):
 		)
 
 		self.assertEqual(response.status_code, 200)
-		self.assertIn(f"<p>Phrase: {phrase}</p>".encode(), response.data)
+		self.assertIn(
+			f'<p lang="en">{phrase}</p>'.encode(),
+			response.data,
+		)
+		self.assertIn(b'class="bluesky-embed"', response.data)
 
 	def test_homepage_rejects_invalid_compressed_phrase(self):
 		response = self.client.get(
