@@ -19,7 +19,21 @@ class AppTest(unittest.TestCase):
 		response = self.client.get("/tweet-generator")
 
 		self.assertEqual(response.status_code, 200)
+		self.assertIn(b"<h1>Tweet Generator</h1>", response.data)
+		self.assertIn(
+			b"Generate a phrase inspired by Frankenstein and Sherlock Holmes,",
+			response.data,
+		)
+		self.assertIn(b"then post it to Bluesky.", response.data)
 		self.assertIn(b"Generate a Phrase!", response.data)
+		self.assertIn(
+			b'href="https://bsky.app/profile/frankensteinengine.bsky.social"',
+			response.data,
+		)
+		self.assertIn(
+			b'href="https://github.com/noltron000/tweet-generator"',
+			response.data,
+		)
 		self.assertIn(
 			b'action="/tweet-generator/generate"',
 			response.data,

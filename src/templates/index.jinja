@@ -8,8 +8,30 @@
 
 	<body>
 		<main>
+			<header>
+				<h1>Tweet Generator</h1>
+				<p>
+					Using Markov Chains, this site generates a phrase based a couple of books, including "Frankenstein".
+					Be aware: this does take a minute to generate...
+					When its done, my bot will also post the generated phrase to Bluesky!
+				</p>
+				<p>
+					Be sure to check out my bot's BlueSky profile, and my GitHub Repository as well!
+				</p>
+			</header>
 			{% include "form.jinja" %}
 			{% include "response.jinja" %}
+			<footer>
+				<p>
+					<a href="https://bsky.app/profile/frankensteinengine.bsky.social">
+						Bluesky account
+					</a>
+					|
+					<a href="https://github.com/noltron000/tweet-generator">
+						GitHub repository
+					</a>
+				</p>
+			</footer>
 		</main>
 		<script
 			type="module"
