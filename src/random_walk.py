@@ -1,5 +1,5 @@
+from collections.abc import Iterable
 from random import randrange
-from typing import Dict, Iterable, List, Set, Tuple
 
 from .markov import MarkovChain
 
@@ -12,18 +12,18 @@ class RandomWalk(MarkovChain):
 		MarkovChain.__init__(self, corpus, order)
 		# Initialize empty variables.
 		self.sentance: str = ""
-		self.vocab: Dict[Tuple[str, ...], int] = {}
+		self.vocab: dict[tuple[str, ...], int] = {}
 		self.sub_types: int = 0
 		self.sub_tokens: int = 0
-		self.sub_phrase: Tuple[str, ...] = ()
+		self.sub_phrase: tuple[str, ...] = ()
 		# Find sentence endings and starting phrases.
-		self.stoppers: List[Tuple[str, ...]] = self.get_stop()
+		self.stoppers: list[tuple[str, ...]] = self.get_stop()
 		if not self.stoppers:
 			raise ValueError(
 				"The corpus must contain sentence-ending punctuation."
 			)
-		self.viable: Set[Tuple[str, ...]] = self.get_viable()
-		self.starters: List[Tuple[str, ...]] = [
+		self.viable: set[tuple[str, ...]] = self.get_viable()
+		self.starters: list[tuple[str, ...]] = [
 			phrase for phrase in self.get_start() if phrase in self.viable
 		]
 		if not self.starters:
@@ -34,7 +34,7 @@ class RandomWalk(MarkovChain):
 		# Generate a random walk.
 		self.random_walk()
 
-	def get_start(self) -> List[Tuple[str, ...]]:
+	def get_start(self) -> list[tuple[str, ...]]:
 		types = []
 		for key in self.dict:
 			if key[0] != "" and key[0][0].isupper():
@@ -43,14 +43,14 @@ class RandomWalk(MarkovChain):
 			types = [key for key in self.dict if key[0] != ""]
 		return types
 
-	def get_stop(self) -> List[Tuple[str, ...]]:
+	def get_stop(self) -> list[tuple[str, ...]]:
 		types = []
 		for key in self.dict:
 			if key[len(key) - 1].endswith((".", "!", "?")):
 				types.append(key)
 		return types
 
-	def get_viable(self) -> Set[Tuple[str, ...]]:
+	def get_viable(self) -> set[tuple[str, ...]]:
 		prefixes = {}
 		predecessors = {phrase: [] for phrase in self.dict}
 		for phrase in self.dict:
@@ -70,7 +70,7 @@ class RandomWalk(MarkovChain):
 
 	def filter_dict(
 		self,
-		sample: Iterable[Tuple[str, ...]],
+		sample: Iterable[tuple[str, ...]],
 		intersect: bool = True,
 	) -> None:
 		"""Build a sampling distribution from selected or excluded items."""
@@ -116,7 +116,7 @@ class RandomWalk(MarkovChain):
 						break
 					index -= 1
 
-	def random_word_by_prob(self) -> Tuple[str, ...]:
+	def random_word_by_prob(self) -> tuple[str, ...]:
 		if self.sub_tokens <= 0:
 			raise ValueError("Cannot select a word from an empty distribution.")
 

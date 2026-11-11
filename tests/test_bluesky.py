@@ -17,12 +17,17 @@ class TweetTest(unittest.TestCase):
 			"did": "did:plc:alice",
 		}
 		post_response = Mock()
-		post_response.text = "posted"
+		post_response.json.return_value = {
+			"uri": "at://did:plc:alice/app.bsky.feed.post/abc",
+		}
 		post.side_effect = [session_response, post_response]
 
 		result = bluesky.tweet("hello")
 
-		self.assertEqual(result, "posted")
+		self.assertEqual(
+			result,
+			"at://did:plc:alice/app.bsky.feed.post/abc",
+		)
 		self.assertEqual(post.call_count, 2)
 		session_call, record_call = post.call_args_list
 		self.assertEqual(

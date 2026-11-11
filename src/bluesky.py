@@ -12,15 +12,13 @@ BLUESKY_HANDLE = "frankensteinengine.bsky.social"
 
 
 def tweet(status: str) -> str:
-	"""Post a tweet as a Bluesky post and return the API response."""
+	"""Post a Bluesky post and return its AT URI."""
 	# The handle identifies the account; authenticate with its app password.
 	app_password = os.environ.get("BLUESKY_APP_PASSWORD")
 
 	# Raise an error when credentials have not been configured.
 	if not app_password:
-		raise RuntimeError(
-			"Set $BLUESKY_APP_PASSWORD to post to Bluesky."
-		)
+		raise RuntimeError("Set $BLUESKY_APP_PASSWORD to post to Bluesky.")
 
 	# Create a session to obtain the account DID and access token.
 	session = requests.post(
@@ -50,4 +48,4 @@ def tweet(status: str) -> str:
 	)
 
 	response.raise_for_status()
-	return response.text
+	return response.json()["uri"]

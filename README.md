@@ -4,15 +4,19 @@ Each of them have a character count appended near the end, indicating how diffic
 For example, dracula_850 has 850 characters, thus making it a difficult for this program to analyze.
 The default is sherlock_300.
 
-Run locally with `python -m flask --app src.app run`; run tests with `python -m unittest discover -s tests`.
-Python 3.7 or newer is required.
-Run lint with `ruff check .`.
-
-The homepage generates a tweet draft.
-Click **Tweet This!** to post it to Bluesky.
+**Python 3.10** or newer is required.
+- Run locally with `python -m flask --app src.app run`.
+- Run tests with `python -m unittest discover -s tests`.
+- Run the linter with `ruff check .`.
 
 ## Website
 https://projects.nebuloid.dev/tweet-generator
+
+### Routes
+| Method | Route                                 | Purpose                                                |
+| ------ | ------------------------------------- | ------------------------------------------------------ |
+| `GET`  | [/](tweet-generator-homepage)         | The user interface for the tweet generator.            |
+| `POST` | [/generate](tweet-generator-function) | Generates a phrase and posts to Bluesky. Returns JSON. |
 
 ## Deployment
 The Flask app runs on Render using the included `render.yaml` Blueprint.
@@ -22,8 +26,8 @@ The Flask app runs on Render using the included `render.yaml` Blueprint.
 	Do not commit  the password to the repository.
 3. Deploy the service and verify it at the Render URL, adding `/tweet-generator`  to the URL to load the app.
 
-Custom-domain routing will be configured separately after the Render service
-is running.
-
 ## Bluesky Account
 https://bsky.app/profile/frankensteinengine.bsky.social
+
+[tweet-generator-homepage]: https://projects.nebuloid.dev/tweet-generator
+[tweet-generator-function]: https://projects.nebuloid.dev/tweet-generator/generate

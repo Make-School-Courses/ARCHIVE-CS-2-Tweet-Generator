@@ -6,9 +6,12 @@ from src.markov import MarkovChain
 class MarkovChainTest(unittest.TestCase):
 	def test_rejects_nonpositive_order(self):
 		for order in (0, -1):
-			with self.subTest(order=order), self.assertRaisesRegex(
-				ValueError,
-				"at least 1",
+			with (
+				self.subTest(order=order),
+				self.assertRaisesRegex(
+					ValueError,
+					"at least 1",
+				),
 			):
 				MarkovChain("one two", order)
 
