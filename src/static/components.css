@@ -58,7 +58,8 @@
 }
 
 #generate-form button:focus-visible,
-footer a:focus-visible {
+footer a:focus-visible,
+#generation-error a:focus-visible {
 	outline: 3px solid var(--focus);
 	outline-offset: 3px;
 }
@@ -89,6 +90,30 @@ footer a:focus-visible {
 	.loading-spinner {
 		animation: none;
 	}
+}
+
+#generation-error[hidden] {
+	display: none;
+}
+
+.error-panel {
+	margin-top: 1rem;
+	font: 0.9rem/1.5 system-ui, sans-serif;
+}
+
+.error-panel h2 {
+	margin: 0 0 0.4rem;
+	color: var(--heading);
+	font-size: 1rem;
+}
+
+.error-panel p {
+	margin: 0 0 0.75rem;
+	overflow-wrap: anywhere;
+}
+
+.error-panel a {
+	color: var(--link);
 }
 
 #generated-result[hidden] {

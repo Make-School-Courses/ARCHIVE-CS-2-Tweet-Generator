@@ -5,29 +5,49 @@ const onSubmit = async (event) => {
 	const generateLabel = form.querySelector("#generate-label")
 	const loadingStatus = form.querySelector("#loading-status")
 	const generatedResult = document.querySelector("#generated-result")
+	const errorSection = document.querySelector("#generation-error")
+	const errorMessage = errorSection.querySelector(
+		"#generation-error-message",
+	)
 
 	button.disabled = true
 	form.setAttribute("aria-busy", "true")
 	generateLabel.hidden = true
 	loadingStatus.hidden = false
 	generatedResult.hidden = true
+	errorSection.hidden = true
 
-	const response = await fetch(
-		form.action,
-		{method: "POST"},
-	)
+	try {
+		const response = await fetch(
+			form.action,
+			{method: "POST"},
+		)
 
-	const data = await response.json()
-	if (!response.ok) throw new Error(
-		data.error ?? "Request failed."
-	)
+		if (!response.ok) throw new Error(
+			`Request failed with status ${response.status}.`
+		)
 
-	const params = new URLSearchParams({
-		compressed_phrase: data.compressed_phrase,
-		tweet_id: data.tweet_id,
-	})
+		const data = await response.json()
+		if (data.error) throw new Error(
+			data.error ?? "Request failed"
+		)
 
-	window.location.assign(`/tweet-generator?${params}`)
+		const params = new URLSearchParams({
+			compressed_phrase: data.compressed_phrase,
+			tweet_id: data.tweet_id,
+		})
+
+		window.location.assign(`/tweet-generator?${params}`)
+	} catch (error) {
+		button.disabled = false
+		form.removeAttribute("aria-busy")
+		generateLabel.hidden = false
+		loadingStatus.hidden = true
+		errorSection.hidden = false
+		errorMessage.textContent = error instanceof Error
+			? error.message
+			: String(error)
+	}
 }
 
 document
