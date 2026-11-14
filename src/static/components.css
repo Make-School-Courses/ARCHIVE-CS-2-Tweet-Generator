@@ -63,6 +63,34 @@ footer a:focus-visible {
 	outline-offset: 3px;
 }
 
+#loading-status:not([hidden]) {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.6rem;
+}
+
+.loading-spinner {
+	width: 1rem;
+	height: 1rem;
+	flex: 0 0 auto;
+	border: 2px solid #fff5e966;
+	border-top-color: #fff5e9;
+	border-radius: 50%;
+	animation: loading-spin 700ms linear infinite;
+}
+
+@keyframes loading-spin {
+	to {
+		transform: rotate(1turn);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.loading-spinner {
+		animation: none;
+	}
+}
+
 #generated-result[hidden] {
 	display: none;
 }
