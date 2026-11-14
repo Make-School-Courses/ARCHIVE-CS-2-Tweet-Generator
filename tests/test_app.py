@@ -29,6 +29,20 @@ class AppTest(unittest.TestCase):
 
 		self.assertEqual(response.status_code, 200)
 		get_profile.assert_not_called()
+		self.assertIn(
+			'<section id="generated-result" hidden>',
+			response.get_data(as_text=True),
+		)
+
+	def test_homepage_shows_generated_result_when_phrase_is_present(self):
+		response = self.client.get(
+			"/tweet-generator",
+			query_string={"phrase": "A generated sentence."},
+		)
+		page = response.get_data(as_text=True)
+
+		self.assertIn('<section id="generated-result">', page)
+		self.assertIn("<p>Phrase: A generated sentence.</p>", page)
 
 	def test_homepage_renders_hidden_generation_error_with_issue_link(self):
 		response = self.client.get("/tweet-generator")

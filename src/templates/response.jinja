@@ -1,4 +1,4 @@
-<section id="generated-result">
+<section id="generated-result" {% if phrase is none %}hidden{% endif %}>
 	{% if post_url is not none and phrase is not none %}
 	{% include "tweet.jinja" %}
 	{% elif phrase is not none %}
