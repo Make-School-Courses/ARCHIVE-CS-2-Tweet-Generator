@@ -1,3 +1,5 @@
+[![MIT License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE.md)
+
 # Tweet Generator
 *This project is live on the web at [**projects.nebuloid.dev/tweet-generator**][tweet-generator-homepage]!*
 <br />
